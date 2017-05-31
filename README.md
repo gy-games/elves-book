@@ -74,17 +74,13 @@ Elves-Center简单点说就是Elves的Server端，我们采用微服务为整个
 
 API：提供以RESTfulAPI方式操作Elves的各项接口
 
-## CMDBProxy
+## \*CMDBProxy
 
 CMDB数据提供代理：为Elves中各组件提供自身CMDB数据信息，便于Elves与自身运维体系的融合
 
-## Watcher
+## Watcher & Dashbord
 
-Elves-Center的各组件监控：监听Elves-Center中各组件的运行状态，数据的传输等，便于运维Elves与进行Elves指令审计，Watcher的监听方式以RabbitMQ bind \*.\*的方式进行，对Elves-Center的业务处理无影响，并将监听结果存储至MangoDB供后续查询。
-
-## Dashbord
-
-为运维Elves的运维人员提供一套方便的WEB化管理界面
+Watcher实现对Elves-Center的各组件监控：监听Elves-Center中各组件的运行状态，数据的传输等，便于运维Elves与进行Elves指令审计，Watcher的监听方式以RabbitMQ bind \*.\*的方式进行，对Elves-Center的业务处理无影响，并将监听结果存储至MangoDB供后续查询。Dashbord为运维Elves的运维人员提供一套方便的WEB化管理界面
 
 ![](/assets/elves-center-dashbord.png)
 
@@ -93,4 +89,38 @@ Elves-Center的各组件监控：监听Elves-Center中各组件的运行状态�
 Elves-agent负责APP的下载与调用，执行结果的反馈与上报，以及当前Elves-Agent运行状态的监控，同时ElvesAgent也提供自身Cron功能、一个Web面板，且为了方便APP的开发，Elves-Agent提供开发者模式，提供简易版API直接供开发交互。
 
 ![](/assets/elves-agent-dashbord.png)
+
+# 任务模式
+
+在了解任务模式及类型前，我们先来了解一下Elves有哪些实现
+
+* 以发起方式角度来看：一次APP的执行有两种方式：1、由Elves-Agent端发起，2、由Elves-Center发起；
+* 从任务的执行方式开看有：1、异步执行，2、同步执行；
+* 从APP执行的后续处理来看有：1、处理型，2、非处理型，处理型即APP执行结果将反馈至用户自定义的Processor，非处理型即执行结果不反馈至用户Processor
+
+从上面三个角度出发共组装成了 5种 工作模式，并由归属于不同的任务
+
+1. **AANP  Agent端发起，异步执行，非处理型**
+2. **AAP     Agent端发起，异步执行，处理型**
+3. **CANP  Center端发起，异步执行，非处理型**
+4. **CAP     Center端发起，异步执行，处理型**
+5. **CSNP   Center端发起，同步执行，非处理型**
+
+![](/assets/modeandtype.png)
+
+# 任务类型
+
+Elves中共有三种类型的任务，分别为及时任务，队列任务与计划任务，从字面就可以理解其含义。
+
+## 及时任务
+
+及时任务只支持CSNP模式，用户通过API发送即时任务后将阻塞等待APP执行结果的反馈
+
+## 队列任务
+
+队列任务支持2种模式，1、CANP模式，2、CAP模式 用户需要使用API先创建队列，添加队列中任务，提交队列后任务开始执行，如需获取执行结果，使用方需要另行发起请求，Elves的队列任务支持任务间的依赖。
+
+## 计划任务
+
+计划任务支持4种模式，1、AANP模式，2、AAP模式，3、CANP模式，4、CAP模式。其中由Agent端发起的任务Elves-Center无法进行监控与追踪。用户可以根据规则设置有Elves-Center端发起的计划任务
 
