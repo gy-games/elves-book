@@ -28,16 +28,12 @@ zookeeper.host=192.168.6.117
 zookeeper.outTime=10000
 zookeeper.root= /elves
 
-#mq basic config
+#mq config
 mq.ip=192.168.6.117
 mq.port=5672
 mq.user=root
 mq.password=root
-mq.queuename=cron
-mq.exchange=elves
-mq.rpc.exchange=rpc_elves
-mq.topic.pattern=*.cron
-mq.storage.routingkey=cron.storage
+
 
 #jdbc conf
 jdbc.type=mysql
@@ -52,7 +48,6 @@ jdbc.password=mysql
 #jdbc.url=jdbc\:mysql\://115.182.1.140\:3306/elves?characterEncoding=UTF-8&amp;useOldAliasMetadataBehavior=true&amp;zeroDateTimeBehavior=convertToNull
 #jdbc.username=elves
 #jdbc.password=CRfrMVyS7DXCRvW
-
 ```
 
 
