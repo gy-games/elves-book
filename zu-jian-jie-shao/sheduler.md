@@ -49,7 +49,7 @@ service AgentService{
 
 scheduler与其它模块通讯使用rabbitmq实现，这里提供scheduler作为消费者，处理的消息数据结构。
 
-#### sendSync 发起同步任务
+##### sendSync 发起同步任务
 
 ```
 接收消息：
@@ -98,7 +98,7 @@ scheduler与其它模块通讯使用rabbitmq实现，这里提供scheduler作为
 }
 ```
 
-#### sendAsync 发起异步任务
+##### sendAsync 发起异步任务
 
 ```
 接收消息：
