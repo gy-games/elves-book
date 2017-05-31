@@ -52,7 +52,88 @@ queue模块计划任务的存储使用mqsql实现，下面是SQL语句。
 
 ## 组件服务
 
-cron模块主要对openapi模块提供计划任务的操作接口，具体如下：
+queue模块主要对openapi模块提供队列任务的操作接口，具体如下：
+
+#####  新建队列
+
+```
+接收
+
+{
+    "mqkey":"openapi.queue.createQueue.EC0EF718FCC41307",
+    "mqtype":"cast",
+    "id":"EC0EF718FCC41307",
+    "agent_ip":"192.168.6.116",
+    "mode":"sap",
+    "app":"testApp",
+    "func":"test",
+    "param":"",
+    "timeout":0,
+    "proxy":"",
+    "depend_queue_id":"",
+}
+
+```
+
+##### 提交队列
+
+```
+接收
+
+{
+    "mqkey":"openapi.queue.commitQueue.EC0EF718FCC41307",
+    "mqtype":"cast",
+    "json_queue_ids":["BF0EE718FCC41307","EC0EF718FCC41307"]
+}
+
+```
+
+##### 停止队列
+
+```
+接收
+
+{
+    "mqkey":"openapi.queue.stopQueue.EC0EF718FCC41307",
+    "mqtype":"cast",
+    "json_queue_ids":["BF0EE718FCC41307","EC0EF718FCC41307"]
+}
+
+```
+
+##### 获取队列任务信息接口
+
+```
+接收
+
+{
+    "mqkey":"openapi.queue.infoQueue.EC0EF718FCC41307",
+    "mqtype":"call",
+    "json_queue_ids":["BF0EE718FCC41307","EC0EF718FCC41307"]
+}
+
+回复
+｛
+    "mqkey":"openapi.queue.infoQueue.EC0EF718FCC41307",
+    "mqflag":1,
+    "info":[
+         {
+            "id" : "BF0EE718FCC41307",
+            "agent_ip" :"192.168.1.1",
+            "mode" :"sap",
+            "app" : "testapp",
+            "func" :"mod1",
+            "param" : "",
+            "timeout" :5000,
+            "proxy" : "test",
+            "depend_tq_id" : "BF0EE718FCC41308",
+            "flag" : "q"
+        },
+        ...
+    ]
+
+｝
+```
 
 ## 修改配置
 
