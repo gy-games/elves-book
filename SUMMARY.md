@@ -19,7 +19,7 @@
   * [3.9 Elves-Apps](zu-jian-jie-shao/elves-app.md)
 * [4. 开发手册](shi-yong-shou-ce.md)
   * [4.1 任务模式及类型](shi-yong-shou-ce/ren-wu-mo-shi.md)
-  * [4.2 HelloWord示例](shi-yong-shou-ce/helloword.md)
+  * [4.2 调试HelloWord示例](shi-yong-shou-ce/helloword.md)
   * [4.3 APP的调试](shi-yong-shou-ce/diao-shi-app.md)
   * [4.3 多种模式及类型执行APP](shi-yong-shou-ce/duo-zhong-mo-shi-ji-lei-xing-zhi-xing-app.md)
 * [5. API](api.md)
