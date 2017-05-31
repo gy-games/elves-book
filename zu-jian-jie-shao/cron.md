@@ -20,7 +20,20 @@ Quartz是一套非常高效的轻量级框架，这里提供一下Quartz的cron�
 
 ## 修改配置
 
+**./elves-cron/conf/conf.properties**
 
+```
+#zookeeper config
+zookeeper.host=192.168.6.117
+zookeeper.outTime=10000
+zookeeper.root = /elves
+
+#mq config
+mq.ip=192.168.6.117
+mq.port=5672
+mq.user=root
+mq.password=root
+```
 
 
 
