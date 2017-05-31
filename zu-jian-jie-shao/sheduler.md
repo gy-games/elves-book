@@ -2,8 +2,6 @@
 
 elves的任务调度组件。   接收cron组件、queue组件、openapi组件发起的任务指令，调度转发到agent并回收任务处理结果，最后将结果返回给任务发起方。
 
-## 
-
 ## Thrift 服务
 
 elves-scheduler 和elves-agent之间的通讯使用thrift实现。
@@ -48,10 +46,6 @@ service AgentService{
 ```
 
 ## 组件服务
-
-
-
-
 
 ## 修改配置
 
