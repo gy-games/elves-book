@@ -137,16 +137,28 @@ queue模块主要对openapi模块提供队列任务的操作接口，具体如�
 **./elves-queue/conf/conf.properties**
 
 ```
-#zookeeper config
-zookeeper.host=192.168.6.117
+#Zookeeper Config
+#Zookeeper地址
+zookeeper.host=192.168.0.1
+#Zookeeper超时时间
 zookeeper.outTime=10000
-zookeeper.node = /Elves/Queue/
+#Zookeeper ROOT地址        
+zookeeper.root=/elves  
 
-#mq config
-mq.ip=192.168.6.117
-mq.port=5672
-mq.user=root
-mq.password=root
+#MQ Basic Config
+#RabbitMQ IP
+mq.ip       = 192.168.0.1
+#RabbitMQ 端口
+mq.port     = 5672
+#RABBITMQ 账号
+mq.user     = admin
+#RABBITMQ 密码
+mq.password = 1234567890
+#Exchange 名称        
+mq.exchange = elves
+
+
+
 
 #jdbc conf
 jdbc.type=mysql
