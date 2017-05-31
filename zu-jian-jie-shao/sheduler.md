@@ -96,14 +96,12 @@ scheduler与其它模块通讯使用rabbitmq实现，这里提供scheduler作为
             "result_flag":1
     }
 }
-
 ```
 
 #### sendAsync 发起异步任务
 
 ```
-接收
-
+接收：
 {
     "mqkey":"openapi.scheduler.sendAsync.88499CCA100F214",
     "mqtype":"call",
