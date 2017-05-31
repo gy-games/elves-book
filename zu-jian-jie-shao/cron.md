@@ -26,13 +26,33 @@ Quartz是一套非常高效的轻量级框架，这里提供一下Quartz的cron�
 #zookeeper config
 zookeeper.host=192.168.6.117
 zookeeper.outTime=10000
-zookeeper.root = /elves
+zookeeper.root= /elves
 
-#mq config
+#mq basic config
 mq.ip=192.168.6.117
 mq.port=5672
 mq.user=root
 mq.password=root
+mq.queuename=cron
+mq.exchange=elves
+mq.rpc.exchange=rpc_elves
+mq.topic.pattern=*.cron
+mq.storage.routingkey=cron.storage
+
+#jdbc conf
+jdbc.type=mysql
+jdbc.driver=com.mysql.jdbc.Driver
+jdbc.pool.init=1
+jdbc.pool.minIdle=3
+jdbc.pool.maxActive=20
+jdbc.testSql=SELECT 'x' FROM DUAL
+jdbc.url=jdbc\:mysql\://192.168.6.116\:3306/elves_cron?characterEncoding=UTF-8&amp;useOldAliasMetadataBehavior=true&amp;zeroDateTimeBehavior=convertToNull
+jdbc.username=mysql
+jdbc.password=mysql
+#jdbc.url=jdbc\:mysql\://115.182.1.140\:3306/elves?characterEncoding=UTF-8&amp;useOldAliasMetadataBehavior=true&amp;zeroDateTimeBehavior=convertToNull
+#jdbc.username=elves
+#jdbc.password=CRfrMVyS7DXCRvW
+
 ```
 
 
