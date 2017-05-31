@@ -45,9 +45,6 @@ jdbc.testSql=SELECT 'x' FROM DUAL
 jdbc.url=jdbc\:mysql\://192.168.6.116\:3306/elves_cron?characterEncoding=UTF-8&amp;useOldAliasMetadataBehavior=true&amp;zeroDateTimeBehavior=convertToNull
 jdbc.username=mysql
 jdbc.password=mysql
-#jdbc.url=jdbc\:mysql\://115.182.1.140\:3306/elves?characterEncoding=UTF-8&amp;useOldAliasMetadataBehavior=true&amp;zeroDateTimeBehavior=convertToNull
-#jdbc.username=elves
-#jdbc.password=CRfrMVyS7DXCRvW
 ```
 
 
