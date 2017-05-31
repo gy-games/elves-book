@@ -61,19 +61,31 @@ mv ./conf/cfg.example.json ./conf/cfg.json
 }
 ```
 
-## 启动
+## 脚本参数
 
 **Windows**
 
-    control.cmd start
+    "build\|install\|start\|stop\|restart\|status\|uninstall"
+
+```
+control.cmd install
+{填写administrator账号}
+{填写administrator密码}
+control.cmd start
+```
+
+windows下的install将借助nssm.exe将elves-agent安装为系统服务
 
 **Linux**
 
-    control.cmd start
+```
+control.cmd install
+control.cmd start
+```
+
+linux下的安装会将启动追加如/etc/rc.local
 
 # 开发模式
-
-
 
 # **安全性**
 
