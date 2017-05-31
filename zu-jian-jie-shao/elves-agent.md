@@ -111,7 +111,7 @@ Develop Tools ：开发面板，下面会详细讲述一下
 
 ![](/assets/elves-agent-develop-tools.png)
 
-开启Elves开发莫时候，即可借助Develop Tools进行APP的开发，目前Develop Tools支持支RT模式的任务执行
+开启Elves开发莫时候，即可借助Develop Tools进行APP的开发，目前Develop Tools支持支RT模式的任务执行，输入APP名称，Func名称，Timeout（选填），Proxy（选填），Param（选填）点击 Generate 即可看到 URI以及 POST的参数，测试模式的API支持GET方式请求，可以直接点击Run Test按钮执行。
 
 # **安全性**
 
