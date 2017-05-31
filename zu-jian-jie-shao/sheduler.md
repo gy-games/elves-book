@@ -21,6 +21,14 @@ mq.password=root
 
 ## 组件构建
 
+```
+
+```
+
+## Thrift服务
+
+elves-scheduler 和elves-agent之间的通讯使用thrift实现，下面是通讯结构体
+
 
 
 
