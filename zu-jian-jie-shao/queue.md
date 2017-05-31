@@ -33,6 +33,13 @@ jdbc.password=mysql
 ## 组件构建
 
 ```
+cd ./elves-queue/bin
+./configure --prefix=/opt/elves/elves-queue
+./make
+./make install
+```
+
+```
 
 ```
 
