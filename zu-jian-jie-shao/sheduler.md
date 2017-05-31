@@ -139,6 +139,7 @@ mq.exchange = elves                                                 #Exchange �
 ## 组件构建
 
 ```
+cd ./elves-scheduler/bin
 
 ```
 
