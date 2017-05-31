@@ -112,7 +112,11 @@ cp ./elves-supervisor/ROOT.war {Tomcat目录}
 
 ##### 登录
 
+默认帐号：admin
 
+默认密码：admin
+
+![](/supervisor-img/login.png)
 
 ##### 密钥管理
 
