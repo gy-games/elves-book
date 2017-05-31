@@ -63,29 +63,55 @@ mv ./conf/cfg.example.json ./conf/cfg.json
 
 ## 脚本参数
 
-**Windows**
-
-    "build\|install\|start\|stop\|restart\|status\|uninstall"
+**Windows control.cmd**
 
 ```
-control.cmd install
-{填写administrator账号}
-{填写administrator密码}
-control.cmd start
+"build|install|start|stop|restart|status|uninstall"
+
+build : 运行后将执行go build , 最终构建成 bin\elves-agent.exe ,构建前先go get ./... 解决依赖问题
+install : windows下的install将借助bin\nssm.exe将elves-agent安装为名为elves-agent的服务，Elves需要以管理员权限运行，这里需要输入管理员账号密码
+start : 执行 net start elves-agent
+stop  : 执行 net stop elves-agent
+restart : 执行 stop & start
+status : 查看elves-agent的运行状态
+uninstall : 卸载服务 sc delete elves-agent
 ```
 
-windows下的install将借助nssm.exe将elves-agent安装为系统服务
-
-**Linux**
+**Linux ./control**
 
 ```
-control.cmd install
-control.cmd start
+build|pack|install|start|stop|restart|status|tail|uninstall
+
+build : 运行后将执行go build , 最终构建成 bin\elves-agent , 构建前先go get ./... 解决依赖问题
+pack  : 运行后会将二进制文件打包成一个tar.gz的包，可用于其他机器的直接部署
+install : 执行后会将elves-agent追加入/etc/rc.local
+start : 以nohup形式启动elves-agent
+stop : 关闭elves-agent
+restart : 执行 stop & start
+status : 查看elves-agent的运行状态
+tail : 可以直接以tail方式查看elves-agent日志
+uninstall : 运行后将删除/etc/rc.local下的elves-agent启动项
 ```
 
-linux下的安装会将启动追加如/etc/rc.local
+# Elves-Agent Web Dashbord
 
-# 开发模式
+![](/assets/elves-agent-dashbord.png)
+
+开启HTTP服务后，Elves-Agent将开启一个HTTP服务，显示Elves-Agent的运行状况。
+
+Dashbord：显示Agent的基本信息，包括Agent的运行模式，Agent Asset名称，AgentIP地址，Agent启动时间，Heartbeat最后通讯时间，Agent版本；APPs的信息，本Agent已安装的APP以及其版本；Agent 计划任务，包含最后的执行时间
+
+Recent Tasks：最近40个倒序排列的任务，其中Flag仅代表Worker已经成功执行
+
+Recent Errors：最近20个倒序排列的Error级别的错误
+
+Develop Tools ：开发面板，下面会详细讲述一下
+
+# Develop Tools
+
+![](/assets/elves-agent-develop-tools.png)
+
+开启Elves开发莫时候，即可借助Develop Tools进行APP的开发，目前Develop Tools支持支RT模式的任务执行
 
 # **安全性**
 
