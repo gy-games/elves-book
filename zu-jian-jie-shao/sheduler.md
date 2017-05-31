@@ -4,7 +4,7 @@ elves的任务调度组件。   接收cron组件、queue组件、openapi组件�
 
 ## Thrift 服务
 
-elves-scheduler 和elves-agent之间的通讯使用thrift实现。
+elves-scheduler 和elves-agent之间的通讯使用thrift实现，下面提供通讯thrift结构体和thrift服务：
 
 ```
 //命令构体
