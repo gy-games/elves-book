@@ -12,6 +12,7 @@
 | OpenAPI | RabbitMQ,Zookeeper | - |
 | Watcher | RabbitMQ,Zookeeper | MongoDB,Tomcat |
 | Dashborad | RabbitMQ,Zookeeper | Tomcat |
+| Elves-Agent | - | - |
 
 ---
 
