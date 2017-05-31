@@ -51,6 +51,13 @@ jdbc.password=mysql
 ## 组件构建
 
 ```
+cd ./elves-cron/bin
+./configure --prefix=/opt/elves-cron
+./make
+./make install
+```
+
+```
 
 ```
 
