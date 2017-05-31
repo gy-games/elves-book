@@ -140,7 +140,9 @@ mq.exchange = elves                                                 #Exchange Âê
 
 ```
 cd ./elves-scheduler/bin
-
+./configure --prefix=/opt/mlterm
+./make
+./make install
 ```
 
 
