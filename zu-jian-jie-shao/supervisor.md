@@ -7,7 +7,28 @@ supervisor组件负责elves的APP管理与权限管理， 认证模块目前主�
 supervisor的权限管理和APP管理依赖mqsql数据库，下面是数据库SQL。
 
 
+    CREATE TABLE `auth_key` (
+      `auth_id` varchar(16) NOT NULL COMMENT '权限ID',
+      `auth_key` varchar(16) NOT NULL COMMENT '权限key',
+      `auth_name` varchar(20) NOT NULL COMMENT '名称',
+      `create_time` datetime NOT NULL COMMENT '创建时间',
+      `update_time` datetime NOT NULL COMMENT '权限修改时间',
+      PRIMARY KEY (`auth_id`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='权限表'
 
+
+
+    CREATE TABLE `app` (
+      `app_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键ID',
+      `instruct` varchar(30) NOT NULL COMMENT '指令',
+      `app_name` varchar(30) NOT NULL COMMENT 'app名称',
+      `founder` varchar(20) NOT NULL COMMENT '创建者',
+      `create_time` datetime NOT NULL COMMENT '创建时间',
+      `version_id` int(11) DEFAULT NULL COMMENT '当前版本id',
+      `processor_ip` varchar(15) DEFAULT NULL COMMENT 'processor的ip',
+      `processor_port` int(11) DEFAULT NULL COMMENT 'processor的port',
+      PRIMARY KEY (`app_id`)
+    ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='应用信息表'
 
 
 ## 组件服务
