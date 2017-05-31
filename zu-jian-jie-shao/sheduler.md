@@ -134,7 +134,6 @@ mq.port     = 5672                                                  #RabbitMQ �
 mq.user     = admin                                                 #RABBITMQ 账号
 mq.password = 1234567890                                            #RABBITMQ 密码                             
 mq.exchange = elves                                                 #Exchange 名称
-
 ```
 
 ## 组件构建
