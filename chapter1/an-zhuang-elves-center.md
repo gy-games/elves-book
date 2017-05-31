@@ -9,9 +9,12 @@ Elves-Center可以根据自身的情况进行筛选部署，理论上Elves-Cente
 ### 二进制安装
 
 * 下载适合操作系统的二进制安装包并解压
+* queue,cron模块需要将SQL文件导入MySQL
 * 修改配置文件./conf/conf.properties （详见各组件介绍 ）
 * 执行chmod +x ./control 设置执行权限
+
 * 执行./control start 启动scheduler
+
 * 执行./control status 查看运行状态
 
 ### 编译安装
@@ -28,6 +31,7 @@ Elves-Center可以根据自身的情况进行筛选部署，理论上Elves-Cente
 ### 编译安装
 
 * 下载源码包或 git clone源码包
+* supervisor需要将SQL文件导入MySQL
 * 修改 ./src/main/resources/conf.properties （详见各组件介绍 ）
 * 执行 mvn package 编译源码
 * 获取编译后的War包
@@ -35,11 +39,7 @@ Elves-Center可以根据自身的情况进行筛选部署，理论上Elves-Cente
 
 ---
 
-# dashbord
-
-略
-
-# watcher
+# dashbord & watcher
 
 略
 
