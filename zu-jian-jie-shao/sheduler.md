@@ -49,6 +49,8 @@ service AgentService{
 
 scheduler与其它模块通讯使用rabbitmq实现，这里提供scheduler作为消费者，处理的消息数据。
 
+
+
 ## 修改配置
 
 **./elves-scheduler/conf/conf.properties**
