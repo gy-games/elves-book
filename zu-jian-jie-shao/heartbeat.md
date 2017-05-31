@@ -6,8 +6,6 @@ heartbeat组件的作用是接收elves-agent的心跳包，向其他组件提供
 
 heartbeat模块主要对其他模块提供elves-agent的实时在线数据接口，具体如下：
 
-
-
 ## 修改配置
 
 **./elves-heartbeat/conf/conf.properties**
@@ -37,4 +35,15 @@ auth.mode 用于标识supervisor模块是否开启（supervisor：开启，simpl
 当auth.mode 设置为supervisor，heartbeat返回给elves-agent可以运行的APP的版本信息为 auth.localAppInfo 的数据。
 
 当 auth.mode 设置为simple，heartbeat返回给elves-agent可以运行的APP的版本信息会从elves-supervisor模块获取。
+
+## 组件构建
+
+```
+cd ./elves-heartbeat/bin
+./configure --prefix=/opt/elves/elves-heartbeat
+./make
+./make install
+```
+
+
 
