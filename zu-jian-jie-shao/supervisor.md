@@ -6,7 +6,6 @@ supervisor组件负责elves的APP管理与权限管理， 认证模块目前主�
 
 supervisor的权限管理和APP管理依赖mqsql数据库，下面是数据库SQL。
 
-
     CREATE TABLE `auth_key` (
       `auth_id` varchar(16) NOT NULL COMMENT '权限ID',
       `auth_key` varchar(16) NOT NULL COMMENT '权限key',
@@ -29,7 +28,6 @@ supervisor的权限管理和APP管理依赖mqsql数据库，下面是数据库SQ
       `processor_port` int(11) DEFAULT NULL COMMENT 'processor的port',
       PRIMARY KEY (`app_id`)
     ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='应用信息表'
-
 
 ## 组件服务
 
@@ -109,6 +107,8 @@ cp ./elves-supervisor/ROOT.war {Tomcat目录}
 {start Tomcat}
 {访问:http://ip:port}
 ```
+
+## WEB功能说明
 
 
 
