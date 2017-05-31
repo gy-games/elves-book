@@ -37,7 +37,7 @@ queue.enabled = true                 #queue组件开关，关闭后，OpenAPI不
 
 ```
 cd ./openapi
-./control build
+mvn package
 cp ./openapi/ROOT.war {Tomcat目录}
 {start Tomcat}
 {访问:http://ip:port}
