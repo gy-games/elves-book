@@ -26,5 +26,15 @@ ftp.res.user=admin
 ftp.res.pass=admin
 ```
 
+## 组件构建
+
+```
+cd ./elves-supervisor
+mvn package
+cp ./elves-supervisor/ROOT.war {Tomcat目录}
+{start Tomcat}
+{访问:http://ip:port}
+```
+
 
 
