@@ -19,9 +19,9 @@ mq.port=5672
 mq.user=root
 mq.password=root
 
-#other config
-other.switch=0
-other.localAppInfo={'app1':'1.0.1','app2':'1.0.2'}
+#auth config
+auth.mode = supervisor              #权限模式，可选择supervisor或simple模式
+auth.localAppInfo={'app1':'1.0.1','app2':'1.0.2'}
 ```
 
 注：
