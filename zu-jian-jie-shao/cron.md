@@ -52,7 +52,7 @@ jdbc.password=mysql
 
 ```
 cd ./elves-cron/bin
-./configure --prefix=/opt/elves-cron
+./configure --prefix=/opt/elves/elves-cron
 ./make
 ./make install
 ```
