@@ -1,8 +1,8 @@
 # 安装Elves-Center
 
-Elves-Center可以根据自身的情况进行筛选部署，理论上Elves-Center可以部署在Linux与Windows平台，但我们建议还是部署在Linux平台下
+Elves-Center可以根据自身的情况进行筛选部署，理论上Elves-Center可以部署在Linux与Windows平台，但我们建议还是部署在Linux平台下，Elves-Center的编译需要maven环境支持，Elves-Agent的编译需要Golang环境的支持
 
-## schduler & queue & cron & heartbeat 
+## schduler & queue & cron & heartbeat
 
 以上4个组件的安装过程一致
 
@@ -23,7 +23,7 @@ Elves-Center可以根据自身的情况进行筛选部署，理论上Elves-Cente
 * 执行./control start 启动scheduler
 * 执行./control status 查看运行状态
 
-# openapi & supervisor 
+# openapi & supervisor
 
 ### 编译安装
 
@@ -42,6 +42,4 @@ Elves-Center可以根据自身的情况进行筛选部署，理论上Elves-Cente
 # watcher
 
 略
-
-
 
