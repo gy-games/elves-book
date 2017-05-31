@@ -128,8 +128,8 @@ scheduler与其它模块通讯使用rabbitmq实现，这里提供scheduler作为
 zookeeper.host=10.0.101.1:2181,10.0.101.2:2181,10.0.101.3:2181
 #Zookeeper超时时间
 zookeeper.outTime=10000
-#Zookeeper ROOT地址                                        
-zookeeper.root=/elves                                             
+#Zookeeper ROOT地址        
+zookeeper.root=/elves  
 
 #MQ Basic Config
 #RabbitMQ IP
@@ -138,9 +138,9 @@ mq.ip       = 10.0.101.100
 mq.port     = 5672
 #RABBITMQ 账号
 mq.user     = admin
-#RABBITMQ 密码                                               
+#RABBITMQ 密码
 mq.password = 1234567890
-#Exchange 名称                                                      
+#Exchange 名称        
 mq.exchange = elves
 ```
 
