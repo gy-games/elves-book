@@ -1,0 +1,58 @@
+# 获取计划任务详细信息
+
+使用本接口将获取单个计划任务详细信息。
+
+## URI
+
+```
+GET /api/v2/cron/detail
+```
+
+## 请求及说明
+
+```
+/v2/cron/detail?ip={ip}&cron_id={cron_id}&app={app}&auth_id={auth_id}&timestamp={timestamp}&sign_type={sign_type}&sign={sign}
+```
+
+| **字段** | **必填否** | **类型** | **注释** |
+| :--- | :--- | :--- | :--- |
+| cron\_id | 必填 | string | cron id |
+| app | 必填 | string | app名称 |
+| auth\_id | 必填 | string | AuthID |
+| timestamp | 必填 | int | 当前时间戳 |
+| sign\_type | 必填 | string enum\(md5\) | 签名类型 |
+| sign | 必填 | string | 签名 |
+
+## 返回及说明
+
+```
+{
+    "ip"               : "127.0.0.1",
+    "app"              : "apptest",
+    "func"             : "hello",
+    "param"            : "",
+    "mode"             : "NP",
+    "proxy"            : "",
+    "rule"             : "0/5 * * * * ?",
+    "last_exec_time"   : "2017/05/30 10:05:01",
+    "last_exec_result" :{
+        "flag"           : "true",
+        "error"          : "",
+        "cron_id"        :"9ad6af3b2e5d4c2f",
+        "worker_flag"    :"1",
+        "worker_message" :"hello word!",
+        "worker_costtime":"74"
+    }
+}
+```
+
+| **字段** | **类型** | **注释** |
+| :--- | :--- | :--- |
+| ip | string | AGENT IP（全局唯一） |
+| status | string enum\(online,offline\) | AGENT在线状态 |
+| asset | string | AGENT别称 |
+| online\_time | string datetime\(yyyy-mm-dd hh:ii:ss\) | AGENT上线时间 |
+| cron\_list | string list | cron ID列表 |
+
+
+
