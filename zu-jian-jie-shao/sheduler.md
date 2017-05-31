@@ -138,6 +138,7 @@ mq.password=root
 ## 组件构建
 
 ```
+cd ./elves-scheduler/bin
 
 ```
 
