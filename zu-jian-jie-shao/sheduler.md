@@ -1,10 +1,10 @@
 # Scheduler
 
-务调度组件,发送任务指令，回收任务结果并做后续处理。发起任务的指令来源于OpenApi组件与Cron组件，在任务执行后，Sheduler需要根据任务类型不同选择是否通知App-Processor。若需要通知，则需要向Supervisor请求App-processor信息，以便快速调用。
+elves的任务调度组件。   接收cron组件、queue组件、openapi组件发起的任务指令，调度转发到agent并回收任务处理结果，最后将结果返回给任务发起方。
 
 ## 修改配置
 
-**./src/main/resource/conf.properties**
+**./elves-scheduler/conf/conf.properties**
 
 ```
 #zookeeper config
@@ -18,6 +18,10 @@ mq.port=5672
 mq.user=root
 mq.password=root
 ```
+
+## 组件构建
+
+
 
 
 
