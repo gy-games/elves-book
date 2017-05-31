@@ -2,6 +2,12 @@
 
 supervisor组件负责elves的APP管理与权限管理， 认证模块目前主要向OpenAPI提供服务。
 
+## 组件服务
+
+supervisor作为权限模块，主要对外提供：APP和权限相关的数据信息。
+
+
+
 ## 修改配置
 
 **./src/main/resource/conf.properties**
