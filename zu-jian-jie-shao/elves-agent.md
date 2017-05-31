@@ -2,13 +2,18 @@
 
 Elves整体采用C/S架构设计，Elves-Agent即为Client，运行在所有被控机中，Elves-Agent与Elves-Center/App-Processor的通讯采用Thrift形式进行，其本身作为ThriftServer接收来自Elves-Center的指令。
 
-依赖
+## 依赖
 
-    github.com/cihub/seelog
+```
+github.com/cihub/seelog                      #日志处理
+github.com/toolkits/file                     #文件处理
+github.com/go-fsnotify/fsnotify              #文件钩子监听
+github.com/jakecoffman/cron                  #定时任务
+git.apache.org/thrift.git/lib/go/thrift      #thrift服务
+github.com/snluu/uuid                        #UUID生成
+```
 
-    github.com/toolkits/file
-
-    xxgithub.com/go-fsnotify/fsnotify
+以上依赖的模块已经Fork至gy-games-libs
 
 # 安装过程
 
