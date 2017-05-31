@@ -2,6 +2,10 @@
 
 heartbeat组件的作用是接收elves-agent的心跳包，向其他组件提供elves-agent的实时在线状态。elves-agent定时发送心跳包给heartbeat模块，heartbeat回复elves-agent上可以运行的App版本信息。
 
+## 组件服务
+
+queue模块主要对openapi模块提供队列任务的操作接口，具体如下：
+
 ## 修改配置
 
 **./elves-heartbeat/conf/conf.properties**
