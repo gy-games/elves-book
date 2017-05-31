@@ -26,9 +26,9 @@ auth.localAppInfo={'app1':'1.0.1','app2':'1.0.2'}
 
 注：
 
-other.switch 用于标识supervisor模块是否开启（0：开启，1：关闭）。
+auth.mode 用于标识supervisor模块是否开启（supervisor：开启，simple：关闭）。
 
-当 other.switch设置为1，heartbeat返回给elves-agent可以运行的APP的版本信息为 other.localAppInfo 的数据。
+当auth.mode 设置为supervisor，heartbeat返回给elves-agent可以运行的APP的版本信息为 auth.localAppInfo 的数据。
 
-当 other.switch设置为0，heartbeat返回给elves-agent可以运行的APP的版本信息会从elves-supervisor模块获取。
+当 auth.mode 设置为simple，heartbeat返回给elves-agent可以运行的APP的版本信息会从elves-supervisor模块获取。
 
