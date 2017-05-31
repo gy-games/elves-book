@@ -15,11 +15,11 @@ zookeeper.outTime=10000                                           #Zookeeper超�
 zookeeper.root=/elves                                             #Zookeeper ROOT地址
 
 #MQ Basic Config
-mq.ip       =10.0.101.100                                          #RabbitMQ IP
-mq.port     =5672                                                  #RabbitMQ 端口
-mq.user     =admin                                                 #RABBITMQ 账号
-mq.password =GyxT2017015                                           #RABBITMQ 密码                             
-mq.exchange =elves                                                 #Exchange 名称
+mq.ip       = 10.0.101.100                                          #RabbitMQ IP
+mq.port     = 5672                                                  #RabbitMQ 端口
+mq.user     = admin                                                 #RABBITMQ 账号
+mq.password = 1234567890                                            #RABBITMQ 密码                             
+mq.exchange = elves                                                 #Exchange 名称
 
 #Auth Config                
 auth.mode = supervisor              #权限模式，可选择supervisor或simple模式
