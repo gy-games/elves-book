@@ -52,7 +52,7 @@ scheduler与其它模块通讯使用rabbitmq实现，这里提供scheduler作为
 #### sendSync 发起同步任务
 
 ```
-接收消息 ：
+同步任务 接收消息 ：
 {
     "mqkey":"openapi.scheduler.sendSync.88499CCA100F214",
     "mqtype":"cast",
