@@ -136,12 +136,12 @@ zookeeper.root=/elves
 mq.ip       = 10.0.101.100
 #RabbitMQ 端口
 mq.port     = 5672
-#RABBITMQ 账号                                                 
+#RABBITMQ 账号
 mq.user     = admin
-#RABBITMQ 密码                                                 
+#RABBITMQ 密码                                               
 mq.password = 1234567890
-#Exchange 名称                                                                         
-mq.exchange = elves                                                 
+#Exchange 名称                                                      
+mq.exchange = elves
 ```
 
 ## 组件构建
