@@ -41,7 +41,35 @@ con模块计划任务的存储使用mqsql实现，下面是SQL语句：
 
 cron模块主要对openapi模块提供计划任务的操作接口，具体如下：
 
+##### 计划任务额添加接口：
 
+```
+接收消息：
+{
+    "mqkey":"openapi.scheduler.sendSync.88499CCA100F214",
+    "mqtype":"cast",
+    "id":"88499CCA100F214"
+    "agent_ip":"192.168.6.116",
+    "mode":"sap",
+    "app":"testApp",
+    "param":"",
+    "timeout":0,
+    "proxy":""
+}
+
+回复消息：
+{
+    "mqkey":"scheduler.openapi.sendSync.88499CCA100F214",
+    "mqtype":"cast",
+    "mqflag":"1",
+    "mqerror":"",
+    "data":{
+            "flag"：0
+            "error":""
+            "result_flag":1
+    }
+}
+```
 
 ## 修改配置
 
