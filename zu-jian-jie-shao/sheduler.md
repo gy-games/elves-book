@@ -27,9 +27,46 @@ mq.password=root
 
 ## Thrift服务
 
-elves-scheduler 和elves-agent之间的通讯使用thrift实现，下面是通讯结构体
+elves-scheduler 和elves-agent之间的通讯使用thrift实现。
 
+```
+//命令构体
+struct Instruct{
+    1 : string id,
+    2 : string ip,
+    3 : string type,
+    4 : string mode,
+    5 : string app,
+    6 : string func,
+    7 : string param,
+    8 : i32 timeout,
+    9 : string proxy
+}
 
+//命令结果结构体
+struct Reinstruct{
+    1 : Instruct ins,
+    3 : i32 flag,
+    4 : i32 costtime,
+    5 : string result
+}
+```
+
+```
+//Scheduler提供接口
+service SchedulerService{
+    //异步返回结果处理器
+    string dataTransport(1:Reinstruct reins)
+}
+
+//Agent提供接口
+service AgentService{
+    //指令接收器[异步]
+    list<Reinstruct>  instructionInvokeAsync(1: list<Instruct> insList)
+    //指令接收器[同步]
+    Reinstruct instructionInvokeSync(1: Instruct ins)
+}
+```
 
 
 
