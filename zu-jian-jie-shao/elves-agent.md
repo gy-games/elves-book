@@ -14,13 +14,19 @@ chmod +x control
 
 # 配置
 
-    mv ./conf/cfg.example.json ./conf/cfg.json
+```
+mv ./conf/cfg.example.json ./conf/cfg.json
+```
+
+**cfg.json**
+
+    asd
 
 
 
 
 
-## 安全性
+安全性
 
 在Elves-Agent的设计中，我们并未对其指令来源进行安全校验，理论上所有实现其Thrift方法的程序都可以调用Elves-Agent，在实际的成产环境中，我们建议与iptables联用以保证其指令来源的合法性
 
