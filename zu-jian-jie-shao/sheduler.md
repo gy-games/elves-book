@@ -49,6 +49,77 @@ service AgentService{
 
 scheduler与其它模块通讯使用rabbitmq实现，这里提供scheduler作为消费者，处理的消息数据结构。
 
+#### sendSync 发起同步任务
+
+```
+接收消息 ：
+{
+    "mqkey":"openapi.scheduler.sendSync.88499CCA100F214",
+    "mqtype":"cast",
+    "id":"88499CCA100F214"
+    "agent_ip":"192.168.6.116",
+    "mode":"sap",
+    "app":"testApp",
+    "func":"test',
+    "param":"",
+    "timeout":0,
+    "proxy":""
+}
+
+回复消息：
+{
+    "mqkey":"scheduler.openapi.sendSync.88499CCA100F214",
+    "mqtype":"cast",
+    "mqflag":"1",
+    "mqerror":"",
+    "data":{
+            "flag"：0
+            "error":""
+            "log_id":"BF0EE718FCC41307",
+            "agent_ip":"192.168.1.1",
+            "mode":"sap",
+            "app":"testapp",
+            "func":"mod1",
+            "param":"",
+            "timeout":5000,
+            "proxy":"",
+            "starttime":"2016-06-27 12:51:05"
+            "agent_sync_flag":0,
+            "agent_sync_error":"",
+            "agent_sync_costtime":50,
+            "worker_message":"",
+            "worker_costtime":0,
+            "processor_sync_flag":0,
+            "processor_sync_error":"",
+            "processor_sync_costtime":50
+            "endtime":"2016-06-27 12:51:05",
+            "result_flag":1
+    }
+}
+
+```
+
+#### sendAsync 发起异步任务
+
+```
+接收
+
+{
+    "mqkey":"openapi.scheduler.sendAsync.88499CCA100F214",
+    "mqtype":"call",
+    "job_type":"cron/queue"
+    "id":"88499CCA100F215",
+    "rand_id":"88499CCA100F218"
+    "agent_ip":"192.168.6.116",
+    "mode":"sap",
+    "app":"testApp",
+    "func":"test',
+    "param":"",
+    "timeout":0,
+    "proxy":""
+}
+```
+
 ## 修改配置
 
 **./elves-scheduler/conf/conf.properties**
