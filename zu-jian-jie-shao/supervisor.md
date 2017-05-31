@@ -6,7 +6,39 @@ supervisor组件负责elves的APP管理与权限管理， 认证模块目前主�
 
 supervisor作为权限模块，主要对外提供：APP和权限相关的数据信息。
 
+##### APP版本数据：
 
+```
+接收
+
+{
+    "mqkey":"openapi.queue.infoQueue.EC0EF718FCC41307",
+    "mqtype":"call",
+    "json_queue_ids":["BF0EE718FCC41307","EC0EF718FCC41307"]
+}
+
+回复
+｛
+    "mqkey":"openapi.queue.infoQueue.EC0EF718FCC41307",
+    "mqflag":1,
+    "info":[
+         {
+            "id" : "BF0EE718FCC41307",
+            "agent_ip" :"192.168.1.1",
+            "mode" :"sap",
+            "app" : "testapp",
+            "func" :"mod1",
+            "param" : "",
+            "timeout" :5000,
+            "proxy" : "test",
+            "depend_tq_id" : "BF0EE718FCC41308",
+            "flag" : "q"
+        },
+        ...
+    ]
+
+｝
+```
 
 ## 修改配置
 
