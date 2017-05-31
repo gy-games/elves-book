@@ -158,8 +158,6 @@ mq.password = 1234567890
 mq.exchange = elves
 
 
-
-
 #jdbc conf
 jdbc.type=mysql
 jdbc.driver=com.mysql.jdbc.Driver
