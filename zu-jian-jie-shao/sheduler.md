@@ -124,16 +124,24 @@ scheduler与其它模块通讯使用rabbitmq实现，这里提供scheduler作为
 
 ```
 #Zookeeper Config
-zookeeper.host=10.0.101.1:2181,10.0.101.2:2181,10.0.101.3:2181    #Zookeeper地址
-zookeeper.outTime=10000                                           #Zookeeper超时时间
-zookeeper.root=/elves                                             #Zookeeper ROOT地址
+#Zookeeper地址
+zookeeper.host=10.0.101.1:2181,10.0.101.2:2181,10.0.101.3:2181
+#Zookeeper超时时间
+zookeeper.outTime=10000
+#Zookeeper ROOT地址                                        
+zookeeper.root=/elves                                             
 
 #MQ Basic Config
-mq.ip       = 10.0.101.100                                          #RabbitMQ IP
-mq.port     = 5672                                                  #RabbitMQ 端口
-mq.user     = admin                                                 #RABBITMQ 账号
-mq.password = 1234567890                                            #RABBITMQ 密码                             
-mq.exchange = elves                                                 #Exchange 名称
+#RabbitMQ IP
+mq.ip       = 10.0.101.100
+#RabbitMQ 端口
+mq.port     = 5672
+#RABBITMQ 账号                                                 
+mq.user     = admin
+#RABBITMQ 密码                                                 
+mq.password = 1234567890
+#Exchange 名称                                                                         
+mq.exchange = elves                                                 
 ```
 
 ## 组件构建
