@@ -37,6 +37,12 @@ con模块计划任务的存储使用mqsql实现，下面是SQL语句：
       PRIMARY KEY (`id`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='计划任务表'
 
+## 组件服务
+
+cron模块主要对openapi模块提供计划任务的操作接口，具体如下：
+
+
+
 ## 修改配置
 
 **./elves-cron/conf/conf.properties**
