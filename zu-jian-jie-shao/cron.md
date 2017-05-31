@@ -18,6 +18,25 @@ Quartz是一套非常高效的轻量级框架，这里提供一下Quartz的cron�
 | 6 | 星期 | 1-7 | , - \* ? / L C \# |
 | 7 | 年份（可选） | 1970－2099 | , - \* / |
 
+## 数据库
+
+con模块计划任务的存储使用mqsql实现，下面是SQL语句：
+
+    CREATE TABLE `task_cron` (
+      `id` varchar(16) NOT NULL COMMENT '主键Id',
+      `agent_ip` varchar(15) NOT NULL COMMENT '客户端IP',
+      `mode` enum('sap','sanp') NOT NULL COMMENT '模式(sap,sanp)',
+      `app` varchar(32) NOT NULL COMMENT '模块',
+      `func` varchar(32) NOT NULL COMMENT '方法',
+      `param` text COMMENT '参数',
+      `timeout` int(11) DEFAULT '0' COMMENT '超时时间',
+      `proxy` varchar(15) DEFAULT NULL COMMENT '代理器',
+      `rule` varchar(30) NOT NULL COMMENT '规则(quartz表达式)',
+      `flag` tinyint(1) NOT NULL DEFAULT '0' COMMENT '状态(0:暂停,1:正常)',
+      `create_time` datetime NOT NULL COMMENT '任务接收时间',
+      PRIMARY KEY (`id`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='计划任务表'
+
 ## 修改配置
 
 **./elves-cron/conf/conf.properties**
