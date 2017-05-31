@@ -110,7 +110,15 @@ cp ./elves-supervisor/ROOT.war {Tomcat目录}
 
 ## WEB功能说明
 
-##### 权限节点
+##### 登录
+
+##### 密钥管理
+
+##### App管理
+
+##### Agent数据
+
+##### 用户权限
 
 
 
