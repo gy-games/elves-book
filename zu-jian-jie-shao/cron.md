@@ -34,7 +34,6 @@ mq.port=5672
 mq.user=root
 mq.password=root
 
-
 #jdbc conf
 jdbc.type=mysql
 jdbc.driver=com.mysql.jdbc.Driver
