@@ -25,7 +25,7 @@ mq.password=root
 
 ```
 
-## Thrift服务
+## Thrift 服务
 
 elves-scheduler 和elves-agent之间的通讯使用thrift实现。
 
@@ -69,8 +69,6 @@ service AgentService{
 ```
 
 ## 组件服务
-
-
 
 
 
