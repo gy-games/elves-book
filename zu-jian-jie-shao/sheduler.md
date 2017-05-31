@@ -6,5 +6,18 @@
 
 **./src/main/resource/conf.properties**
 
+```
+#zookeeper config
+zookeeper.host=192.168.6.117
+zookeeper.outTime=10000
+zookeeper.root = /elves
+
+#mq config
+mq.ip=192.168.6.117
+mq.port=5672
+mq.user=root
+mq.password=root
+```
+
 
 
