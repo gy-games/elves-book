@@ -66,7 +66,7 @@ mq.password = 1234567890
 mq.exchange = elves
 
 #FTP adress config
-ftp.res.ip=http://192.168.6.117
+ftp.res.ip=http://192.168.0.1
 ftp.res.user=admin
 ftp.res.pass=admin
 ```
