@@ -7,17 +7,17 @@ heartbeat组件的作用是接收elves-agent的心跳包，向其他组件提供
 **./elves-heartbeat/conf/conf.properties**
 
 ```
-#zookeeper config
-zookeeper.host=192.168.6.117
-zookeeper.outTime=10000
-zookeeper.root= /elves
-zookeeper.heartbeat.port=11102
+#Zookeeper Config
+zookeeper.host=10.0.101.1:2181,10.0.101.2:2181,10.0.101.3:2181    #Zookeeper地址
+zookeeper.outTime=10000                                           #Zookeeper超时时间
+zookeeper.root=/elves                                             #Zookeeper ROOT地址
 
-#mq config
-mq.ip=192.168.6.117
-mq.port=5672
-mq.user=root
-mq.password=root
+#MQ Basic Config
+mq.ip       = 10.0.101.100                                          #RabbitMQ IP
+mq.port     = 5672                                                  #RabbitMQ 端口
+mq.user     = admin                                                 #RABBITMQ 账号
+mq.password = 1234567890                                            #RABBITMQ 密码                             
+mq.exchange = elves                                                 #Exchange 名称
 
 #auth config
 auth.mode = supervisor              #权限模式，可选择supervisor或simple模式
