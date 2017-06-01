@@ -157,7 +157,7 @@ cron模块主要对openapi模块提供计划任务的操作接口，具体如下
 }
 ```
 
-##### 获取计划任务列表：
+##### cronList：
 
 ```
 接收消息：
@@ -183,22 +183,22 @@ cron模块主要对openapi模块提供计划任务的操作接口，具体如下
 }
 ```
 
-##### 计划任务执行详细信息：
+##### cronDetail：
 
 ```
 接收消息:
 {
     "mqkey":"openapi.crn.cronDetail",
-    "mqtype":"call.88499CCA100F220",
+    "mqtype":"call.88499CCA100FAAA",
     "mqbody"{
         "id":"884DDCCA100F220"
     }
 }
 
-回复消息：
+回复消息："发送RoutingKey:88499CCA100FAAA"
 {
-    "mqkey":"openapi.crn.cronDetail",
-    "mqtype":"call.88499CCA100F220",
+    "mqkey":"openapi.crn",
+    "mqtype":"cast",
     "mqbody":{
         "ip":"127.0.0.1",
         "app":"apptest",
