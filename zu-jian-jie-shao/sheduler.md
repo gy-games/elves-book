@@ -54,59 +54,52 @@ scheduler与其它模块通讯使用rabbitmq实现，这里提供scheduler作为
 ```
 接收消息：
 {
-    "mqkey":"openapi.scheduler.sendSync",
+    "mqkey":"openapi.scheduler.syncJob",
     "mqtype":"call.88499CCA100F214",
     "mqbody":{
-        "id":"88499CCA100F214"
-        "agent_ip":"192.168.6.116",
-        "mode":"sap",
+        "rt_id":"9ad6af3b2e5d4c2f"
+        "ip":"192.168.6.116",
         "app":"testApp",
         "func":"test',
         "param":"",
-        "timeout":0,
+        "timeout":90,
         "proxy":""
     }
 }
 
 回复消息：
 {
-    "mqkey":"scheduler.openapi.sendSync.88499CCA100F214",
+    "mqkey":"scheduler.openapi.syncJob",
     "mqtype":"cast",
-    "mqflag":"1",
-    "mqerror":"",
-    "data":{
-            "flag"：0
-            "error":""
-            "log_id":"BF0EE718FCC41307",
-            "agent_ip":"192.168.1.1",
-            "mode":"sap",
-            "app":"testapp",
-            "func":"mod1",
-            "param":"",
-            "timeout":5000,
-            "proxy":"",
-            "starttime":"2016-06-27 12:51:05"
-            "agent_sync_flag":0,
-            "agent_sync_error":"",
-            "agent_sync_costtime":50,
-            "worker_message":"",
-            "worker_costtime":0,
-            "processor_sync_flag":0,
-            "processor_sync_error":"",
-            "processor_sync_costtime":50
-            "endtime":"2016-06-27 12:51:05",
-            "result_flag":1
+    "mqbody":{
+        "flag"："true"
+        "error":""
+        "result":{
+            "rt_id":"9ad6af3b2e5d4c2f",
+            "worker_flag":"1",
+            "worker_message":"hello word!",
+            "worker_costtime":"74"
+        }
     }
 }
 ```
 
-##### sendAsync 发起异步任务
+##### 异步任务
 
 ```
 接收消息：
 {
-    "mqkey":"openapi.scheduler.sendAsync.88499CCA100F214",
-    "mqtype":"call",
+    "mqkey":"queue.scheduler.asyncJob",
+    "mqtype":"call.88499CCA100F214",
+    "mqbody":{
+        "flag": "true",
+        "error": "",
+        "task_id": "BF0EE718FCC41307",
+        "worker_flag": "1",
+        "worker_message": "hello word!",
+        "worker_costtime": "74"
+
+    }
     "job_type":"cron/queue"
     "id":"88499CCA100F215",
     "rand_id":"88499CCA100F218"
