@@ -38,8 +38,6 @@ GET /api/v2/queue/create
 
 | **字段** | **类型** | **注释** |
 | :--- | :--- | :--- |
-| flag | string enum\("true","false"\) | 接口执行状态 |
-| error | string | 接口错误信息 |
 | queue\_id | string | 队列ID |
 
 
