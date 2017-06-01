@@ -233,9 +233,5 @@ mvn package
 ./control start
 ```
 
-```
-
-```
-
 
 

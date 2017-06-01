@@ -54,14 +54,13 @@ queue模块计划任务的存储使用mqsql实现，下面是SQL语句。
 
 queue模块主要对openapi模块提供队列任务的操作接口，具体如下：
 
-##### 新建队列
+##### 创建队列
 
 ```
-接收
-
+接收消息：
 {
-    "mqkey":"openapi.queue.createQueue.EC0EF718FCC41307",
-    "mqtype":"cast",
+    "mqkey":"openapi.queue.createQueue7",
+    "mqtype":"call.EC0EF718FCC4130",
     "id":"EC0EF718FCC41307",
     "agent_ip":"192.168.6.116",
     "mode":"sap",
@@ -71,6 +70,10 @@ queue模块主要对openapi模块提供队列任务的操作接口，具体如�
     "timeout":0,
     "proxy":"",
     "depend_queue_id":"",
+}
+
+回复消息：
+{
 }
 ```
 
