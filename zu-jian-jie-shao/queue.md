@@ -68,7 +68,7 @@ queue模块主要对openapi模块提供队列任务的操作接口，具体如�
 
 回复消息："发送RoutingKey:EC0EF718FCC4130"
 {
-    "mqkey":"openapi.queue",
+    "mqkey":"queue.openapi",
     "mqtype":"cast",
     "mqbody":{
         "id":"12d6af3b2e5d4c2e"
@@ -76,17 +76,33 @@ queue模块主要对openapi模块提供队列任务的操作接口，具体如�
 }
 ```
 
-##### commitQueue:
+##### createTask:
 
 ```
 接收
 
 {
-    "mqkey":"openapi.queue.commitQueue.EC0EF718FCC41307",
-    "mqtype":"cast",
-    "json_queue_ids":["BF0EE718FCC41307","EC0EF718FCC41307"]
+    "mqkey":"openapi.queue.createTask",
+    "mqtype":"call.EC0EF718FCC41307",
+    "mqbody":{
+        "id":"12d6af3b2e5d4c2e",
+        "ip":"192.168.1.1",
+        "mode":"NP",
+        "func":"test",
+        "param":"",
+        "timeout":20,
+        "proxy":"",
+        "depend_task_id":""
+    }
 }
-回复消息：｛
+回复消息："发送RoutingKey:EC0EF718FCC41307"
+{
+    "mqkey":"queue.openapi",
+    "mqtype":"cast",
+    "mqbody":{
+        "id":"12d6af3b2e5d4c2e"
+    }
+}
 ```
 
 ##### 停止队列
