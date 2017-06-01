@@ -87,29 +87,34 @@ scheduler与其它模块通讯使用rabbitmq实现，这里提供scheduler作为
 ##### 异步任务
 
 ```
-接收消息：
+接收queue消息：
 {
     "mqkey":"queue.scheduler.asyncJob",
-    "mqtype":"call.88499CCA100F214",
+    "mqtype":"cast",
     "mqbody":{
-        "flag": "true",
-        "error": "",
-        "task_id": "BF0EE718FCC41307",
-        "worker_flag": "1",
-        "worker_message": "hello word!",
-        "worker_costtime": "74"
-
+        "task_id":"9ad6af3b2e5d4c2f"
+        "ip":"192.168.6.116",
+        "app":"testApp",
+        "func":"test',
+        "param":"",
+        "timeout":90,
+        "proxy":""
     }
-    "job_type":"cron/queue"
-    "id":"88499CCA100F215",
-    "rand_id":"88499CCA100F218"
-    "agent_ip":"192.168.6.116",
-    "mode":"sap",
-    "app":"testApp",
-    "func":"test',
-    "param":"",
-    "timeout":0,
-    "proxy":""
+}
+
+接收cron消息：
+{
+    "mqkey":"cron.scheduler.asyncJob",
+    "mqtype":"cast",
+    "mqbody":{
+        "cron_id":"9ad6af3b2e5d4c2d"
+        "ip":"192.168.6.116",
+        "app":"testApp",
+        "func":"test',
+        "param":"",
+        "timeout":90,
+        "proxy":""
+    }
 }
 ```
 
