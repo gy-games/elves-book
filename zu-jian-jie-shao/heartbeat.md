@@ -99,9 +99,8 @@ auth.mode 用于标识supervisor模块是否开启（supervisor：开启，simpl
 
 ```
 cd ./elves-heartbeat/bin
-./configure --prefix=/opt/elves/elves-heartbeat
-./make
-./make install
+mvn package
+./control start
 ```
 
 
