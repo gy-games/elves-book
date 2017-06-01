@@ -6,15 +6,16 @@ heartbeat组件的作用是接收elves-agent的心跳包，向其他组件提供
 
 heartbeat模块主要对其他模块提供elves-agent的实时在线数据接口，具体如下：
 
-##### 获取agent实时在线数据：
+##### agentInfo：
 
 ```
-接收
-
+接收消息：
 {
-    "mqkey":"openapi.queue.infoQueue.EC0EF718FCC41307",
-    "mqtype":"call",
-    "json_queue_ids":["BF0EE718FCC41307","EC0EF718FCC41307"]
+    "mqkey":"{模块}.heartbeat.agentInfo",
+    "mqtype":"call.CCCEF718FCC41307",
+    "mqbody":{
+        
+    }
 }
 
 回复
