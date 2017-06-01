@@ -56,7 +56,7 @@ cron模块主要对openapi模块提供计划任务的操作接口，具体如下
 
 ### 服务提供详情
 
-#### taskResult {#cron-taskresult}
+##### 异步任务回复结果
 
 ```
  {
@@ -66,7 +66,7 @@ cron模块主要对openapi模块提供计划任务的操作接口，具体如下
         "flag"："true"
         "error":""
         "result":{
-            "cron_id":"9ad6af3b2e5d4c2d",
+            "id":"9ad6af3b2e5d4c2d",
             "worker_flag":"1",
             "worker_message":"hello word!",
             "worker_costtime":"74"
