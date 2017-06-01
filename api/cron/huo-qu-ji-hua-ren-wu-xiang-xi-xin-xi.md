@@ -41,9 +41,11 @@ GET /api/v2/cron/detail
         "last_exec_result" :{
             "flag"           : "true",
             "error"          : "",
-            "cron_id"        :"9ad6af3b2e5d4c2f",
-            "worker_flag"    :"1",
-            "worker_message" :"hello word!"
+            "result":{
+                "worker_flag"    :"1",
+                "worker_message" :"hello word!",
+                "worker_costtime":"100"
+            }
         }
     }
 }
@@ -51,11 +53,9 @@ GET /api/v2/cron/detail
 
 | **字段** | **类型** | **注释** |
 | :--- | :--- | :--- |
-| ip | string | AGENT IP（全局唯一） |
-| status | string enum\(online,offline\) | AGENT在线状态 |
-| asset | string | AGENT别称 |
-| online\_time | string datetime\(yyyy-mm-dd hh:ii:ss\) | AGENT上线时间 |
-| cron\_list | string list | cron ID列表 |
+| rule | string | 计划任务规则 |
+| last\_exec\_time | string datetime\(yyyy-mm-dd hh:ii:ss\) | 计划任务最后一次执行时间 |
+| last\_exec\_result | string json | 计划任务最后一次执行结果 |
 
 
 
