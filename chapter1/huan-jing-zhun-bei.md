@@ -10,8 +10,7 @@
 | Heartbeat | RabbitMQ,Zookeeper | Apache或Nginx |
 | Supervisor | RabbitMQ,Zookeeper | Mysql,Tomcat,FTP |
 | OpenAPI | RabbitMQ,Zookeeper | - |
-| Watcher | RabbitMQ,Zookeeper | MongoDB,Tomcat |
-| Dashborad | RabbitMQ,Zookeeper | Tomcat |
+| Watcher&Dashbord | RabbitMQ,Zookeeper | MongoDB,Tomcat |
 | Elves-Agent | - | - |
 
 ---
