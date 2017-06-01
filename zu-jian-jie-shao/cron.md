@@ -52,13 +52,28 @@ cron模块主要对openapi模块提供计划任务的操作接口，具体如下
 
 | **组件** | **服务** | **类型** | **注释** |
 | :--- | :--- | :--- | :--- |
-
+|  |  |  |  |
 
 ### 服务提供详情
 
-#### taskResult
+#### taskResult {#cron-taskresult}
 
-     12
+```
+ {
+    "mqkey":"scheduler.cron.asyncJob",
+    "mqtype":"cast",
+    "mqbody":{
+        "flag"："true"
+        "error":""
+        "result":{
+            "cron_id":"9ad6af3b2e5d4c2d",
+            "worker_flag":"1",
+            "worker_message":"hello word!",
+            "worker_costtime":"74"
+        }
+    }
+}
+```
 
 ##### 添加计划任务：
 
