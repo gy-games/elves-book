@@ -44,7 +44,7 @@ GET /api/v2/queue/result
             "depend_task_id":"BF0EE718FCC41307",
             "flag": "",
             "error": "",
-            "task_id": "",
+            "task_id": "AF0EE718FCC41301",
             "worker_flag": "",
             "worker_message": "",
             "worker_costtime": ""
@@ -54,7 +54,7 @@ GET /api/v2/queue/result
             "depend_task_id":"BF0EE718FCC41307",
             "flag": "",
             "error": "",
-            "task_id": "",
+            "task_id": "CF0EE718FCC41302",
             "worker_flag": "",
             "worker_message": "word!",
             "worker_costtime": ""
