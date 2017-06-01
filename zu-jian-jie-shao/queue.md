@@ -254,9 +254,8 @@ jdbc.password=mysql
 
 ```
 cd ./elves-queue/bin
-./configure --prefix=/opt/elves/elves-queue
-./make
-./make install
+mvn package
+./control start
 ```
 
 ```
