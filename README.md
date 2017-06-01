@@ -14,9 +14,9 @@
 
 开发语言与结构：Elves自身以C/S架构设计，Elves-Center\(SERVER\)由JAVA实现，Elves-Agent\(CLIENT\)由Golang实现\(同时提供JAVA版本\)
 
-# 架构![](/assets/arc.png)
+# 架构![](/assets/arc.jpg)
 
-Elves以三大核心组成，分别为"Elves-Center"，"Elves-Agent"，"Elves-Apps"
+Elves逻辑上以三大核心组成，分别为"Elves-Center"，"Elves-Agent"，"Elves-Apps"
 
 # Elves-Apps
 
@@ -46,7 +46,7 @@ APP的执行后需要返回两个执行结构，分别为flag与result，均为s
 
 # Elves-Center
 
-Elves-Center简单点说就是Elves的Server端，我们采用微服务为整个Elves提供高可用的服务。
+Elves-Center简单点说就是Elves的Server端，我们采用微服务为整个Elves提供高可用的服务，所有组件均注册至Zookeeper检测存活与部分组件集群化部署选举，组件间的数据交互使用RABBITMQ以队列方式进行交互，各组件功能单一且耦合度极低。
 
 ## Scheduler
 

@@ -1,4 +1,4 @@
-# 签名\(Sign\)
+# 签名认证
 
 接口签名是对请求的所有参数进行一个摘要计算以防止伪造请求的方法，对于以下的请求：
 
@@ -12,7 +12,7 @@ http://host:port/foo/bar/?key2=value2&key1=value1&timestamp=1234567890
 http://host:port/foo/bar/?key2=value2&key1=value1&auth_id=x&timestamp=1234567890&sign_type=MD5&sign=fb316e29172065a840090ddc759f4dff
 ```
 
-**签名的计算方法为：                
+**签名的计算方法为：                  
 **
 
 1. 生成待签名字符串 将 Uri 的 Path 部分（在本例中为："/foo/bar/"），与接口指定的 Uri 参数对（通常为除 sign 和 sign\_type 外的所有参数，则在本例中为"key2=value2", "key1=value1", "timestamp=1234567890"）经过字母顺序排序后以“&”连接的字符串通过“?”进行拼接进行拼接，生成最终带签名字符串，即本例中结果（signString）为：
