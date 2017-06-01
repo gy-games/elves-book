@@ -27,7 +27,8 @@ POST /api/v2/queue/commit
 ```
 {
     "flag": "true",
-    "error": ""
+    "error": "",
+    "result":"success"
 }
 ```
 
@@ -35,8 +36,7 @@ POST /api/v2/queue/commit
 
 | **字段** | **类型** | **注释** |
 | :--- | :--- | :--- |
-| flag | string enum\("true","false"\) | 接口执行状态 |
-| error | string | 接口错误信息 |
+| result | string | 提交队列任务状态，success/fail |
 
 
 
