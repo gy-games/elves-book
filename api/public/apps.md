@@ -25,10 +25,14 @@ GET /api/v2/info/app
 
 ```
 {
-    "app": "apptest",
-    "app_name": "测试APP",
-    "app_ver": "1.0.0",
-    "last_update_time":"2017/05/30 12:42"
+    "flag":"true",
+    "error":"",
+    "result":{
+        "app": "apptest",
+        "app_name": "测试APP",
+        "app_ver": "1.0.0",
+        "last_update_time":"2017/05/30 12:42"
+    }
 }
 ```
 
