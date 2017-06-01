@@ -33,10 +33,12 @@ GET /api/v2/rt/exec
 {
     "flag": "true",
     "error": "",
-    "rt_id":"9ad6af3b2e5d4c2f",
-    "worker_flag":"1",
-    "worker_message":"hello word!",
-    "worker_costtime":"74"
+    "result":{
+        "rt_id":"9ad6af3b2e5d4c2f",
+        "worker_flag":"1",
+        "worker_message":"hello word!",
+        "worker_costtime":"74"
+    }
 }
 ```
 
