@@ -46,7 +46,7 @@ POST /api/v2/queue/addtask
 
 | **字段** | **类型** | **注释** |
 | :--- | :--- | :--- |
-| task\_id | string | 任务 ID |
+| qk\_id | string | 任务 ID |
 
 
 
