@@ -229,9 +229,8 @@ jdbc.password=mysql
 
 ```
 cd ./elves-cron/bin
-./configure --prefix=/opt/elves/elves-cron
-./make
-./make install
+mvn package
+./control start
 ```
 
 ```
