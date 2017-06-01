@@ -47,7 +47,40 @@ supervisor作为权限模块，主要对外提供：APP和权限相关的数据�
 
 回复消息："发送RoutingKey:DDDEF718FCC41307"
 {
-    "mqkey":"openapi.queue.infoQueue.EC0EF718FCC41307",
+    "mqkey":"supervisor.{模块}.infoQueue.EC0EF718FCC41307",
+    "mqtype":1,
+    "mybody":{
+        "result":[
+            {
+                "instruct":"appTest",
+                "version":"1.0.0",
+                "agentList":["192.168.1.1","192.168.1.2"]
+            },
+            {
+                 "instruct":"appTest2",
+                "version":"1.0.1",
+                "agentList":["192.168.1.3","192.168.1.2"]
+            }
+        ]
+    }
+}
+```
+
+##### getAuthKey：
+
+```
+接收消息：
+{
+    "mqkey":"openapi.supervisor.getAuthKey",
+    "mqtype":"call.DDFEF718FCC41307",
+    "mqbody":{
+        "authId":"AAAAA718FCC41307"
+    }
+}
+
+回复消息："发送RoutingKey:DDFEF718FCC41307"
+{
+    "mqkey":"supervisor.openapi.infoQueue.EC0EF718FCC41307",
     "mqtype":1,
     "mybody":{
         "result":[
