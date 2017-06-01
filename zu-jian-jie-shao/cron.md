@@ -191,7 +191,7 @@ cron模块主要对openapi模块提供计划任务的操作接口，具体如下
     "mqkey":"openapi.crn.cronDetail",
     "mqtype":"call.88499CCA100F220",
     "mqbody"{
-        "cron_id":"884DDCCA100F220"
+        "id":"884DDCCA100F220"
     }
 }
 
