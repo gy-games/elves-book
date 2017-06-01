@@ -139,13 +139,13 @@ cron模块主要对openapi模块提供计划任务的操作接口，具体如下
 接收消息：
 {
     "mqkey":"openapi.cron.stopCron",
-    "mqtype":"call.88499CCA100F216",
+    "mqtype":"call.88499CCA100FAAA",
     "mqbody":{
-        "cron_id":"88499CCA100FABC"
+        "id":"88499CCA100FABC"
     }
 }
 
-回复消息：
+回复消息："发送RoutingKey:88499CCA100FAAA"
 {
     "mqkey":"cron.openapi.stopCron",
     "mqtype":"cast",
