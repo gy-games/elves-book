@@ -53,6 +53,7 @@ cron模块主要对openapi模块提供计划任务的操作接口，具体如下
         "agent_ip":"192.168.6.116",
         "mode":"NP",
         "app":"testApp",
+        "func":"test",
         "param":"",
         "timeout":0,
         "proxy":"",
@@ -62,7 +63,7 @@ cron模块主要对openapi模块提供计划任务的操作接口，具体如下
 
 回复消息：
 {
-    "mqkey":"open.openapi.sendSync.88499CCA100F214",
+    "mqkey":"cron.openapi.createCron.88499CCA100F214",
     "mqtype":"cast",
     "mqflag":"1",
     "mqerror":"",
