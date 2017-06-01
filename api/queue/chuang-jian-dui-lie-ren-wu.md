@@ -36,7 +36,9 @@ POST /api/v2/queue/addtask
 {
     "flag": "true",
     "error": "",
-    "qk_id":"12d6af3b2e5d4c2e"
+    "result":{
+        "qk_id":"12d6af3b2e5d4c2e"
+    }
 }
 ```
 
