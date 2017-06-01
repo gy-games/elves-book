@@ -24,7 +24,7 @@ heartbeat模块主要对其他模块提供elves-agent的实时在线数据接口
     "mqkey":"heartbeat.{模块}",
     "mqtype":"cast",
     "mqbody":{
-        "data":[
+        "result":[
             {
                 "ip":"192.168.1.1",
                 "asset":"CX0001",
@@ -46,9 +46,11 @@ heartbeat模块主要对其他模块提供elves-agent的实时在线数据接口
     "mqkey":"hearteat.heartbeat.updateAppInfo",
     "mqtype":"cast",
     "mqbody":{
-        "data":{
-            
-        }
+        "result":[{
+            "instruct":"appTest",
+            "version":"1.0.0",
+            "agentList":["192.168.1.1","192.168.1.2"]
+        }]
     }
 }
 
