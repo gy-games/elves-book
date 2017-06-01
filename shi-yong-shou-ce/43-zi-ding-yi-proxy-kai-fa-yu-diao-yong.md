@@ -41,9 +41,27 @@ proxy执行后，输出以终端打印方式输出，为了方便elves-agent回�
 
 # 自定义Proxy
 
-如有一些特殊情况如编程语言的变化等内置的Proxy无法满足开发需求，可以自定义Proxy，自定义Proxy的输入与内置的Proxy一直，但存放位置放在自身的app内，与实际执行的worker脚本保持一致。
+如有一些特殊情况如编程语言的变化等内置的Proxy无法满足开发需求，可以自定义Proxy，自定义Proxy的输入与内置的Proxy一直，但存放位置放在自身的app内，与实际执行的worker脚本保持一致，且Proxy分为两种，调用参数也不同。
 
 例如：
 
-      111
+```
+elves-agent
+├─apps 
+│ ├─myproxyappdemo1      #自定义Proxy的应用包1
+│ │ │ myproxyappdemo.py    
+│ │ └─myproxy.py            #自定义的Proxy
+│ │
+│ └─myproxyappdemo2      #自定义Proxy的应用包2
+│   │ myproxyappdemo.ll    
+│   └─myproxy.exe            #自定义的Proxy
+│
+└─... 
+```
+
+如myproxy.py实现了proxy的参数接入与结果处理，因为.py文件无法直接运行，在调用时需要传入其解释器的名称，这样在我们调用API时 proxy 字段需要传入 python\|myproxy.py , elves-agent接收到自定义proxy指令后，会调用
+
+     python ./apps/myproxyappdemo1/myproxy.py myproxyappdemo1 {func} {base64\(json\(param\)\)}
+
+
 
