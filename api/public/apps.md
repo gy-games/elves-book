@@ -1,4 +1,4 @@
-# 获取APP列表信息
+# 获取APP信息
 
 获取此AuthID所对应的APP的基本信息，包含APP指令名称，APP名称、APP版本号以及APP的最后更新时间
 
