@@ -46,7 +46,7 @@ supervisor作为权限模块，主要对外提供：APP和权限相关的数据�
 }
 
 回复消息："发送RoutingKey:DDDEF718FCC41307"
-｛
+{
     "mqkey":"openapi.queue.infoQueue.EC0EF718FCC41307",
     "mqflag":1,
     "info":[
@@ -64,8 +64,7 @@ supervisor作为权限模块，主要对外提供：APP和权限相关的数据�
         },
         ...
     ]
-
-｝
+}
 ```
 
 ## 修改配置
