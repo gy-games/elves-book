@@ -13,7 +13,7 @@ git.apache.org/thrift.git/lib/go/thrift      #thrift服务
 github.com/snluu/uuid                        #UUID生成
 ```
 
-以上依赖的模块已经Fork至gy-games-libs
+以上依赖的模块已经Fork至github.com/gy-games-libs
 
 # 安装过程
 
