@@ -59,7 +59,7 @@ queue模块主要对openapi模块提供队列任务的操作接口，具体如�
 ```
 接收消息：
 {
-    "mqkey":"openapi.queue.createQueue7",
+    "mqkey":"openapi.queue.createQueue",
     "mqtype":"call.EC0EF718FCC4130",
     "id":"EC0EF718FCC41307",
     "agent_ip":"192.168.6.116",
