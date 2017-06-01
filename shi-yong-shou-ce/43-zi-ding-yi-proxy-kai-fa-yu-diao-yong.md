@@ -4,7 +4,7 @@ Proxy概念的引入主要为了更加便捷的App-Worker的开发，Proxy会通
 
 ## Proxy的输入
 
-所有的
+elves-agent调用app的入口均通过Proxy进入
 
-
+    代理器 {appname} {appfunc} {base64{appparam}}
 
