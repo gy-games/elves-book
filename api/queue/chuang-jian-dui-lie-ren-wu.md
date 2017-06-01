@@ -46,8 +46,6 @@ POST /api/v2/queue/addtask
 
 | **字段** | **类型** | **注释** |
 | :--- | :--- | :--- |
-| flag | string enum\("true","false"\) | 接口执行状态 |
-| error | string | 接口错误信息 |
 | task\_id | string | 任务 ID |
 
 
