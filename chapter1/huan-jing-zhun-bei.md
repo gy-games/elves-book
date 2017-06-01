@@ -7,8 +7,8 @@
 | Scheduler | RabbitMQ,Zookeeper | - |
 | Queue | RabbitMQ,Zookeeper | Mysql |
 | Cron | RabbitMQ,Zookeeper | Mysql |
-| Heartbeat | RabbitMQ,Zookeeper | Apache/Nginx |
-| Supervisor | RabbitMQ,Zookeeper | Mysql,Tomcat |
+| Heartbeat | RabbitMQ,Zookeeper | Apache或Nginx |
+| Supervisor | RabbitMQ,Zookeeper | Mysql,Tomcat,FTP |
 | OpenAPI | RabbitMQ,Zookeeper | - |
 | Watcher | RabbitMQ,Zookeeper | MongoDB,Tomcat |
 | Dashborad | RabbitMQ,Zookeeper | Tomcat |
@@ -48,7 +48,9 @@
 
 ## 安装Apache或Nginx
 
-    略
+```
+略
+```
 
 
 
