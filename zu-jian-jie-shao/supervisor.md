@@ -41,29 +41,19 @@ supervisor作为权限模块，主要对外提供：APP和权限相关的数据�
     "mqkey":"{模块}.supervisor.appInfo",
     "mqtype":"call.DDDEF718FCC41307",
     "mqbody":{
-        
+        "instruct":"testApp"
     }
 }
 
 回复消息："发送RoutingKey:DDDEF718FCC41307"
 {
     "mqkey":"openapi.queue.infoQueue.EC0EF718FCC41307",
-    "mqflag":1,
-    "info":[
-         {
-            "id" : "BF0EE718FCC41307",
-            "agent_ip" :"192.168.1.1",
-            "mode" :"sap",
-            "app" : "testapp",
-            "func" :"mod1",
-            "param" : "",
-            "timeout" :5000,
-            "proxy" : "test",
-            "depend_tq_id" : "BF0EE718FCC41308",
-            "flag" : "q"
-        },
-        ...
-    ]
+    "mqtype":1,
+    "mybody":{
+        "result":[
+            {}
+        ]
+    }
 }
 ```
 
