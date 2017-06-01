@@ -11,7 +11,7 @@ GET /api/v2/rt/exec
 ## 请求及参数
 
 ```
-/v2/rt/exec?ip={ip}&func={func}&param={param}&timeout={timeout}&proxy={proxy}&app={auth_id}&auth_id={auth_id}&timestamp={timestamp}&sign_type={sign_type}&sign={sign}
+/v2/rt/exec?ip={ip}&func={func}&param={param}&timeout={timeout}&proxy={proxy}&app={app}&auth_id={auth_id}&timestamp={timestamp}&sign_type={sign_type}&sign={sign}
 ```
 
 | **字段** | **必填否** | **类型** | **注释** |
