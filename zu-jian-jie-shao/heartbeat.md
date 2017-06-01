@@ -38,15 +38,16 @@ heartbeat模块主要对其他模块提供elves-agent的实时在线数据接口
 }
 ```
 
-##### 更新APP版本信息：
+##### updateAppInfo：
 
 ```
-接收
-
+接收消息：
 {
-    "mqkey":"openapi.queue.infoQueue.EC0EF718FCC41307",
-    "mqtype":"call",
-    "json_queue_ids":["BF0EE718FCC41307","EC0EF718FCC41307"]
+    "mqkey":"hearteat.heartbeat.updateAppInfo",
+    "mqtype":"cast",
+    "mqbody":{
+        
+    }
 }
 
 回复
