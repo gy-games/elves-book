@@ -63,44 +63,38 @@ cron模块主要对openapi模块提供计划任务的操作接口，具体如下
 
 回复消息：
 {
-    "mqkey":"cron.openapi.createCron.88499CCA100F214",
+    "mqkey":"cron.openapi.createCron",
     "mqtype":"cast",
-    "mqflag":"1",
-    "mqerror":"",
-    "data":{
-            "flag"：0
-            "error":""
-            "result_flag":1
+    "mqbody":{
+        "flag": "true",
+        "error": "",
+        "result":{
+            "cron_id":"2ad6af3b2e5d4c2e"
+        }
     }
 }
 ```
 
-##### 删除计划任务：
+##### 开启计划任务：
 
 ```
 接收消息：
 {
-    "mqkey":"openapi.scheduler.sendSync.88499CCA100F214",
-    "mqtype":"cast",
-    "id":"88499CCA100F214"
-    "agent_ip":"192.168.6.116",
-    "mode":"sap",
-    "app":"testApp",
-    "param":"",
-    "timeout":0,
-    "proxy":""
+    "mqkey":"openapi.cron.startCron",
+    "mqtype":"call.88499CCA100F215",
+    "mqbody":{
+        "cron_id":"88499CCA100FABC"
+    }
 }
 
 回复消息：
 {
-    "mqkey":"scheduler.openapi.sendSync.88499CCA100F214",
+    "mqkey":"cron.openapi.startCron",
     "mqtype":"cast",
-    "mqflag":"1",
-    "mqerror":"",
-    "data":{
-            "flag"：0
-            "error":""
-            "result_flag":1
+    "mqbody":{
+        "flag": "true",
+        "error": "",
+        "result":""
     }
 }
 ```
