@@ -67,7 +67,7 @@ GET /api/v2/queue/result
 
 | **字段** | **类型** | **注释** |
 | :--- | :--- | :--- |
-| status | string json enum\(finish,stoped\) | 队列状态finish:已执行完,execing:指令已发出暂未获得执行结果,pendding:等待执行 |
+| result-&gt;qk\_id-&gt;status | enum\(finish,execing,pendding,stoped\) | 队列状态finish:已执行完,execing:指令已发出暂未获得执行结果,pendding:等待执行,stoped:停止 |
 
 
 
