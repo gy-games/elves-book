@@ -59,13 +59,17 @@ elves-agent
 └─...
 ```
 
-1、如myproxy.py实现了proxy的参数接入与结果处理，因为.py文件无法直接运行，在调用时需要传入其解释器的名称，这样在我们调用API时 proxy 字段需要传入 python\|myproxy.py , elves-agent接收到自定义proxy指令后，会调用
+1、如myproxy.py实现了proxy的参数接入与结果处理，因为.py文件无法直接运行，在调用时需要传入其解释器的名称，这样在我们调用API时 proxy 字段需要传入" python\|myproxy.py ", elves-agent接收到自定义proxy指令后，会调用
 
 ```
  python ./apps/myproxyappdemo1/myproxy.py myproxyappdemo1 {func} {base64(json(param))}
 ```
 
-2、如myproxy.exe实现了proxy的参数接入与结果处理，因为.exe文件可以直接运行，在调用时可以直接传入 myproxy.exe, elves-agent接收到自定义proxy指令后，会调用
+2、如myproxy.exe实现了proxy的参数接入与结果处理，因为.exe文件可以直接运行，在调用时可以proxy字段直接传入" myproxy.exe ", elves-agent接收到自定义proxy指令后，会调用
 
-    ./apps/myproxyappdemo1/myproxy.exe myproxyappdemo1 {func} {base64\(json\(param\)\)}
+```
+./apps/myproxyappdemo1/myproxy.exe myproxyappdemo1 {func} {base64\(json\(param\)\)}
+```
+
+**当然，如果使用自定义的Proxy，你也可以直接将此Proxy定义为app程序的逻辑处理，这里没有任何限制**
 
