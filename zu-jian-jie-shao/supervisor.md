@@ -112,7 +112,7 @@ supervisor作为权限模块，主要对外提供：APP和权限相关的数据�
 }
 ```
 
-##### getApp：
+##### appInfo：
 
 ```
 接收消息：
@@ -120,9 +120,7 @@ supervisor作为权限模块，主要对外提供：APP和权限相关的数据�
     "mqkey":"openapi.supervisor.validateAuth",
     "mqtype":"call.GGFEF718FCC41307",
     "mqbody":{
-        "authId":"AAAAA718FCC41307",
-        "app":"appTest",
-        "ip":"192.168.1.1"
+        "authId":"AAAAA718FCC41307"
     }
 }
 
