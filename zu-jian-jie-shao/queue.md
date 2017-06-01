@@ -100,7 +100,7 @@ queue模块主要对openapi模块提供队列任务的操作接口，具体如�
     "mqkey":"queue.openapi",
     "mqtype":"cast",
     "mqbody":{
-        "id":"12d6af3b2e5d4c2e"
+        "id":"ddd6af3b2e5d4c2e"
     }
 }
 ```
