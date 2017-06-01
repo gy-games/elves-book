@@ -34,7 +34,7 @@ GET /api/v2/rt/exec
     "flag": "true",
     "error": "",
     "result":{
-        "rt_id":"9ad6af3b2e5d4c2f",
+        "id":"9ad6af3b2e5d4c2f",
         "worker_flag":"1",
         "worker_message":"hello word!",
         "worker_costtime":"74"
@@ -46,7 +46,7 @@ GET /api/v2/rt/exec
 
 | **字段** | **类型** | **注释** |
 | :--- | :--- | :--- |
-| rt\_id | string | 及时任务ID |
+| id | string | 即时任务ID |
 | worker\_flag | string enum\("1","0"\) | app-worker执行状态值,1:成功,0失败 |
 | worker\_message | string | app-worker执行结果 |
 | worker\_costtime | int | app-worker执行时长（毫秒） |

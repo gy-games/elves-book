@@ -36,7 +36,7 @@ POST /api/v2/cron/add
     "flag": "true",
     "error": "",
     "result":{
-        "cron_id":"2ad6af3b2e5d4c2e"
+        "id":"2ad6af3b2e5d4c2e"
     }
 }
 ```
@@ -45,7 +45,7 @@ POST /api/v2/cron/add
 
 | **字段** | **类型** | **注释** |
 | :--- | :--- | :--- |
-| cron\_id | string | 计划任务 ID |
+| id | string | 计划任务 ID |
 
 
 

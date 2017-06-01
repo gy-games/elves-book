@@ -35,7 +35,7 @@ POST /api/v2/queue/qksqueue
     "flag": "true",
     "error": "",
     "result":{
-        "queue_id":"12d6af3b2e5d4c2e"
+        "id":"12d6af3b2e5d4c2e"
     }
 }
 ```
