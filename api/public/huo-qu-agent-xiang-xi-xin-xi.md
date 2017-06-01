@@ -28,9 +28,8 @@ GET /api/v2/info/agents/detail
 ```
 {
     "ip"           : "127.0.0.1",
-    "status"       : "online",
     "asset"        : "localhost",
-    "online_time"  : "2017/05/30 10:05:01",
+    "last_hb_time"  : "2017/05/30 10:05:01",
     "cron_list"    : ["A49B1E8FA1B43BC5","B39B1E8FA1B43BA4"]
 }
 ```
@@ -40,7 +39,7 @@ GET /api/v2/info/agents/detail
 | ip | string | AGENT IP（全局唯一） |
 | status | string enum\(online,offline\) | AGENT在线状态 |
 | asset | string | AGENT别称 |
-| online\_time | string datetime\(yyyy-mm-dd hh:ii:ss\) | AGENT上线时间 |
+| last\_hb\_time | string datetime\(yyyy-mm-dd hh:ii:ss\) | AGENT最后通讯时间 |
 | cron\_list | string list | cron ID列表 |
 
 
