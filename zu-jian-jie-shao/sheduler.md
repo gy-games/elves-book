@@ -151,8 +151,7 @@ scheduler与其它模块通讯使用rabbitmq实现，这里提供scheduler作为
             "worker_costtime":"74"
         }
     }
-
-｝
+}
 ```
 
 ## 修改配置
