@@ -49,21 +49,23 @@ service AgentService{
 
 scheduler与其它模块通讯使用rabbitmq实现，这里提供scheduler作为消费者，处理的消息数据结构。
 
-##### sendSync 发起同步任务
+##### 同步任务
 
 ```
 接收消息：
 {
-    "mqkey":"openapi.scheduler.sendSync.88499CCA100F214",
-    "mqtype":"cast",
-    "id":"88499CCA100F214"
-    "agent_ip":"192.168.6.116",
-    "mode":"sap",
-    "app":"testApp",
-    "func":"test',
-    "param":"",
-    "timeout":0,
-    "proxy":""
+    "mqkey":"openapi.scheduler.sendSync",
+    "mqtype":"call.88499CCA100F214",
+    "mqbody":{
+        "id":"88499CCA100F214"
+        "agent_ip":"192.168.6.116",
+        "mode":"sap",
+        "app":"testApp",
+        "func":"test',
+        "param":"",
+        "timeout":0,
+        "proxy":""
+    }
 }
 
 回复消息：
