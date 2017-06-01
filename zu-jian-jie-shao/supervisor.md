@@ -36,15 +36,16 @@ supervisor作为权限模块，主要对外提供：APP和权限相关的数据�
 ##### appInfo：
 
 ```
-接收
-
+接收消息：
 {
     "mqkey":"{模块}.supervisor.appInfo",
     "mqtype":"call.DDDEF718FCC41307",
-    "json_queue_ids":["BF0EE718FCC41307","EC0EF718FCC41307"]
+    "mqbody":{
+        
+    }
 }
 
-回复
+回复消息：
 ｛
     "mqkey":"openapi.queue.infoQueue.EC0EF718FCC41307",
     "mqflag":1,
