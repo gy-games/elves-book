@@ -28,7 +28,7 @@ GET /api/v2/queue/result
 {
     "flag": "true",
     "error": "",
-    "task_result": {
+    "result": {
         "BF0EE718FCC41307": {
             "status":"finish",
             "depend_task_id":"",
@@ -67,8 +67,6 @@ GET /api/v2/queue/result
 
 | **字段** | **类型** | **注释** |
 | :--- | :--- | :--- |
-| flag | string enum\("true","false"\) | 接口执行状态 |
-| error | string | 接口错误信息 |
 | status | string json enum\(finish,stoped\) | 队列状态finish:已执行完,execing:指令已发出暂未获得执行结果,pendding:等待执行 |
 
 
