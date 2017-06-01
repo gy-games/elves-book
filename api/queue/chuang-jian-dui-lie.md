@@ -28,7 +28,9 @@ GET /api/v2/queue/create
 {
     "flag": "true",
     "error": "",
-    "queue_id":"12d6af3b2e5d4c2e"
+    "result":{
+        "queue_id":"12d6af3b2e5d4c2e"
+    }
 }
 ```
 
