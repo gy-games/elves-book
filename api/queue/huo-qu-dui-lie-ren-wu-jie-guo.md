@@ -31,7 +31,7 @@ GET /api/v2/queue/result
     "task_result": {
         "BF0EE718FCC41307": {
             "status":"finish",
-            "depend":"",
+            "depend_task_id":"",
             "flag": "true",
             "error": "",
             "task_id": "BF0EE718FCC41307",
@@ -41,7 +41,7 @@ GET /api/v2/queue/result
         },
         "AF0EE718FCC41301": {
             "status":"execing",
-            "depend":"BF0EE718FCC41307",
+            "depend_task_id":"BF0EE718FCC41307",
             "flag": "",
             "error": "",
             "task_id": "",
@@ -51,7 +51,7 @@ GET /api/v2/queue/result
         },
         "CF0EE718FCC41302": {
             "status":"pendding",
-            "depend":"BF0EE718FCC41307",
+            "depend_task_id":"BF0EE718FCC41307",
             "flag": "",
             "error": "",
             "task_id": "",
