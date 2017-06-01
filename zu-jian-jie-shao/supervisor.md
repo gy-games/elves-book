@@ -52,12 +52,14 @@ supervisor作为权限模块，主要对外提供：APP和权限相关的数据�
     "mybody":{
         "result":[
             {
-                "ip":"192.168.1.1",
-                "asset":"CX0001",
-                "last_hb_time":"2017-06-02 01:36:00",
-                "apps":{
-                    "testApp":"1.0.1"
-                    }
+                "instruct":"appTest",
+                "version":"1.0.0",
+                "agentList":["192.168.1.1","192.168.1.2"]
+            },
+            {
+                 "instruct":"appTest2",
+                "version":"1.0.1",
+                "agentList":["192.168.1.3","192.168.1.2"]
             }
         ]
     }
