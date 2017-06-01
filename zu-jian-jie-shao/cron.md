@@ -45,8 +45,12 @@ cron模块主要对openapi模块提供计划任务的操作接口，具体如下
 
 | **服务** | **类型** | **注释** |
 | :--- | :--- | :--- |
-| [taskResult](#taskresult) | rpc.cast | 接收Cron任务执行结果 |
-|  |  |  |
+| taskResult | rpc.cast | 接收Cron任务执行结果 |
+| createCron | rpc.call | 添加Cron计划任务 |
+| startCron | rpc.call | 开启Cron计划任务 |
+| stopCron | rpc.call | 停止Cron计划任务 |
+| cronList | rpc.call | 计划任务列表信息 |
+| cronDetail | rpc.call | 计划任务详情 |
 
 ##### 服务使用列表
 
