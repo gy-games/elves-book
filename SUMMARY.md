@@ -20,7 +20,7 @@
 * [4. 开发手册](shi-yong-shou-ce.md)
   * [4.1 调试HelloWord示例](shi-yong-shou-ce/helloword.md)
   * [4.2 上线APP与APP执行](shi-yong-shou-ce/diao-shi-app.md)
-  * [4.3 自定义Proxy开发与调用](shi-yong-shou-ce/43-zi-ding-yi-proxy-kai-fa-yu-diao-yong.md)
+  * [内置Proxy与自定义Proxy](shi-yong-shou-ce/43-zi-ding-yi-proxy-kai-fa-yu-diao-yong.md)
 * [5. API](api.md)
   * [5.1 签名\(Sign\)](api/qian-ming-ren-zheng.md)
   * [5.2 信息\(Info\)](api/public.md)
