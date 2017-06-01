@@ -14,31 +14,28 @@ heartbeat模块主要对其他模块提供elves-agent的实时在线数据接口
     "mqkey":"{模块}.heartbeat.agentInfo",
     "mqtype":"call.CCCEF718FCC41307",
     "mqbody":{
-        
+        "ip":"192.168.1.1",
+        "asset":"CX0001"
     }
 }
 
-回复
-｛
-    "mqkey":"openapi.queue.infoQueue.EC0EF718FCC41307",
-    "mqflag":1,
-    "info":[
-         {
-            "id" : "BF0EE718FCC41307",
-            "agent_ip" :"192.168.1.1",
-            "mode" :"sap",
-            "app" : "testapp",
-            "func" :"mod1",
-            "param" : "",
-            "timeout" :5000,
-            "proxy" : "test",
-            "depend_tq_id" : "BF0EE718FCC41308",
-            "flag" : "q"
-        },
-        ...
-    ]
-
-｝
+回复消息：
+{
+    "mqkey":"heartbeat.{模块}",
+    "mqtype":"cast",
+    "mqbody":{
+        "result":[
+            {
+                "ip":"192.168.1.1",
+                "asset":"CX0001",
+                "last_hb_time":"2017-06-02 01:36:00",
+                "apps":{
+                    "testApp":"1.0.1"
+                }
+            }
+        ]
+    }
+}
 ```
 
 ##### 更新APP版本信息：
