@@ -33,14 +33,14 @@ supervisor的权限管理和APP管理依赖mqsql数据库，下面是数据库SQ
 
 supervisor作为权限模块，主要对外提供：APP和权限相关的数据信息。
 
-##### APP版本数据：
+##### appInfo：
 
 ```
 接收
 
 {
-    "mqkey":"openapi.queue.infoQueue.EC0EF718FCC41307",
-    "mqtype":"call",
+    "mqkey":"{模块}.supervisor.appInfo",
+    "mqtype":"call.DDDEF718FCC41307",
     "json_queue_ids":["BF0EE718FCC41307","EC0EF718FCC41307"]
 }
 
