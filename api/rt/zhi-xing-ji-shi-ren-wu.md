@@ -46,8 +46,6 @@ GET /api/v2/rt/exec
 
 | **字段** | **类型** | **注释** |
 | :--- | :--- | :--- |
-| flag | string enum\("true","false"\) | 接口执行状态 |
-| error | string | 接口错误信息 |
 | rt\_id | string | 及时任务ID |
 | worker\_flag | string enum\("1","0"\) | app-worker执行状态值,1:成功,0失败 |
 | worker\_message | string | app-worker执行结果 |
