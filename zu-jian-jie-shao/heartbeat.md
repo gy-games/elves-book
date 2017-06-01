@@ -19,7 +19,7 @@ heartbeat模块主要对其他模块提供elves-agent的实时在线数据接口
     }
 }
 
-回复消息：
+回复消息："发送RoutingKey:CCCEF718FCC41307"
 {
     "mqkey":"heartbeat.{模块}",
     "mqtype":"cast",
