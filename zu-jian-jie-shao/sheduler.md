@@ -104,6 +104,18 @@ scheduler与其它模块通讯使用rabbitmq实现，这里提供scheduler作为
 
 异步queue任务返回:
 {
+    "mqkey":"queue.scheduler.asyncJob",
+    "mqtype":"cast",
+    "mqbody":{
+        "flag"："true"
+        "error":""
+        "result":{
+            "task_id":"9ad6af3b2e5d4c2f",
+            "worker_flag":"1",
+            "worker_message":"hello word!",
+            "worker_costtime":"74"
+        }
+    }
 }
 
 
@@ -121,9 +133,22 @@ scheduler与其它模块通讯使用rabbitmq实现，这里提供scheduler作为
         "proxy":""
     }
 }
+
 异步cron任务返回消息:
 {
-    
+    "mqkey":"scheduler.cron.asyncJob",
+    "mqtype":"cast",
+    "mqbody":{
+        "flag"："true"
+        "error":""
+        "result":{
+            "cron_id":"9ad6af3b2e5d4c2d",
+            "worker_flag":"1",
+            "worker_message":"hello word!",
+            "worker_costtime":"74"
+        }
+    }
+
 ｝
 ```
 
