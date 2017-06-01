@@ -27,21 +27,24 @@ GET /api/v2/cron/detail
 
 ```
 {
-    "ip"               : "127.0.0.1",
-    "app"              : "apptest",
-    "func"             : "hello",
-    "param"            : "",
-    "mode"             : "NP",
-    "proxy"            : "",
-    "rule"             : "0/5 * * * * ?",
-    "last_exec_time"   : "2017/05/30 10:05:01",
-    "last_exec_result" :{
-        "flag"           : "true",
-        "error"          : "",
-        "cron_id"        :"9ad6af3b2e5d4c2f",
-        "worker_flag"    :"1",
-        "worker_message" :"hello word!",
-        "worker_costtime":"74"
+    "falg":"true",
+    "error":"",
+    "result":{
+        "ip"               : "127.0.0.1",
+        "app"              : "apptest",
+        "func"             : "hello",
+        "param"            : "",
+        "mode"             : "NP",
+        "proxy"            : "",
+        "rule"             : "0/5 * * * * ?",
+        "last_exec_time"   : "2017/05/30 10:05:01",
+        "last_exec_result" :{
+            "flag"           : "true",
+            "error"          : "",
+            "cron_id"        :"9ad6af3b2e5d4c2f",
+            "worker_flag"    :"1",
+            "worker_message" :"hello word!"
+        }
     }
 }
 ```

@@ -27,7 +27,8 @@ POST /api/v2/cron/stop
 ```
 {
     "flag": "true",
-    "error": ""
+    "error": "",
+    "result":""
 }
 ```
 
@@ -35,8 +36,7 @@ POST /api/v2/cron/stop
 
 | **字段** | **类型** | **注释** |
 | :--- | :--- | :--- |
-| flag | string enum\("true","false"\) | 接口执行状态,true即为执行成功 |
-| error | string | 接口错误信息 |
+
 
 
 

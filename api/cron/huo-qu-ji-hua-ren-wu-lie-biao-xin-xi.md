@@ -25,16 +25,20 @@ GET /api/v2/cron/list
 ## 返回及说明
 
 ```
-[
-    "1ad6af3b2e5d4c2w",
-    "2ad6af3b2e5d4c2e",
-    "scd6af3b2e5d4c1d"
-]
+{
+    "flag":"true",
+    "error":"",
+    "result":[
+        "1ad6af3b2e5d4c2w",
+        "2ad6af3b2e5d4c2e",
+        "scd6af3b2e5d4c1d"
+    ]
+}
 ```
 
 | **字段** | **类型** | **注释** |
 | :--- | :--- | :--- |
-| cron\_id | string | 计划任务ID |
+| result-&gt;cron\_id | string | 计划任务ID |
 
 
 

@@ -34,7 +34,9 @@ POST /api/v2/queue/qksqueue
 {
     "flag": "true",
     "error": "",
-    "queue_id":"12d6af3b2e5d4c2e"
+    "result":{
+        "queue_id":"12d6af3b2e5d4c2e"
+    }
 }
 ```
 
@@ -42,8 +44,6 @@ POST /api/v2/queue/qksqueue
 
 | **字段** | **类型** | **注释** |
 | :--- | :--- | :--- |
-| flag | string enum\("true","false"\) | 接口执行状态 |
-| error | string | 接口错误信息 |
 | queue\_id | string | 队列 ID |
 
 
