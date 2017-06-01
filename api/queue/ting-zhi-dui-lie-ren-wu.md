@@ -28,7 +28,7 @@ POST /api/v2/queue/stop
 {
     "flag": "true",
     "error": "",
-    "status": {
+    "result": {
         "BF0EE718FCC41307": "finish",
         "AF0EE718FCC4130C": "execing",
         "EF0EE718FSEC4130": "stoped"
@@ -40,9 +40,7 @@ POST /api/v2/queue/stop
 
 | **字段** | **类型** | **注释** |
 | :--- | :--- | :--- |
-| flag | string enum\("true","false"\) | 接口执行状态 |
-| error | string | 接口错误信息 |
-| status | string json enum\(finish,stoped\) | 队列状态,finish:已执行完,execing:指令已发出暂未获得执行结果,stoped:停止成功 |
+| result-&gt;map\(qk\_id:status\) | map\(string , enum\(finish,stoped\)\) | 队列状态,finish:已执行完,execing:指令已发出暂未获得执行结果,stoped:停止成功 |
 
 
 
