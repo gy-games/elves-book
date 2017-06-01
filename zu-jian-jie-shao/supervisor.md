@@ -118,13 +118,13 @@ supervisor作为权限模块，主要对外提供：APP和权限相关的数据�
 接收消息：
 {
     "mqkey":"openapi.supervisor.validateAuth",
-    "mqtype":"call.GGFEF718FCC41307",
+    "mqtype":"call.OOFEF718FCC41307",
     "mqbody":{
         "authId":"AAAAA718FCC41307"
     }
 }
 
-回复消息："发送RoutingKey:GGFEF718FCC41307"
+回复消息："发送RoutingKey:OOFEF718FCC41307"
 {
     "mqkey":"supervisor.openapi",
     "mqtype":"cast",
