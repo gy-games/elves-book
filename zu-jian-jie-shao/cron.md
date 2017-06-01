@@ -60,7 +60,7 @@ cron模块主要对openapi模块提供计划任务的操作接口，具体如下
 
 ```
  {
-    "mqkey":"scheduler.cron.asyncJob",
+    "mqkey":"scheduler.cron.taskResult",
     "mqtype":"cast",
     "mqbody":{
         "flag"："true"
