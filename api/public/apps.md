@@ -11,7 +11,7 @@ GET /api/v2/info/app
 ## 请求及参数
 
 ```
-/v2/info/app?app={app}&auth_id={auth_id}&timestamp={timestamp}&sign_type={sign_type}&sign={sign}
+/v2/info/app?&auth_id={auth_id}&timestamp={timestamp}&sign_type={sign_type}&sign={sign}
 ```
 
 | **字段** | **必填否** | **类型** | **注释** |
