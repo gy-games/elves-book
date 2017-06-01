@@ -102,6 +102,11 @@ scheduler与其它模块通讯使用rabbitmq实现，这里提供scheduler作为
     }
 }
 
+异步queue任务返回:
+{
+}
+
+
 接收cron消息：
 {
     "mqkey":"cron.scheduler.asyncJob",
@@ -116,7 +121,13 @@ scheduler与其它模块通讯使用rabbitmq实现，这里提供scheduler作为
         "proxy":""
     }
 }
+异步cron任务返回消息:
+{
+    
+｝
 ```
+
+## 异步任务接受
 
 ## 修改配置
 
