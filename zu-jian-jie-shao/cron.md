@@ -99,32 +99,26 @@ cron模块主要对openapi模块提供计划任务的操作接口，具体如下
 }
 ```
 
-##### 启动计划任务：
+##### 停止计划任务：
 
 ```
 接收消息：
 {
-    "mqkey":"openapi.scheduler.sendSync.88499CCA100F214",
-    "mqtype":"cast",
-    "id":"88499CCA100F214"
-    "agent_ip":"192.168.6.116",
-    "mode":"sap",
-    "app":"testApp",
-    "param":"",
-    "timeout":0,
-    "proxy":""
+    "mqkey":"openapi.cron.stopCron",
+    "mqtype":"call.88499CCA100F216",
+    "mqbody":{
+        "cron_id":"88499CCA100FABC"
+    }
 }
 
 回复消息：
 {
-    "mqkey":"scheduler.openapi.sendSync.88499CCA100F214",
+    "mqkey":"cron.openapi.stopCron",
     "mqtype":"cast",
-    "mqflag":"1",
-    "mqerror":"",
-    "data":{
-            "flag"：0
-            "error":""
-            "result_flag":1
+    "mqbody":{
+        "flag": "true",
+        "error": "",
+        "result":""
     }
 }
 ```
