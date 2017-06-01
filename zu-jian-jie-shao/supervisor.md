@@ -41,11 +41,11 @@ supervisor作为权限模块，主要对外提供：APP和权限相关的数据�
     "mqkey":"{模块}.supervisor.appInfo",
     "mqtype":"call.DDDEF718FCC41307",
     "mqbody":{
-        
+
     }
 }
 
-回复消息：
+回复消息："发送RoutingKey:DDDEF718FCC41307"
 ｛
     "mqkey":"openapi.queue.infoQueue.EC0EF718FCC41307",
     "mqflag":1,
