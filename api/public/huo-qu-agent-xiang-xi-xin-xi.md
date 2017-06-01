@@ -37,7 +37,6 @@ GET /api/v2/info/agents/detail
 | **字段** | **类型** | **注释** |
 | :--- | :--- | :--- |
 | ip | string | AGENT IP（全局唯一） |
-| status | string enum\(online,offline\) | AGENT在线状态 |
 | asset | string | AGENT别称 |
 | last\_hb\_time | string datetime\(yyyy-mm-dd hh:ii:ss\) | AGENT最后通讯时间 |
 | cron\_list | string list | cron ID列表 |
