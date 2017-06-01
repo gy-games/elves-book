@@ -26,11 +26,15 @@ GET /api/v2/info/agents/detail
 ## 返回及说明
 
 ```
-{
-    "ip"           : "127.0.0.1",
-    "asset"        : "localhost",
-    "last_hb_time"  : "2017/05/30 10:05:01",
-    "cron_list"    : ["A49B1E8FA1B43BC5","B39B1E8FA1B43BA4"]
+{  
+    "flag": "true",
+    "error": "",
+    "result":{
+        "ip" : "127.0.0.1",
+        "asset" : "localhost",
+        "last_hb_time" : "2017/05/30 10:05:01",
+        "cron_list" : ["A49B1E8FA1B43BC5","B39B1E8FA1B43BA4"]
+    }
 }
 ```
 
