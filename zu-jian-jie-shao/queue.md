@@ -157,38 +157,59 @@ queue模块主要对openapi模块提供队列任务的操作接口，具体如�
 }
 ```
 
-##### 获取队列任务信息接口
+##### queueResult
 
 ```
-接收
-
+接收消息：
 {
-    "mqkey":"openapi.queue.infoQueue.EC0EF718FCC41307",
-    "mqtype":"call",
-    "json_queue_ids":["BF0EE718FCC41307","EC0EF718FCC41307"]
+    "mqkey":"openapi.queue.queueResult",
+    "mqtype":"call.EC0EF718FCC41BBB",
+    "mqbody":{
+        "id":"12d6af3b2e5d4c2e"
+    }
 }
 
-回复
-｛
-    "mqkey":"openapi.queue.infoQueue.EC0EF718FCC41307",
-    "mqflag":1,
-    "info":[
-         {
-            "id" : "BF0EE718FCC41307",
-            "agent_ip" :"192.168.1.1",
-            "mode" :"sap",
-            "app" : "testapp",
-            "func" :"mod1",
-            "param" : "",
-            "timeout" :5000,
-            "proxy" : "test",
-            "depend_tq_id" : "BF0EE718FCC41308",
-            "flag" : "q"
-        },
-        ...
-    ]
-
-｝
+回复消息："发送RoutingKey:EC0EF718FCC41BBB"
+{
+    "mqkey":"queue.openapi",
+    "mqtype":"cast",
+    "mqbody":{
+        "flag": "true",
+        "error": "",
+        "result":{
+            "BF0EE718FCC41307": {
+                "status":"finish",
+                "depend_task_id":"",
+                "flag": "true",
+                "error": "",
+                "id": "BF0EE718FCC41307",
+                "worker_flag": "1",
+                "worker_message": "hello word!",
+                "worker_costtime": "74"
+            },
+            "AF0EE718FCC41301": {
+                "status":"execing",
+                "depend_task_id":"BF0EE718FCC41307",
+                "flag": "",
+                "error": "",
+                "id": "AF0EE718FCC41301",
+                "worker_flag": "",
+                "worker_message": "",
+                "worker_costtime": ""
+            },
+            "CF0EE718FCC41302": {
+                "status":"pendding",
+                "depend_task_id":"BF0EE718FCC41307",
+                "flag": "",
+                "error": "",
+                "id": "CF0EE718FCC41302",
+                "worker_flag": "",
+                "worker_message": "word!",
+                "worker_costtime": ""
+            }
+        }
+    }
+}
 ```
 
 ## 修改配置
