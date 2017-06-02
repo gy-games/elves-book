@@ -51,6 +51,7 @@ cron模块主要对openapi模块提供计划任务的操作接口，具体如下
 | createCron | rpc.call | 添加Cron计划任务 |
 | startCron | rpc.call | 开启Cron计划任务 |
 | stopCron | rpc.call | 停止Cron计划任务 |
+| deleteCron | rpc.call | 删除Cron计划任务 |
 | cronList | rpc.call | 计划任务列表信息 |
 | cronDetail | rpc.call | 计划任务详情 |
 
@@ -67,7 +68,7 @@ cron模块主要对openapi模块提供计划任务的操作接口，具体如下
 ```
  接收消息：
  {
-    "mqkey":"scheduler.cron.cronResult",
+    "mqkey":"{组件}.cron.cronResult",
     "mqtype":"cast",
     "mqbody":{
         "flag"："true"
@@ -90,7 +91,6 @@ cron模块主要对openapi模块提供计划任务的操作接口，具体如下
     "mqkey":"{组件}.cron.createCron",
     "mqtype":"call.88499CCA100F219",
     "mqbody":{
-        "id":"99499CCA100F214"
         "agent_ip":"192.168.6.116",
         "mode":"NP",
         "app":"testApp",
@@ -104,12 +104,12 @@ cron模块主要对openapi模块提供计划任务的操作接口，具体如下
 
 回复消息："发送RoutingKey:88499CCA100F219"
 {
-    "mqkey":"cron.{组件}.createCron",
+    "mqkey":"cron.{组件}",
     "mqtype":"cast",
     "mqbody":{
         "flag": "true",
         "error": "",
-        "cron_id":"2ad6af3b2e5d4c2e"
+        "id":"99499CCA100F214"
     }
 }
 ```
@@ -119,7 +119,7 @@ cron模块主要对openapi模块提供计划任务的操作接口，具体如下
 ```
 接收消息：
 {
-    "mqkey":"openapi.cron.startCron",
+    "mqkey":"{组件}.cron.startCron",
     "mqtype":"call.198499CCA100F219",
     "mqbody":{
         "id":"DF499CCA100FABC"
@@ -128,7 +128,7 @@ cron模块主要对openapi模块提供计划任务的操作接口，具体如下
 
 回复消息："发送RoutingKey:198499CCA100F219"
 {
-    "mqkey":"cron.openapi",
+    "mqkey":"cron.{组件}",
     "mqtype":"cast",
     "mqbody":{
         "flag": "true",
@@ -142,7 +142,7 @@ cron模块主要对openapi模块提供计划任务的操作接口，具体如下
 ```
 接收消息：
 {
-    "mqkey":"openapi.cron.stopCron",
+    "mqkey":"{组件}.cron.stopCron",
     "mqtype":"call.88499CCA100FAAA",
     "mqbody":{
         "id":"88499CCA100FABC"
@@ -151,7 +151,30 @@ cron模块主要对openapi模块提供计划任务的操作接口，具体如下
 
 回复消息："发送RoutingKey:88499CCA100FAAA"
 {
-    "mqkey":"cron.openapi",
+    "mqkey":"cron.{组件}",
+    "mqtype":"cast",
+    "mqbody":{
+        "flag": "true",
+        "error": ""
+    }
+}
+```
+
+**deleteCron：**
+
+```
+接收消息：
+{
+    "mqkey":"{组件}.cron.deleteCron",
+    "mqtype":"call.88499CCA100FAAA",
+    "mqbody":{
+        "id":"88499CCA100FABC"
+    }
+}
+
+回复消息："发送RoutingKey:88499CCA100FAAA"
+{
+    "mqkey":"cron.{组件}",
     "mqtype":"cast",
     "mqbody":{
         "flag": "true",
@@ -165,7 +188,7 @@ cron模块主要对openapi模块提供计划任务的操作接口，具体如下
 ```
 接收消息：
 {
-    "mqkey":"openapi.cron.cronList",
+    "mqkey":"{组件}.cron.cronList",
     "mqtype":"call.88499CCA100FFFF",
     "mqbody":{
         "app":"testApp"
@@ -174,7 +197,7 @@ cron模块主要对openapi模块提供计划任务的操作接口，具体如下
 
 回复消息："发送RoutingKey:88499CCA100FFFF"
 {
-    "mqkey":"cron.openapi",
+    "mqkey":"cron.{组件}",
     "mqtype":"cast",
     "mqbody":{
         "flag":"true",

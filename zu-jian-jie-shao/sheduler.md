@@ -73,7 +73,6 @@ scheduler与其它模块通讯使用rabbitmq实现，这里提供scheduler作为
     "mqkey":"{发送组件}.scheduler.syncJob",
     "mqtype":"call.88499CCA100F214",
     "mqbody":{
-        "id":"9ad6af3b2e5d4c2f",
         "ip":"192.168.6.116",
         "app":"testApp",
         "func":"test',
