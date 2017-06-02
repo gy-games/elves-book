@@ -61,7 +61,7 @@ scheduler与其它模块通讯使用rabbitmq实现，这里提供scheduler作为
 | **组件** | **服务** | **类型** | **注释** |
 | :--- | :--- | :--- | :--- |
 | queue | taskResult | cast | 发送队列任务处理结果 |
-| cron | [taskResult](/zu-jian-jie-shao/cron.md) | cast | 发送计划任务处理结果 |
+| cron | cronResult | cast | 发送计划任务处理结果 |
 
 ### 服务提供详情
 

@@ -41,11 +41,13 @@ con模块计划任务的存储使用mqsql实现，下面是SQL语句：
 
 cron模块主要对openapi模块提供计划任务的操作接口，具体如下：
 
+**RoutingKey : \*.cron**
+
 ### 服务提供列表
 
 | **服务** | **类型** | **注释** |
 | :--- | :--- | :--- |
-| taskResult | rpc.cast | 接收Cron任务执行结果 |
+| cronResult | rpc.cast | 接收Cron任务执行结果 |
 | createCron | rpc.call | 添加Cron计划任务 |
 | startCron | rpc.call | 开启Cron计划任务 |
 | stopCron | rpc.call | 停止Cron计划任务 |
@@ -60,11 +62,11 @@ cron模块主要对openapi模块提供计划任务的操作接口，具体如下
 
 ### 服务提供详情
 
-##### taskResult：
+##### cronResult：
 
 ```
  {
-    "mqkey":"scheduler.cron.taskResult",
+    "mqkey":"scheduler.cron.cronResult",
     "mqtype":"cast",
     "mqbody":{
         "flag"："true"
