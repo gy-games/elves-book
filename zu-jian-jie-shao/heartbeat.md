@@ -6,6 +6,17 @@ heartbeat组件的作用是接收elves-agent的心跳包，向其他组件提供
 
 heartbeat模块主要对其他模块提供elves-agent的实时在线数据接口，具体如下：
 
+**RoutingKey : \*.heartbeat**
+
+### 服务提供列表
+
+| **服务** | **类型** | **注释** |
+| :--- | :--- | :--- |
+| agentInfo | rpc.call | 获取实时Agent在线数据 |
+| updateAppInfo | rpc.cast | 通知heartbeat更新App信息 |
+
+### 服务提供详情
+
 ##### agentInfo：
 
 ```
