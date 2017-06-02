@@ -33,6 +33,19 @@ supervisor的权限管理和APP管理依赖mqsql数据库，下面是数据库SQ
 
 supervisor作为权限模块，主要对外提供：APP和权限相关的数据信息。
 
+**RoutingKey : \*.supervisor**
+
+### 服务提供列表
+
+| **服务** | **类型** | **注解** |
+| :--- | :--- | :--- |
+| appAuthInfo | rpc.call | app信息和app绑定agent数据 |
+| getAuthKey | rpc.call | 通过authId获取authKey |
+| validateAuth | rpc.call | 权限验证（authId是否有该IP运行app的权限） |
+| appInfo | rpc.call | 获取authId管理的app数据 |
+
+### 服务提供详情
+
 ##### appAuthInfo：
 
 ```
@@ -41,7 +54,7 @@ supervisor作为权限模块，主要对外提供：APP和权限相关的数据�
     "mqkey":"{模块}.supervisor.appAuthInfo",
     "mqtype":"call.DDDEF718FCC41307",
     "mqbody":{
-        "instruct":"testApp"
+        "app":"testApp"
     }
 }
 
@@ -52,14 +65,14 @@ supervisor作为权限模块，主要对外提供：APP和权限相关的数据�
     "mybody":{
         "result":[
             {
-                "instruct":"appTest",
+                "app":"appTest",
                 "version":"1.0.0",
                 "agentList":["192.168.1.1","192.168.1.2"]
             },
             {
-                 "instruct":"appTest2",
-                "version":"1.0.1",
-                "agentList":["192.168.1.3","192.168.1.2"]
+                 "app":"appTest2",
+                 "version":"1.0.1",
+                 "agentList":["192.168.1.3","192.168.1.2"]
             }
         ]
     }
