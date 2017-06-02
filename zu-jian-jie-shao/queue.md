@@ -54,6 +54,27 @@ queue模块计划任务的存储使用mqsql实现，下面是SQL语句。
 
 queue模块主要对openapi模块提供队列任务的操作接口，具体如下：
 
+**RoutingKey : \*.schedler**
+
+### 服务提供列表
+
+| **服务** | **类型** | **注释** |
+| :--- | :--- | :--- |
+| createQueue | rpc.call | 发送同步任务 |
+| createTask | rpc.cast | 发送异步任务 |
+| commitQueue |  |  |
+| stopQueue |  |  |
+| queueResult |  |  |
+
+### 服务使用列表
+
+| **组件** | **服务** | **类型** | **注释** |
+| :--- | :--- | :--- | :--- |
+| queue | taskResult | cast | 发送队列任务处理结果 |
+| cron | [taskResult](/zu-jian-jie-shao/cron.md) | cast | 发送计划任务处理结果 |
+
+### 服务提供详情
+
 ##### createQueue：
 
 ```
