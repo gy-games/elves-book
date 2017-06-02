@@ -60,18 +60,18 @@ queue模块主要对openapi模块提供队列任务的操作接口，具体如�
 
 | **服务** | **类型** | **注释** |
 | :--- | :--- | :--- |
-| createQueue | rpc.call | 发送同步任务 |
-| createTask | rpc.cast | 发送异步任务 |
-| commitQueue |  |  |
-| stopQueue |  |  |
-| queueResult |  |  |
+| createQueue | rpc.call | 创建队列 |
+| createTask | rpc.call | 添加任务项 |
+| commitQueue | rpc.call | 提交队列 |
+| stopQueue | rpc.call | 停止队列 |
+| queueResult | rpc.call | 获取队列执行结果 |
+| taskResult | rpc.cast | 队列任务直接结果处理 |
 
 ### 服务使用列表
 
 | **组件** | **服务** | **类型** | **注释** |
 | :--- | :--- | :--- | :--- |
-| queue | taskResult | cast | 发送队列任务处理结果 |
-| cron | [taskResult](/zu-jian-jie-shao/cron.md) | cast | 发送计划任务处理结果 |
+|  |  |  |  |
 
 ### 服务提供详情
 
@@ -228,6 +228,25 @@ queue模块主要对openapi模块提供队列任务的操作接口，具体如�
                 "worker_message": "word!",
                 "worker_costtime": ""
             }
+        }
+    }
+}
+```
+
+##### taskResult：
+
+```
+ {
+    "mqkey":"scheduler.queue.taskResult",
+    "mqtype":"cast",
+    "mqbody":{
+        "flag"："true"
+        "error":""
+        "result":{
+            "id":"9ad6af3b2e5d4c2d",
+            "worker_flag":"1",
+            "worker_message":"hello word!",
+            "worker_costtime":"74"
         }
     }
 }
