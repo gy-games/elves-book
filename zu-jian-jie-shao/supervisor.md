@@ -54,7 +54,6 @@ supervisor作为权限模块，主要对外提供：APP和权限相关的数据�
     "mqkey":"{模块}.supervisor.appAuthInfo",
     "mqtype":"call.DDDEF718FCC41307",
     "mqbody":{
-        "app":"testApp"
     }
 }
 
@@ -142,11 +141,11 @@ supervisor作为权限模块，主要对外提供：APP和权限相关的数据�
     "mqkey":"supervisor.openapi",
     "mqtype":"cast",
     "mybody":{
-        "result":[{
+        "result":{
             "app": "apptest",
             "app_name": "测试APP",
             "app_ver": "1.0.0"
-        }]
+        }
     }
 }
 ```

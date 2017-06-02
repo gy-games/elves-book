@@ -108,9 +108,7 @@ cron模块主要对openapi模块提供计划任务的操作接口，具体如下
     "mqbody":{
         "flag": "true",
         "error": "",
-        "result":{
-            "cron_id":"2ad6af3b2e5d4c2e"
-        }
+        "cron_id":"2ad6af3b2e5d4c2e"
     }
 }
 ```
@@ -133,8 +131,7 @@ cron模块主要对openapi模块提供计划任务的操作接口，具体如下
     "mqtype":"cast",
     "mqbody":{
         "flag": "true",
-        "error": "",
-        "result":""
+        "error": ""
     }
 }
 ```
@@ -157,8 +154,7 @@ cron模块主要对openapi模块提供计划任务的操作接口，具体如下
     "mqtype":"cast",
     "mqbody":{
         "flag": "true",
-        "error": "",
-        "result":""
+        "error": ""
     }
 }
 ```
@@ -180,6 +176,8 @@ cron模块主要对openapi模块提供计划任务的操作接口，具体如下
     "mqkey":"cron.openapi",
     "mqtype":"cast",
     "mqbody":{
+        "flag":"true",
+        "error":"",
         "result":[
             "1ad6af3b2e5d4c2w",
             "2ad6af3b2e5d4c2e",
@@ -206,21 +204,25 @@ cron模块主要对openapi模块提供计划任务的操作接口，具体如下
     "mqkey":"openapi.crn",
     "mqtype":"cast",
     "mqbody":{
-        "ip":"127.0.0.1",
-        "app":"apptest",
-        "func":"hello",
-        "param":"",
-        "mode":"NP",
-        "proxy":"",
-        "rule":"0/5 * * * * ?",
-        "last_exec_time":"2017-05-16 18:08:00",
-        "last_exec_result" :{
-            "flag": "true",
-            "error":"",
-            "result":{
-                "worker_flag"    :"1",
-                "worker_message" :"hello word!",
-                "worker_costtime":"100"
+        "flag":"true",
+        "error":"",
+        "result":{
+            "ip":"127.0.0.1",
+            "app":"apptest",
+            "func":"hello",
+            "param":"",
+            "mode":"NP",
+            "proxy":"",
+            "rule":"0/5 * * * * ?",
+            "last_exec_time":"2017-05-16 18:08:00",
+            "last_exec_result" :{
+                "flag": "true",
+                "error":"",
+                "result":{
+                    "worker_flag"    :"1",
+                    "worker_message" :"hello word!",
+                    "worker_costtime":"100"
+                }
             }
         }
     }
