@@ -51,7 +51,7 @@ supervisor作为权限模块，主要对外提供：APP和权限相关的数据�
 ```
 接收消息：
 {
-    "mqkey":"{模块}.supervisor.appAuthInfo",
+    "mqkey":"{组件}.supervisor.appAuthInfo",
     "mqtype":"call.DDDEF718FCC41307",
     "mqbody":{
     }
@@ -59,8 +59,8 @@ supervisor作为权限模块，主要对外提供：APP和权限相关的数据�
 
 回复消息："发送RoutingKey:DDDEF718FCC41307"
 {
-    "mqkey":"supervisor.{模块}.infoQueue.EC0EF718FCC41307",
-    "mqtype":1,
+    "mqkey":"supervisor.{组件}",
+    "mqtype":"cast",
     "mybody":{
         "result":[
             {
@@ -83,19 +83,19 @@ supervisor作为权限模块，主要对外提供：APP和权限相关的数据�
 ```
 接收消息：
 {
-    "mqkey":"openapi.supervisor.getAuthKey",
+    "mqkey":"{组件}.supervisor.getAuthKey",
     "mqtype":"call.DDFEF718FCC41307",
     "mqbody":{
-        "authId":"AAAAA718FCC41307"
+        "auth_id":"AAAAA718FCC41307"
     }
 }
 
 回复消息："发送RoutingKey:DDFEF718FCC41307"
 {
-    "mqkey":"supervisor.openapi",
+    "mqkey":"supervisor.{组件}",
     "mqtype":"cast",
     "mybody":{
-        "authKey":"718FCC41307BBBBB"
+        "auth_key":"718FCC41307BBBBB"
     }
 }
 ```
@@ -105,10 +105,10 @@ supervisor作为权限模块，主要对外提供：APP和权限相关的数据�
 ```
 接收消息：
 {
-    "mqkey":"openapi.supervisor.validateAuth",
+    "mqkey":"{组件}.supervisor.validateAuth",
     "mqtype":"call.GGFEF718FCC41307",
     "mqbody":{
-        "authId":"AAAAA718FCC41307",
+        "auth_id":"AAAAA718FCC41307",
         "app":"appTest",
         "ip":"192.168.1.1"
     }
@@ -116,10 +116,10 @@ supervisor作为权限模块，主要对外提供：APP和权限相关的数据�
 
 回复消息："发送RoutingKey:GGFEF718FCC41307"
 {
-    "mqkey":"supervisor.openapi",
+    "mqkey":"supervisor.{组件}",
     "mqtype":"cast",
     "mybody":{
-        "result":"fail"
+        "result":"true"
     }
 }
 ```
@@ -129,16 +129,16 @@ supervisor作为权限模块，主要对外提供：APP和权限相关的数据�
 ```
 接收消息：
 {
-    "mqkey":"openapi.supervisor.validateAuth",
+    "mqkey":"{组件}.supervisor.validateAuth",
     "mqtype":"call.OOFEF718FCC41307",
     "mqbody":{
-        "authId":"AAAAA718FCC41307"
+        "auth_id":"AAAAA718FCC41307"
     }
 }
 
 回复消息："发送RoutingKey:OOFEF718FCC41307"
 {
-    "mqkey":"supervisor.openapi",
+    "mqkey":"supervisor.{组件}",
     "mqtype":"cast",
     "mybody":{
         "result":{
@@ -146,6 +146,32 @@ supervisor作为权限模块，主要对外提供：APP和权限相关的数据�
             "app_name": "测试APP",
             "app_ver": "1.0.0"
         }
+    }
+}
+```
+
+##### agentList：
+
+```
+接收消息：
+{
+    "mqkey":"{组件}.supervisor.agentList",
+    "mqtype":"call.OOFEF718FCC41307",
+    "mqbody":{
+        "auth_id":"AAAAA718FCC41307"
+    }
+}
+
+回复消息："发送RoutingKey:OOFEF718FCC41307"
+{
+    "mqkey":"supervisor.{组件}",
+    "mqtype":"cast",
+    "mybody":{
+        "result":[
+            "127.0.0.1",
+            "192.168.0.1",
+            "172.32.0.1"
+        ]
     }
 }
 ```

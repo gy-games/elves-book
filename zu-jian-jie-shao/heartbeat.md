@@ -12,8 +12,9 @@ heartbeat模块主要对其他模块提供elves-agent的实时在线数据接口
 
 | **服务** | **类型** | **注释** |
 | :--- | :--- | :--- |
-| agentInfo | rpc.call | 获取实时Agent在线数据 |
-| updateAppInfo | rpc.cast | 通知heartbeat更新App信息 |
+| agentInfo | rpc.call | 获取实时agent在线数据 |
+| agentList | rpc.call | 搜索agent列表 |
+| updateAppInfo | rpc.cast | 通知heartbeat更新app信息 |
 
 ### 服务提供详情
 
@@ -22,29 +23,59 @@ heartbeat模块主要对其他模块提供elves-agent的实时在线数据接口
 ```
 接收消息：
 {
-    "mqkey":"{模块}.heartbeat.agentInfo",
+    "mqkey":"{组件}.heartbeat.agentInfo",
     "mqtype":"call.CCCEF718FCC41307",
     "mqbody":{
-        "ip":"192.168.1.1",
-        "asset":"CX0001"
+        "ip":"192.168.1.1"
     }
 }
 
 回复消息："发送RoutingKey:CCCEF718FCC41307"
 {
-    "mqkey":"heartbeat.{模块}",
+    "mqkey":"heartbeat.{组件}",
     "mqtype":"cast",
     "mqbody":{
-        "result":[
-            {
-                "ip":"192.168.1.1",
-                "asset":"CX0001",
-                "last_hb_time":"2017-06-02 01:36:00",
-                "apps":{
-                    "testApp":"1.0.1"
-                }
+        "result":{
+            "ip":"192.168.1.1",
+            "asset":"CX0001",
+            "last_hb_time":"2017-06-02 01:36:00",
+            "apps":{
+                "testApp":"1.0.1"
             }
-        ]
+        }
+    }
+}
+```
+
+##### agentList：
+
+```
+接收消息：
+{
+    "mqkey":"{组件}.heartbeat.agentList",
+    "mqtype":"call.CCCEF718FCC41307",
+    "mqbody":{
+        "ip":"192.168.1.1",
+        "asset":"",
+        "pagesize":10,
+        "pagenumber":1
+    }
+}
+
+回复消息："发送RoutingKey:CCCEF718FCC41307"
+{
+    "mqkey":"heartbeat.{组件}",
+    "mqtype":"cast",
+    "mqbody":{
+        "count":1000,
+        "result":[{
+            "ip":"192.168.1.1",
+            "asset":"CX0001",
+            "last_hb_time":"2017-06-02 01:36:00",
+            "apps":{
+                "testApp":"1.0.1"
+            }]
+        }
     }
 }
 ```
@@ -54,11 +85,11 @@ heartbeat模块主要对其他模块提供elves-agent的实时在线数据接口
 ```
 接收消息：
 {
-    "mqkey":"hearteat.heartbeat.updateAppInfo",
+    "mqkey":"{组件}.heartbeat.updateAppInfo",
     "mqtype":"cast",
     "mqbody":{
         "result":[{
-            "instruct":"appTest",
+            "app":"appTest",
             "version":"1.0.0",
             "agentList":["192.168.1.1","192.168.1.2"]
         }]
