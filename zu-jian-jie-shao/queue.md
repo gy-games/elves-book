@@ -138,8 +138,7 @@ queue模块主要对openapi模块提供队列任务的操作接口，具体如�
     "mqtype":"cast",
     "mqbody":{
         "flag": "true",
-        "error": "",
-        "result":""
+        "error": ""
     }
 }
 ```
