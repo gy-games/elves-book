@@ -18,11 +18,11 @@
 
 | **Code** | **Value** | **解释** |
 | :--- | :--- | :--- |
-| 401.1 | Unauthorized Missing Sign Param |  |
-| 401.2 | Unauthorized Sign Timeout |  |
-| 401.3 | Unauthorized AuthId Is Illegal |  |
-| 401.4 | Unauthorized AuthKey Is Illegal |  |
-| 401.5 | Unauthorized Sign Error |  |
+| 401.1 | Unauthorized Missing Sign Param | 权限认证参数有误 |
+| 401.2 | Unauthorized Sign Timeout | 签名时间超时 |
+| 401.3 | Unauthorized AuthId Is Illegal | AuthID不合法 |
+| 401.4 | Unauthorized AuthKey Is Illegal | AuthKEY不合法 |
+| 401.5 | Unauthorized Sign Error | 签名错误 |
 
 ### 402 Require Module Not Enabled 所需组件未启用
 
@@ -30,9 +30,9 @@
 
 | **Code** | **Value** | **解释** |
 | :--- | :--- | :--- |
-| 402.1 | Require Module \(supervisor\) Not Enabled |  |
-| 402.2 | Require Module \(cron\) Not Enabled |  |
-| 402.3 | Require Module \(queue\) Not Enabled |  |
+| 402.1 | Require Module \(supervisor\) Not Enabled | 依赖的组件supervisor未启用 |
+| 402.2 | Require Module \(cron\) Not Enabled | 依赖的组件cron未启用 |
+| 402.3 | Require Module \(queue\) Not Enabled | 依赖的组件queue未启用 |
 
 ### 403 Request Param Illegal 请求参数错误
 
@@ -40,12 +40,12 @@
 
 | **Code** | **Value** | **解释** |
 | :--- | :--- | :--- |
-| 403.1 | Request Params \(ip\) Illegal |  |
-| 403.2 | Request Params \(param\) Illegal |  |
-| 403.3 | Request Params \(app\|\|func\) Illegal |  |
-| 403.4 | Request Params \(mode\) Illegal |  |
-| 403.5 | Request Params \(cron-rule\) Illegal |  |
-| 403.6 | Request Params \(queue\_id\) Illegal |  |
+| 403.1 | Request Params \(ip\) Illegal | IP参数不合法 |
+| 403.2 | Request Params \(param\) Illegal | param参数不合法 |
+| 403.3 | Request Params \(app\|\|func\) Illegal | app或func不合法 |
+| 403.4 | Request Params \(mode\) Illegal | mode参数不合法 |
+| 403.5 | Request Params \(cron-rule\) Illegal | cron-rule参数 |
+| 403.6 | Request Params \(queue\_id\) Illegal | queue\_id参数不合法 |
 
 ### 410 Scheduler Error
 
@@ -77,7 +77,7 @@ Supervisor组件业务相关错误
 
 | **Code** | **Value** | **解释** |
 | :--- | :--- | :--- |
-|  |  |  |
+| 413.1 | AuthId Not Found | 未找到此AuthID |
 
 ### 414 Heartbeat Error
 
@@ -85,7 +85,7 @@ Heatbeat组件业务相关错误
 
 | **Code** | **Value** | **解释** |
 | :--- | :--- | :--- |
-|  |  |  |
+| 414.1 | Agent Info Not Found | 未找到Agent信息 |
 
 ### 500 Internal ServerError 内部错误
 
