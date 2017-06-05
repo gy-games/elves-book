@@ -45,19 +45,11 @@
 
 * app输入 apptest , func输入helloword , param输入{"my":"toryzen"} ,点击"Generate"，再点击"Run Test"，获取 APP Worker 执行后结果
 
-### 3.2 队列任务\(Queue\)调试Worker
-
-{暂未实现}
-
-### 3.3 队列任务\(Queue\)调试Worker/Processor
-
-{暂未实现}
-
-### 3.4 计划任务\(Cron\)调试Worker
+### 3.2 计划任务\(Cron\)调试Worker
 
 略
 
-### 3.5 计划任务\(Cron\)调试Worker/Processor
+### 3.3 计划任务\(Cron\)调试Worker/Processor
 
 略
 
