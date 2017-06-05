@@ -18,9 +18,19 @@
 
 | **Code** | **返回值** | **解释** |
 | :--- | :--- | :--- |
-| 402.1 | Require Module Supervisor Not Enabled |  |
-| 402.2 | Require Module Cron Not Enabled |  |
-| 402.3 | Require Module Queue Not Enabled |  |
+| 402.1 | Require Module \(supervisor\) Not Enabled |  |
+| 402.2 | Require Module \(cron\) Not Enabled |  |
+| 402.3 | Require Module \(queue\) Not Enabled |  |
+
+### 403 Request Param Illegal 请求参数错误
+
+组件依赖相关错误
+
+| **Code** | **返回值** | **解释** |
+| :--- | :--- | :--- |
+| 403.1 | Request Params \(ip\) Illegal |  |
+| 403.2 | 403.2Request Params \(param\) Illegal |  |
+| 403.3 | Request Params \(app\|\|func\) Illegal |  |
 
 ### 500 Internal ServerError 内部错误
 
