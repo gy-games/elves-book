@@ -4,6 +4,8 @@
 
 ### 401 Unauthorized 权限错误
 
+权限认证相关错误
+
 | **Code** | **返回值** | **解释** |
 | :--- | :--- | :--- |
 | 401.1 | Unauthorized Missing Sign Param |  |
@@ -12,11 +14,15 @@
 
 ### 402 Require Module Not Enabled 所需组件未启用
 
+组件依赖相关错误
+
 | **Code** | **返回值** | **解释** |
 | :--- | :--- | :--- |
-| 402.1 | Require Module Supervisor Not Enabled |   |
-| 402.2 | Require Module Cron Not Enabled |   |
+| 402.1 | Require Module Supervisor Not Enabled |  |
+| 402.2 | Require Module Cron Not Enabled |  |
 | 402.3 | Require Module Queue Not Enabled |  |
 
+### 500 Internal ServerError 内部错误
 
+程序内部错误，一般为组件内部抛出了异常，详细信息会追加入错误信息内
 
