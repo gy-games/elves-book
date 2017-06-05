@@ -1,10 +1,14 @@
 # 返回值与码表
 
-接口的返回值均采用Json格式。
+接口采用统一的返回值码与统一的返回值格式，接口的返回值均采用Json格式。
 
-    {
-
+```
+{
+    "flag":"true/false",     #返回值状态，继标识程序状态又标识业务状态
+    "error":"",              #错误内容，返回值格式为：[Code]Value
+    "result":[Object]        #返回值内容
 }
+```
 
 # Flag Error Code
 
@@ -12,7 +16,7 @@
 
 权限认证相关错误
 
-| **Code** | **返回值** | **解释** |
+| **Code** | **Value** | **解释** |
 | :--- | :--- | :--- |
 | 401.1 | Unauthorized Missing Sign Param |  |
 | 401.2 | Unauthorized Sign Timeout |  |
@@ -24,7 +28,7 @@
 
 组件依赖相关错误
 
-| **Code** | **返回值** | **解释** |
+| **Code** | **Value** | **解释** |
 | :--- | :--- | :--- |
 | 402.1 | Require Module \(supervisor\) Not Enabled |  |
 | 402.2 | Require Module \(cron\) Not Enabled |  |
@@ -34,7 +38,7 @@
 
 组件依赖相关错误
 
-| **Code** | **返回值** | **解释** |
+| **Code** | **Value** | **解释** |
 | :--- | :--- | :--- |
 | 403.1 | Request Params \(ip\) Illegal |  |
 | 403.2 | Request Params \(param\) Illegal |  |
@@ -47,7 +51,7 @@
 
 Scheduler组件业务相关错误
 
-| **Code** | **返回值** | **解释** |
+| **Code** | **Value** | **解释** |
 | :--- | :--- | :--- |
 |  |  |  |
 
@@ -55,7 +59,7 @@ Scheduler组件业务相关错误
 
 Cron组件业务相关错误
 
-| **Code** | **返回值** | **解释** |
+| **Code** | **Value** | **解释** |
 | :--- | :--- | :--- |
 |  |  |  |
 
@@ -63,7 +67,7 @@ Cron组件业务相关错误
 
 Scheduler组件业务相关错误
 
-| **Code** | **返回值** | **解释** |
+| **Code** | **Value** | **解释** |
 | :--- | :--- | :--- |
 |  |  |  |
 
@@ -71,7 +75,7 @@ Scheduler组件业务相关错误
 
 Supervisor组件业务相关错误
 
-| **Code** | **返回值** | **解释** |
+| **Code** | **Value** | **解释** |
 | :--- | :--- | :--- |
 |  |  |  |
 
@@ -79,7 +83,7 @@ Supervisor组件业务相关错误
 
 Heatbeat组件业务相关错误
 
-| **Code** | **返回值** | **解释** |
+| **Code** | **Value** | **解释** |
 | :--- | :--- | :--- |
 |  |  |  |
 
