@@ -43,7 +43,28 @@ cp ./openapi/ROOT.war {Tomcat目录}
 {访问:http://ip:port}
 ```
 
-# API服务
+## 服务使用列表
+
+| **组件** | **服务** | **类型** | **注释** |
+| :--- | :--- | :--- | :--- |
+| scheduler | syncJob | rpc.call | 发送同步任务 |
+| cron | createCron | rpc.call | 添加Cron计划任务 |
+|  | startCron | rpc.call | 开启Cron计划任务 |
+|  | stopCron | rpc.call | 停止Cron计划任务 |
+|  | deleteCron | rpc.call | 删除Cron计划任务 |
+|  | cronDetail | rpc.call | 计划任务详情 |
+|  | cronList | rpc.call | 计划任务列表信息 |
+| queue | createQueue | rpc.call | 创建队列 |
+|  | addTask | rpc.call | 添加任务项 |
+|  | commitQueue | rpc.call | 提交队列 |
+|  | stopQueue | rpc.call | 停止队列 |
+|  | queueResult | rpc.call | 获取队列执行结果 |
+| supervisor | appAuthInfo | rpc.call | 获取实时agent在线数据 |
+|  | getAuthKey | rpc.call | 通过authId获取authKey |
+|  | validateAuth | rpc.call | 权限验证（authId是否有该IP运行app的权限） |
+|  | appInfo | rpc.call | 获取authId管理的app数据 |
+
+# 服务API
 
 [详见API](/api.md)
 
