@@ -11,7 +11,7 @@ GET|POST /api/v2/queue/qksqueue
 ## 请求及参数
 
 ```
-/v2/queue/qksqueue?ip={ip}&app={app}&func={func}&param={param}&timeout={timeout}&proxy={proxy}&auth_id={auth_id}&timestamp={timestamp}&sign_type={sign_type}&sign={sign}
+/api/v2/queue/qksqueue?ip={ip}&app={app}&func={func}&param={param}&timeout={timeout}&proxy={proxy}&auth_id={auth_id}&timestamp={timestamp}&sign_type={sign_type}&sign={sign}
 ```
 
 | **字段** | **必填否** | **类型** | **注释** |
