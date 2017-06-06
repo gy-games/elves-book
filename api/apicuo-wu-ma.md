@@ -23,6 +23,7 @@
 | 401.3 | Unauthorized AuthId Is Illegal | AuthID不合法 |
 | 401.4 | Unauthorized AuthKey Is Illegal | AuthKEY不合法 |
 | 401.5 | Unauthorized Sign Error | 签名错误 |
+| 401.6 | Unauthorized AuthId Permission Denied | AuthID没有操作权限 |
 
 ### 402 Require Module Not Enabled 所需组件未启用
 
