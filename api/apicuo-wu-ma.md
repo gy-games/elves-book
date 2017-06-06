@@ -55,7 +55,7 @@ Scheduler组件业务相关错误
 
 | **Code** | **Value** | **解释** |
 | :--- | :--- | :--- |
-|  |  |  |
+| 410.1 | Send Job To Agent Fail | 发送任务到Agent失败 |
 
 ### 411 Cron Error
 
@@ -63,7 +63,7 @@ Cron组件业务相关错误
 
 | **Code** | **Value** | **解释** |
 | :--- | :--- | :--- |
-|  |  |  |
+| 411.1 | Not Find Cron Job To Operate | 未找到CronJob进行操作 |
 
 ### 412 Queue Error
 
