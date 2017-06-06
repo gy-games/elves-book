@@ -5,7 +5,7 @@
 ## URI
 
 ```
-POST /api/v2/queue/addtask
+GET|POST /api/v2/queue/addtask
 ```
 
 ## 请求及参数

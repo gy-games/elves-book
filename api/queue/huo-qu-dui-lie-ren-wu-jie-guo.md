@@ -5,7 +5,7 @@
 ## URI
 
 ```
-GET /api/v2/queue/result
+GET|POST /api/v2/queue/result
 ```
 
 ## 请求及参数

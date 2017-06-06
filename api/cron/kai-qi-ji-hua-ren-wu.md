@@ -5,7 +5,7 @@
 ## URI
 
 ```
-POST /api/v2/cron/start
+GET|POST /api/v2/cron/start
 ```
 
 ## 请求及参数

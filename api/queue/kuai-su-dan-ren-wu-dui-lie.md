@@ -5,7 +5,7 @@
 ## URI
 
 ```
-POST /api/v2/queue/qksqueue
+GET|POST /api/v2/queue/qksqueue
 ```
 
 ## 请求及参数

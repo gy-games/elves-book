@@ -5,7 +5,7 @@
 ## URI
 
 ```
-GET /api/v2/info/app
+GET|POST /api/v2/info/app
 ```
 
 ## 请求及参数

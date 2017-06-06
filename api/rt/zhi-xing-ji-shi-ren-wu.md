@@ -5,7 +5,7 @@
 ## URI
 
 ```
-GET /api/v2/rt/exec
+GET|POST /api/v2/rt/exec
 ```
 
 ## 请求及参数

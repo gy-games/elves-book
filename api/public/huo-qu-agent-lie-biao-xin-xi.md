@@ -5,7 +5,7 @@
 ## URI
 
 ```
-GET /api/v2/info/agents
+GET|POST /api/v2/info/agents
 ```
 
 ## 请求及说明

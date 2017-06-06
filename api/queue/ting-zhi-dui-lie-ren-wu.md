@@ -5,7 +5,7 @@
 ## URI
 
 ```
-POST /api/v2/queue/stop
+GET|POST /api/v2/queue/stop
 ```
 
 ## 请求及参数

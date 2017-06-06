@@ -5,7 +5,7 @@
 ## URI
 
 ```
-POST /api/v2/queue/commit
+GET|POST /api/v2/queue/commit
 ```
 
 ## 请求及参数

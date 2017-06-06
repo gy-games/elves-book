@@ -5,7 +5,7 @@
 ## URI
 
 ```
-POST /api/v2/cron/delete
+GET|POST /api/v2/cron/delete
 ```
 
 ## 请求及参数
