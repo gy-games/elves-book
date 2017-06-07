@@ -167,6 +167,8 @@ supervisor作为权限模块，主要对外提供：APP和权限相关的数据�
     "mqkey":"supervisor.{组件}",
     "mqtype":"cast",
     "mybody":{
+        "flag":"true",
+        "error":"",
         "result":[
             "127.0.0.1",
             "192.168.0.1",
