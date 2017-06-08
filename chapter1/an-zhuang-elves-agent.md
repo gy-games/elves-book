@@ -16,7 +16,7 @@
 * 复制并修改配置文件 conf\cfg.example.json -&gt; conf\cfg.json 
 * 根据自身需求修改相关参数 conf\cfg.json（详见[Elves-Agent](/zu-jian-jie-shao/elves-agent.md)）
 * 执行chmod +x ./control 增加执行权限
-* 执行 control.cmd start 开启elves-agent
+* 执行 ./control start 开启elves-agent
 * 若开启了http服务，则访问 ip:port 查看运行状态
 
 若需要开机启动，则执行./control install
@@ -45,8 +45,8 @@
 * 执行./control build 构建
 * 复制并修改配置文件 conf\cfg.example.json -&gt; conf\cfg.json 
 * 根据自身需求修改相关参数 conf\cfg.json（详见[Elves-Agent](/zu-jian-jie-shao/elves-agent.md)）
-* 执行 control.cmd install 安装elves-agent
-* 执行 control.cmd start 开启elves-agen
+* 执行 ./control install 安装elves-agent
+* 执行./ control start 开启elves-agen
 * 若开启了http服务，则访问 ip:port 查看运行状态
 
 ---
