@@ -20,7 +20,7 @@ Elves逻辑上以三大核心组成，分别为"Elves-Center"，"Elves-Agent"，
 
 # Elves-Apps
 
-Apps的便捷开发为整个系统的核心关注点，Elves-App分为两部分组成，分别为worker与processor，其中Worker运行在Agent端，简单点说如果想实现一个C/S架构的App则需要实现Worker与Processor，若只需要一个C架构的App则仅需要实现Worker。在Worker的指令调用中，我们采用进程调用方式，为进一步简化开发人员的工作，我们在Agent端引入了一个Proxy的概念，Proxy接收到指令后，将指令转换为方法以及参数并采用动态加载的方式调用App并将APP执行结构格式化后反馈至Elves。
+Apps的便捷开发为整个系统的核心关注点，Elves-App分为两部分组成，分别为worker与processor，其中Worker运行在Agent端，简单点说如果想实现一个C/S架构的App则需要实现Worker与Processor，若只需要一个C架构的App则仅需要实现Worker。在Worker的指令调用中，我们采用进程调用方式，为进一步简化开发人员的工作，我们在SDK内置了Agent入口，入口接收到指令后，将指令转换为方法以及参数并采用动态加载的方式调用App并将APP执行结构格式化后反馈至Elves。
 
 以Python为例，开发人员只需要确定方法名、参数（Dictionary）实现自身逻辑即可。
 
@@ -42,7 +42,7 @@ Apps的便捷开发为整个系统的核心关注点，Elves-App分为两部分�
 
 APP的执行后需要返回两个执行结构，分别为flag与result，均为string类型，flag为枚举:true,false用于确定app的执行状态，result为执行反馈结果。
 
-若想获取反馈结果可以通过Elves API或者实现一个Processor直接由Agent端主动反馈，Processor的实现也非常简单，可以在后续的使用手册中查看。
+若想获取反馈结果可以通过Elves API或者实现一个Processor直接由Agent端主动反馈，Processor的实现也非常简单，可以在后续的使用手册中查看。[4.1调试HelloWork示例](/shi-yong-shou-ce/helloword.md)
 
 # Elves-Center
 
