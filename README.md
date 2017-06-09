@@ -1,6 +1,6 @@
 # 介绍
 
-目前市面上的自动化运维工具众多，如Ansible,Saltstack,Puppet等均为非常优秀的自动化运维工具或平台，其主要面向运维人员使用命令行等方式进行自动化运维操作，Elves与上述自动化运维工具的初衷一致，但其致力于为运维开发人员提供服务， Elves为一套自动化运维开发平台，其自身不提供业务性功能，运维开发人员可根据自身的业务进行应用\(APP\)的开发来实现相应业务的自动化管理。
+Elves为一套自动化运维开发平台\(IT Automatic Develop Platform\)，其致力于为运维研发人员提供便捷的运维自动化业务编程实现环境， Elves自身不提供业务性功能，运维开发人员可根据自身的业务进行应用\(APP\)的开发来实现相应业务的自动化管理。
 
 # 特性
 
@@ -12,7 +12,7 @@
 
 数据交互传输：Elves-Center间各组件的数据传输使用RABBITMQ以队列形式进行交互，Elves-Center与Elves-Agent间数据传输使用Thrift进行交互，开发人员操作Elves\(App\)使用RESTful方式交互
 
-开发语言与结构：Elves自身以C/S架构设计，Elves-Center\(SERVER\)由JAVA实现，Elves-Agent\(CLIENT\)由Golang实现\(同时提供JAVA版本\)
+开发语言与结构：Elves自身以C/S架构设计，Elves-Center\(SERVER\)由JAVA实现，Elves-Agent\(CLIENT\)由Golang实现
 
 # 架构![](/assets/arc.jpg)
 
