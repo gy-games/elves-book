@@ -56,7 +56,7 @@
 ```
 elves-agent
     ├─apps        #ElvesAPP安装目录
-    ├─bin         #执行文件，包括elve-agent主程序,各语言代理器agentProxy.*，nssm.exe     
+    ├─bin         #执行文件，包括elve-agent主程序，nssm.exe     
     ├─conf        #配置文件目录          
     │      cfg.example.json    #示例配置文件，使用时需要更名为cfg.json
     │      cron.json           #agent cron配置文件

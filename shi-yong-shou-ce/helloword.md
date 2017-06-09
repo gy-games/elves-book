@@ -9,7 +9,7 @@
 ```
         │
         ├─processor  #Processor 示例包
-        │  │  app.py           #Processor入口问题
+        │  │  app-processor.py #App Processor入口
         │  │  setting.ini      #Processor配置文件
         │  │
         │  ├─logs              #默认日志目录
@@ -20,6 +20,7 @@
         │  └─util              #部分工具类
         │
         └─worker     #Worker 示例包
+                app-worker.py  #App Worker入口
                 appcfg.json    #Worker配置文件
                 apptest.py     #Worker执行方法
 ```

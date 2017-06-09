@@ -4,11 +4,13 @@ Elves-App分为两部分组成，分别为**Worker**与**Processor**，Worker为
 
 ## Worker
 
-Worker运行在Agent端，Agent端触发App-Worker采用进程调用方式，为进一步简化开发人员的工作、格式化参数的输入与格式化执行结果的回收，我们在Agent端引入了一个Proxy的概念，Proxy接收到指令后，将指令转换为方法以及参数并采用动态加载的方式调用App-Worker并将APP执行结构格式化后反馈至Elves。
+Worker运行在Agent端，Agent端触发App-Worker采用进程调用方式，为进一步简化开发人员的工作、格式化参数的输入与格式化执行结果的回收，我们设置了APP的默认入口，app-worker.py\|exe，默认情况下Agent接受指令后会以命令行方式调用app-worker.py\|exe，app-worker.py\|exe将指令转换为方法以及参数并采用动态加载的方式调用App-Worker并将APP执行结构格式化后反馈至Elves。
 
 以Python为例，开发人员只需要确定方法名、参数（Dictionary）实现自身逻辑即可。
 
 **App "apptest" Worker 实现**
+
+**./app/apptest/apptest.py**
 
 ```py
   class apptest():
@@ -22,7 +24,7 @@ Worker运行在Agent端，Agent端触发App-Worker采用进程调用方式，为
     return flag,result
 ```
 
-APP的执行后需要返回两个执行结构，分别为flag与result，均为string类型，flag为枚举:true,false用于确定app的执行状态，result为执行反馈结果。
+APP的执行后需要返回两个执行结构，分别为flag与result，均为string类型，flag为枚举:true,false用于确定app的执行状态，result为执行反馈结果,此结果也将作为队列任务判断成功的依据。
 
 如上述APP，用户只需要告知Elves，我要执行apptest的helloword方法，参数为{"my":"toryzen"}即可得到toryzen的反馈结果，true,toryzen
 
@@ -34,7 +36,7 @@ Processor的实现稍微复杂了一些，因Worker处理完的结果将直接�
 
 Processor的实践用法很多，例如实现一款C/S架构的APP或者实现执行日志的采集，Processor的启用对应Elves任务\(mode\)的P模式，且相应的我们需要在Worker内添加相应配置文件cfg.json。
 
-**cfg.json**
+**appcfg.json**
 
 ```
 {
@@ -47,6 +49,17 @@ Processor的实践用法很多，例如实现一款C/S架构的APP或者实现�
     }
 }
 ```
+
+这时Worker的目录结构变为：
+
+```
+    apptest
+    ├─app-worker.py       #app worker 入口     
+    ├─apptest.py          #worker 执行逻辑       
+    └─appcfg.json         #app 配置文件
+```
+
+
 
 配置文件中定义了Processor的地址及端口以及超时设置，且必须保证其两者间的互通性。
 
@@ -93,7 +106,7 @@ Port    = 20110
 最后以nohup运行我们的Processor即可等待接收数据的反馈
 
 ```bash
-nohup python ./app.py &
+nohup python ./app-processor.py &
 ```
 
 
