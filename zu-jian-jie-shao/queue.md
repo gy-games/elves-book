@@ -1,6 +1,6 @@
 # Queue
 
-queue组件是elves的队列任务组件，可以管理elves的队列任务，根据队列任务内容向scheduler发起任务，队列使用MqSQL实现。
+queue组件是elves的队列任务组件，可以管理elves的队列任务，且队列任务支持任务间依赖，根据队列任务内容向scheduler发起异步任务。
 
 ![](/assets/queue-flow.png)
 
