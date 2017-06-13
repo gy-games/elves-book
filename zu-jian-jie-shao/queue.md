@@ -11,9 +11,8 @@ wget {elves-queue.tar.gz}                     #选择合适的安装包
 tar -zxvf {elves-queue.tar.gz}                #解压安装包
 cd elves-queue                                #进入Elves-QUEUE目录
 vim conf/conf.properties                      #修改配置文件
-{./control build}                                #若为源码包可以进行构建，构建需要mvn环境                              
-./control start                               #启动elves-queue
-./control status                              #查看启动状态
+{./control|control.cmd build}                             #若为源码包可以进行构建，构建需要mvn环境                              
+./control|control.cmd start                               #启动elves-queue
 ```
 
 ## 配置文件
@@ -43,6 +42,29 @@ jdbc.testSql=SELECT 'x' FROM DUAL
 jdbc.url=jdbc\:mysql\://192.168.0.1\:3306/elves_queue?characterEncoding=UTF-8&amp;useOldAliasMetadataBehavior=true&amp;zeroDateTimeBehavior=convertToNull
 jdbc.username=mysql
 jdbc.password=mysql
+```
+
+## 脚本参数
+
+**Windows control.cmd**
+
+```
+"build|start"
+
+build : 运行后将执行mvn package , 最终构建成 bin\elves-queue-.x.x-release.jar 
+start : 以java -jar 方式启动elves-queue
+```
+
+**Linux ./control**
+
+```
+build|start|stop|status|restart
+
+build : 运行后将执行mvn package , 最终构建成 bin\elves-queue-.x.x-release.jar
+start : 以nohup java -jar形式启动elves-queue
+stop : 关闭elves-queue
+restart : 执行 stop & start
+status : 查看elves-queue的运行状态
 ```
 
 ## Mysql数据库结构
