@@ -7,18 +7,49 @@ queue组件是elves的队列任务组件，可以管理elves的队列任务，�
 ## 编译及安装
 
 ```
-wget elves-agent-x.x.x-linux.zip
-cd ./elves-queue/bin
+wget {elves-queue.tar.gz}                     #选择合适的安装包
+tar -zxvf {elves-queue.tar.gz}                #解压安装包
+cd elves-queue                                #进入Elves-QUEUE目录
+vim conf/conf.properties                      #修改配置文件
+{./control build}                                #若为源码包可以进行构建，构建需要mvn环境                              
+./control start                               #启动elves-queue
+./control status                              #查看启动状态
 ```
 
+
+
+## 配置文件
+
+**./elves-queue/conf/conf.properties**
+
 ```
-mvn package
-./control start
+#Zookeeper Config
+zookeeper.host=192.168.0.1      #Zookeeper地址
+zookeeper.outTime=10000         #Zookeeper超时时间
+zookeeper.root=/elves           #Zookeeper ROOT地址 
+
+#MQ Basic Config
+mq.ip       = 192.168.0.1       #RabbitMQ IP
+mq.port     = 5672              #RabbitMQ 端口
+mq.user     = admin             #RABBITMQ 账号
+mq.password = 1234567890        #RABBITMQ 密码
+mq.exchange = elves             #Exchange 名称  
+
+#jdbc conf
+jdbc.type=mysql
+jdbc.driver=com.mysql.jdbc.Driver
+jdbc.pool.init=1
+jdbc.pool.minIdle=3
+jdbc.pool.maxActive=20
+jdbc.testSql=SELECT 'x' FROM DUAL
+jdbc.url=jdbc\:mysql\://192.168.0.1\:3306/elves_queue?characterEncoding=UTF-8&amp;useOldAliasMetadataBehavior=true&amp;zeroDateTimeBehavior=convertToNull
+jdbc.username=mysql
+jdbc.password=mysql
 ```
 
-## 数据库
+## Mysql数据库结构
 
-queue模块计划任务的存储使用mysql实现，下面是SQL语句。
+queue模块计划任务的存储使用mysql实现，下面是数据库结构。
 
 ##### queue表：
 
@@ -66,16 +97,16 @@ queue模块主要对openapi模块提供队列任务的操作接口，具体如�
 
 | **服务** | **类型** | **注释** |
 | :--- | :--- | :--- |
-| createQueue | rpc.call | 创建队列 |
-| addTask | rpc.call | 添加任务项 |
-| commitQueue | rpc.call | 提交队列 |
-| stopQueue | rpc.call | 停止队列 |
-| queueResult | rpc.call | 获取队列执行结果 |
-| taskResult | rpc.cast | 队列任务直接结果处理 |
+| [createQueue](#createqueue) | rpc.call | 创建队列 |
+| [addTask](#addtask) | rpc.call | 添加任务项 |
+| [commitQueue](#commitqueue) | rpc.call | 提交队列 |
+| [stopQueue](#stopqueue) | rpc.call | 停止队列 |
+| [queueResult](#queueresult) | rpc.call | 获取队列执行结果 |
+| [taskResult](/taskResult) | rpc.cast | 队列任务直接结果处理 |
 
 ### 服务提供详情
 
-##### createQueue：
+##### createQueue： {#createqueue}
 
 ```
 接收消息：
@@ -99,7 +130,7 @@ queue模块主要对openapi模块提供队列任务的操作接口，具体如�
 }
 ```
 
-##### addTask:
+##### addTask: {#addtask}
 
 ```
 接收消息：
@@ -130,7 +161,7 @@ queue模块主要对openapi模块提供队列任务的操作接口，具体如�
 }
 ```
 
-##### commitQueue:
+##### commitQueue: {#commitqueue}
 
 ```
 接收消息：
@@ -153,7 +184,7 @@ queue模块主要对openapi模块提供队列任务的操作接口，具体如�
 }
 ```
 
-##### stopQueue:
+##### stopQueue: {#stopqueue}
 
 ```
 接收消息：
@@ -181,7 +212,7 @@ queue模块主要对openapi模块提供队列任务的操作接口，具体如�
 }
 ```
 
-##### queueResult
+##### queueResult {#queueresult}
 
 ```
 接收消息：
@@ -236,7 +267,7 @@ queue模块主要对openapi模块提供队列任务的操作接口，具体如�
 }
 ```
 
-##### taskResult：
+##### taskResult： {#taskresult}
 
 ```
  {
@@ -253,44 +284,6 @@ queue模块主要对openapi模块提供队列任务的操作接口，具体如�
         }
     }
 }
-```
-
-## 修改配置
-
-**./elves-queue/conf/conf.properties**
-
-```
-#Zookeeper Config
-#Zookeeper地址
-zookeeper.host=192.168.0.1
-#Zookeeper超时时间
-zookeeper.outTime=10000
-#Zookeeper ROOT地址        
-zookeeper.root=/elves  
-
-#MQ Basic Config
-#RabbitMQ IP
-mq.ip       = 192.168.0.1
-#RabbitMQ 端口
-mq.port     = 5672
-#RABBITMQ 账号
-mq.user     = admin
-#RABBITMQ 密码
-mq.password = 1234567890
-#Exchange 名称        
-mq.exchange = elves
-
-
-#jdbc conf
-jdbc.type=mysql
-jdbc.driver=com.mysql.jdbc.Driver
-jdbc.pool.init=1
-jdbc.pool.minIdle=3
-jdbc.pool.maxActive=20
-jdbc.testSql=SELECT 'x' FROM DUAL
-jdbc.url=jdbc\:mysql\://192.168.6.116\:3306/elves_queue?characterEncoding=UTF-8&amp;useOldAliasMetadataBehavior=true&amp;zeroDateTimeBehavior=convertToNull
-jdbc.username=mysql
-jdbc.password=mysql
 ```
 
 ## 
