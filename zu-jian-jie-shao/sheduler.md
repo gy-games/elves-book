@@ -2,6 +2,32 @@
 
 elves的任务调度组件。   接收cron组件、queue组件、openapi组件发起的任务指令，调度转发到agent并回收任务处理结果，最后将结果返回给任务发起方。
 
+# 组件构建
+
+```
+cd ./elves-scheduler/bin
+mvn package
+./control start
+```
+
+# 配置文件
+
+**./elves-scheduler/conf/conf.properties**
+
+```
+#Zookeeper Config
+zookeeper.host=10.0.101.1:2181,10.0.101.2:2181,10.0.101.3:2181   #Zookeeper地址
+zookeeper.outTime=10000                                          #Zookeeper超时时间
+zookeeper.root=/elves                                            #Zookeeper ROOT地址  
+
+#MQ Basic Config
+mq.ip       = 10.0.101.100                                       #RabbitMQ IP
+mq.port     = 5672                                               #RabbitMQ 端口
+mq.user     = admin                                              #RABBITMQ 账号
+mq.password = 1234567890                                         #RABBITMQ 密码
+mq.exchange = elves                                              #Exchange 名称  
+```
+
 ## Thrift 服务
 
 elves-scheduler 和elves-agent之间的通讯使用thrift实现，下面提供通讯thrift结构体和thrift服务：
@@ -9,23 +35,23 @@ elves-scheduler 和elves-agent之间的通讯使用thrift实现，下面提供�
 ```
 //命令构体
 struct Instruct{
-    1 : string id,
-    2 : string ip,
-    3 : string type,
-    4 : string mode,
-    5 : string app,
-    6 : string func,
-    7 : string param,
-    8 : i32 timeout,
-    9 : string proxy
+    1 : string id,                      #消息ID
+    2 : string ip,                      #AgentIP
+    3 : string type,                    #类型cron,queue,rt
+    4 : string mode,                    #模式P,NP
+    5 : string app,                     #APP名称
+    6 : string func,                    #APP 方法名
+    7 : string param,                   #APP 方法参数
+    8 : i32 timeout,                    #超时时间(秒)
+    9 : string proxy                    #自定义入口
 }
 
 //命令结果结构体
 struct Reinstruct{
-    1 : Instruct ins,
-    3 : i32 flag,
-    4 : i32 costtime,
-    5 : string result
+    1 : Instruct ins,                    #命令结构体
+    3 : i32 flag,                        #执行状态
+    4 : i32 costtime,                    #执行耗时(毫秒)
+    5 : string result                    #执行结果
 }
 ```
 
@@ -55,13 +81,6 @@ scheduler与其它模块通讯使用rabbitmq实现，这里提供scheduler作为
 | :--- | :--- | :--- |
 | [syncJob](#syncjob) | rpc.call | 发送同步任务 |
 | [asyncJob](#asyncjob) | rpc.cast | 发送异步任务 |
-
-### 服务使用列表
-
-| **组件** | **服务** | **类型** | **注释** |
-| :--- | :--- | :--- | :--- |
-| queue | taskResult | cast | 发送队列任务处理结果 |
-| cron | cronResult | cast | 发送计划任务处理结果 |
 
 ### 服务提供详情
 
@@ -120,39 +139,14 @@ scheduler与其它模块通讯使用rabbitmq实现，这里提供scheduler作为
 }
 ```
 
-### 修改配置
+### 服务使用列表
 
-**./elves-scheduler/conf/conf.properties**
+| **组件** | **服务** | **类型** | **注释** |
+| :--- | :--- | :--- | :--- |
+| queue | taskResult | cast | 发送队列任务处理结果 |
+| cron | cronResult | cast | 发送计划任务处理结果 |
 
-```
-#Zookeeper Config
-#Zookeeper地址
-zookeeper.host=10.0.101.1:2181,10.0.101.2:2181,10.0.101.3:2181
-#Zookeeper超时时间
-zookeeper.outTime=10000
-#Zookeeper ROOT地址        
-zookeeper.root=/elves  
 
-#MQ Basic Config
-#RabbitMQ IP
-mq.ip       = 10.0.101.100
-#RabbitMQ 端口
-mq.port     = 5672
-#RABBITMQ 账号
-mq.user     = admin
-#RABBITMQ 密码
-mq.password = 1234567890
-#Exchange 名称        
-mq.exchange = elves
-```
-
-## 组件构建
-
-```
-cd ./elves-scheduler/bin
-mvn package
-./control start
-```
 
 
 
