@@ -20,7 +20,7 @@ queue模块计划任务的存储使用mqsql实现，下面是SQL语句。
 
 ##### task\_list表
 
-    1
+    CREATE TABLE `task_list` (  `task_id` varchar(16) NOT NULL COMMENT '任务ID',  `queue_id` varchar(16) NOT NULL COMMENT '队列ID',  `ip` varchar(15) NOT NULL COMMENT 'AgentIP',  `mode` enum('np','n') NOT NULL COMMENT '模式',  `app` varchar(32) NOT NULL COMMENT '模块',  `func` varchar(32) NOT NULL COMMENT '指令',  `param` text COMMENT '参数',  `timeout` int(11) DEFAULT '0' COMMENT '超时时间',  `proxy` varchar(35) DEFAULT NULL COMMENT '代理器',  `depend_task_id` varchar(16) NOT NULL DEFAULT 'null' COMMENT '依赖的任务id',  `create_time` datetime NOT NULL COMMENT '创建时间',  `flag` int(11) DEFAULT NULL COMMENT '返回值',  `error` text COMMENT '返回错误',  `worker_flag` int(11) DEFAULT NULL COMMENT 'worker执行状态',  `worker_message` text COMMENT 'worker执行结果内容',  `worker_costtime` int(11) DEFAULT NULL COMMENT 'worker执行耗时',  `exec_finish_time` datetime DEFAULT NULL COMMENT '结果回收时间',  `status` tinyint(4) NOT NULL DEFAULT '0' COMMENT '状态(0:等待,1:运行,2:结束)',  PRIMARY KEY (`task_id`),  KEY `queue_id` (`queue_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='队列任务表'
 
 ## 组件服务
 
