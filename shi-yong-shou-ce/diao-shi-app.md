@@ -28,6 +28,8 @@ app的发布需要借助于heartbeat组件，Heartbeat存在两种模式，且�
 
 2、点击添加APP，WEB端上传{app名称}\_{版本号}.zip，并填写app名称与版本号
 
+4、创建APP
+
 3、授权APP允许运行的机器
 
 # 执行
