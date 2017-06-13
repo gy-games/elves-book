@@ -6,23 +6,13 @@ queue组件是elves的队列任务组件，可以管理elves的队列任务，�
 
 queue模块计划任务的存储使用mqsql实现，下面是SQL语句。
 
-##### task\_queue队列任务表：
+##### queue表：
 
-    CREATE TABLE `task_queue` (
-      `id` varchar(16) NOT NULL COMMENT '主键ID',
-      `agent_ip` varchar(15) NOT NULL COMMENT 'AgentIP',
-      `mode` enum('sap','sanp') NOT NULL COMMENT '模式',
-      `app` varchar(32) NOT NULL COMMENT '模块',
-      `func` varchar(32) NOT NULL COMMENT '指令',
-      `param` longtext COMMENT '参数',
-      `timeout` int(11) DEFAULT '0' COMMENT '超时时间',
-      `proxy` varchar(15) DEFAULT NULL COMMENT '代理器',
-      `depend_tq_id` varchar(16) DEFAULT NULL COMMENT '依赖id',
-      `flag` tinyint(4) NOT NULL DEFAULT '0' COMMENT '状态(0:等待,1:运行,2:结束)',
-      `call_id` varchar(16) DEFAULT NULL COMMENT '锁ID(自动生成):',
-      `create_time` datetime NOT NULL COMMENT '创建时间',
-      PRIMARY KEY (`id`)
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='队列任务表'
+    CREATE TABLE `queue` (  `queue_id` varchar(16) NOT NULL COMMENT '队列ID',  `app` varchar(25) DEFAULT NULL COMMENT 'APP',  `createtime` datetime DEFAULT NULL COMMENT '创建时间',  `committime` datetime DEFAULT NULL COMMENT '提交时间',  `status` enum('pendding','running','stoped') DEFAULT 'pendding' COMMENT '队列状态',  PRIMARY KEY (`queue_id`)) ENGINE=MyISAM DEFAULT CHARSET=utf8
+
+##### task\_list表
+
+    2
 
 ##### lock\_queue存储过程：
 
