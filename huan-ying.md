@@ -8,7 +8,7 @@ Elves-Project 才刚刚起步，欢迎更多的人加入我们，共同见证其
 
 ## 作者列表
 
-* toryzen
+* [toryzen](http://torblog.sinaapp.com/)
 * eastFu
 * 光宇游戏系统部
 
