@@ -8,37 +8,19 @@ queue模块计划任务的存储使用mqsql实现，下面是SQL语句。
 
 ##### queue表：
 
-    CREATE TABLE `queue` (  `queue_id` varchar(16) NOT NULL COMMENT '队列ID',  `app` varchar(25) DEFAULT NULL COMMENT 'APP',  `createtime` datetime DEFAULT NULL COMMENT '创建时间',  `committime` datetime DEFAULT NULL COMMENT '提交时间',  `status` enum('pendding','running','stoped') DEFAULT 'pendding' COMMENT '队列状态',  PRIMARY KEY (`queue_id`)) ENGINE=MyISAM DEFAULT CHARSET=utf8
+    CREATE TABLE `queue` (
+
+`queue_id` varchar\(16\) NOT NULL COMMENT '队列ID',  
+  `app` varchar\(25\) DEFAULT NULL COMMENT 'APP',  
+  `createtime` datetime DEFAULT NULL COMMENT '创建时间',  
+  `committime` datetime DEFAULT NULL COMMENT '提交时间',  
+  `status` enum\('pendding','running','stoped'\) DEFAULT 'pendding' COMMENT '队列状态',  
+  PRIMARY KEY \(`queue_id`\)  
+\) ENGINE=MyISAM DEFAULT CHARSET=utf8
 
 ##### task\_list表
 
-    2
-
-##### lock\_queue存储过程：
-
-    DELIMITER $$
-
-    CREATE DEFINER=`mysql`@`%` PROCEDURE `lock_queue`(IN T VARCHAR(16))
-        BEGIN
-                CREATE TEMPORARY TABLE locktmp (
-                         `id` VARCHAR(16) DEFAULT NULL COMMENT '队列ID'
-                        ) ENGINE=MEMORY DEFAULT CHARSET=utf8;
-                INSERT INTO locktmp
-
-                SELECT id FROM task_queue WHERE flag = 1  AND call_id IS NULL AND depend_tq_id IS NULL 
-                UNION ALL 
-                (SELECT c.id FROM(
-                SELECT a.id,b.call_id,b.flag FROM 
-                (SELECT * FROM task_queue WHERE flag = 1 AND call_id IS NULL AND  depend_tq_id IS NOT NULL) AS a
-                LEFT JOIN task_queue b ON a.depend_tq_id =b.id
-                WHERE b.call_id IS NOT NULL AND b.flag = 2) c
-                );
-
-                UPDATE `task_queue` SET call_id =T WHERE `id` IN( SELECT * FROM locktmp );
-                DROP TEMPORARY TABLE locktmp;
-        END$$
-
-    DELIMITER ;
+    1
 
 ## 组件服务
 
