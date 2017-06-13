@@ -2,9 +2,23 @@
 
 queue组件是elves的队列任务组件，可以管理elves的队列任务，根据队列任务内容向scheduler发起任务，队列使用MqSQL实现。
 
+![](/assets/queue-flow.png)
+
+## 编译及安装
+
+```
+wget elves-agent-x.x.x-linux.zip
+cd ./elves-queue/bin
+```
+
+```
+mvn package
+./control start
+```
+
 ## 数据库
 
-queue模块计划任务的存储使用mqsql实现，下面是SQL语句。
+queue模块计划任务的存储使用mysql实现，下面是SQL语句。
 
 ##### queue表：
 
@@ -41,7 +55,6 @@ queue模块计划任务的存储使用mqsql实现，下面是SQL语句。
       PRIMARY KEY (`task_id`),
       KEY `queue_id` (`queue_id`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='队列任务表'
-
 
 ## 组件服务
 
@@ -280,17 +293,7 @@ jdbc.username=mysql
 jdbc.password=mysql
 ```
 
-## 组件构建
-
-```
-cd ./elves-queue/bin
-mvn package
-./control start
-```
-
-```
-
-```
+## 
 
 
 
