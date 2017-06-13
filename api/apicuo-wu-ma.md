@@ -82,6 +82,7 @@ Supervisor组件业务相关错误
 | **Code** | **Value** | **解释** |
 | :--- | :--- | :--- |
 | 413.1 | AuthId Not Found | 未找到此AuthID |
+| 413.2 | App Not Found | 未找到此App |
 
 ### 414 Heartbeat Error
 
