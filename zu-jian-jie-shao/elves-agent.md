@@ -130,7 +130,25 @@ Develop Tools ：开发面板，下面会详细讲述一下
 
 Agent端默认 内置计划任务，使用Agent端调用的计划任务信息将不反馈至Elves-Center，agent-cron的配置文件位置为./elves-agent/conf/cron.json
 
-    s
+```
+{
+    "QWASZXCVDFERTYGH": {                       #CRON的ID，可以自定义，但不可以重复
+        "Flag": "true",                         #CRON状态，true/false
+        "Comment": "this is a test!",           #CRON注释
+        "App": "apptest",                       #CRON调用的APP
+        "Func": "helloword",                    #CRON调用的APP FUNC
+        "Param": {                              #CRON调用的APP FUNC PARAM
+            "my":"hello toryzen!"
+        },
+        "Timeout": 0,                           #CRON调用的APP超时时间
+        "Proxy": "python|app-worker.py",        #CRON调用的APPPROXY
+        "Mode": "P",                            #CRON调用的APP MODE
+        "Rule": "*/15 * * * * *"                #CRON RULE
+    }
+}
+```
+
+cron rule 请参考 https://github.com/jakecoffman/cron
 
 # **安全性**
 
