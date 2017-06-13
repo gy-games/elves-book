@@ -22,8 +22,9 @@ github.com/snluu/uuid                        #UUID生成
 ```
 cd elves-agent
 go get ./...
-chmod +x control
-./control build
+
+chmod +x control && ./control build    #linux
+control.cmd build                      #windows
 ```
 
 ## 配置
