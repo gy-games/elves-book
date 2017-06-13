@@ -71,7 +71,9 @@ Scheduler组件业务相关错误
 
 | **Code** | **Value** | **解释** |
 | :--- | :--- | :--- |
-|  |  |  |
+| 412.1 | Queue Not Found | 队列未找到 |
+| 412.2 | Queue Status Incorrect | 队列状态不正确 |
+| 412.3 | Stop Task Error | 任务停止失败 |
 
 ### 413 Supervisor Error
 
