@@ -25,7 +25,7 @@ mq.ip       = 10.0.101.100                                       #RabbitMQ IP
 mq.port     = 5672                                               #RabbitMQ 端口
 mq.user     = admin                                              #RABBITMQ 账号
 mq.password = 1234567890                                         #RABBITMQ 密码
-mq.exchange = elves                                              #Exchange 名称  
+mq.exchange = elves                                              #Exchange 名称
 ```
 
 ## Thrift 服务
@@ -145,8 +145,6 @@ scheduler与其它模块通讯使用rabbitmq实现，这里提供scheduler作为
 | :--- | :--- | :--- | :--- |
 | queue | taskResult | cast | 发送队列任务处理结果 |
 | cron | cronResult | cast | 发送计划任务处理结果 |
-
-
 
 
 
