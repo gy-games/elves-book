@@ -1,6 +1,6 @@
 # 介绍
 
-Elves为一套自动化运维开发平台\(IT Automatic Develop Platform\)，其致力于为运维研发人员提供便捷的运维自动化业务编程实现环境， Elves自身不提供业务性功能，运维开发人员可根据自身的业务进行应用\(APP\)的开发来实现相应业务的自动化管理。
+Elves为一套自动化运维开发平台\(IT Automatic Develop Platform\)，面向开发，注重以编程实现运维自动化，致力于为运维研发人员提供便捷的运维自动化业务编程实现环境， Elves自身不提供业务性功能，运维开发人员可根据自身的业务进行应用\(APP\)的开发来实现相应业务的自动化管理。
 
 # 特性
 
@@ -16,7 +16,7 @@ Elves为一套自动化运维开发平台\(IT Automatic Develop Platform\)，其
 
 # 架构![](/assets/arc.jpg)
 
-Elves逻辑上以三大核心组成，分别为"Elves-Center"，"Elves-Agent"，"Elves-Apps"
+Elves逻辑上以三大核心组成，分别为"**Elves-Center**"，"**Elves-Agent**"，"**Elves-Apps**"
 
 # Elves-Apps
 
@@ -72,7 +72,7 @@ Elves-Center简单点说就是Elves的Server端，我们采用微服务为整个
 
 ## OpenAPI
 
-API：提供以RESTfulAPI方式操作Elves的各项接口
+API：提供HTTP RESTfulAPI方式操作Elves的各项接口
 
 ## \*CMDBProxy
 
