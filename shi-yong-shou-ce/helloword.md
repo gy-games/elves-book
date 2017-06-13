@@ -46,11 +46,9 @@
 
 * app输入 apptest , func输入helloword , param输入{"my":"toryzen"} ,点击"Generate"，再点击"Run Test"，获取 APP Worker 执行后结果
 
-![](/assets/develop-pannel-1.png)![](/assets/develop-pannel-2.png)
+### ![](/assets/develop-pannel-1.png)![](/assets/develop-pannel-2.png)3.2 计划任务\(Cron\)调试Worker
 
-### 3.2 计划任务\(Cron\)调试Worker
-
-* 启动Elves-Agent
+* ### 启动Elves-Agent
 * 打开elves-agent目录下的conf/cron.json
 * 填写相关信息，Mode采用NP模式，并保存corn.json，Worker即开始按照Rule进行执行
 
@@ -62,7 +60,7 @@
 * 打开elves-agent目录下的conf/cron.json
 * 填写相关信息，Mode采用P模式，并保存corn.json，Worker即开始按照Rule进行执行
 
-### 
+计划任务配置参考 [3.8 Elves-Agent](/zu-jian-jie-shao/elves-agent.md) \(Agent Cron Task\)
 
 
 
