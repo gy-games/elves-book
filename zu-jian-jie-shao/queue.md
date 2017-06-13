@@ -69,7 +69,7 @@ status : 查看elves-queue的运行状态
 
 ## Mysql数据库结构
 
-queue模块计划任务的存储使用mysql实现，下面是数据库结构。
+queue模块计划任务的存储使用mysql实现，数据库结构如下:
 
 ##### queue表：
 
@@ -109,7 +109,7 @@ queue模块计划任务的存储使用mysql实现，下面是数据库结构。
 
 ## 组件服务
 
-queue模块主要对openapi模块提供队列任务的操作接口，具体如下：
+queue模块主要对elves提供队列任务的操作接口，具体如下：
 
 **RoutingKey : \*.queue**
 
