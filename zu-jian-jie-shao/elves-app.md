@@ -59,8 +59,6 @@ Processor的实践用法很多，例如实现一款C/S架构的APP或者实现�
     └─appcfg.json         #app 配置文件
 ```
 
-
-
 配置文件中定义了Processor的地址及端口以及超时设置，且必须保证其两者间的互通性。
 
 以Python为例，Processor的处理逻辑在./service/servce.py中
