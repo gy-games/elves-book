@@ -27,8 +27,7 @@ GET|POST /api/v2/cron/stop
 ```
 {
     "flag": "true",
-    "error": "",
-    "result":""
+    "error": ""
 }
 ```
 

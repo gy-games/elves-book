@@ -27,8 +27,7 @@ GET|POST /api/v2/cron/delete
 ```
 {
     "flag": "true",
-    "error": "",
-    "result":""
+    "error": ""
 }
 ```
 
