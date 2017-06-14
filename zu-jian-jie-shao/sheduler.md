@@ -118,7 +118,7 @@ scheduler与其它模块通讯使用rabbitmq实现，这里提供scheduler作为
 }
 ```
 
-#### AsyncJob
+#### asyncJob
 
 ```
 接收消息：
