@@ -27,8 +27,7 @@ GET|POST /api/v2/queue/commit
 ```
 {
     "flag": "true",
-    "error": "",
-    "result":""
+    "error": ""
 }
 ```
 

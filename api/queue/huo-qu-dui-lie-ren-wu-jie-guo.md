@@ -56,7 +56,7 @@ GET|POST /api/v2/queue/result
             "error": "",
             "id": "CF0EE718FCC41302",
             "worker_flag": "",
-            "worker_message": "word!",
+            "worker_message": "",
             "worker_costtime": ""
         }
     }
