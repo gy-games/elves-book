@@ -48,6 +48,8 @@
 | 403.4 | Request Params \(mode\) Illegal | mode参数不合法 |
 | 403.5 | Request Params \(cron-rule\) Illegal | cron-rule参数 |
 | 403.6 | Request Params \(queue\_id\) Illegal | queue\_id参数不合法 |
+| 403.7 | Request Params \(func\) Illegal | func参数合法（整型） |
+| 403.8 | Request Params \(timeout\) Illegak | timeout参数合法 |
 
 ### 410 Scheduler Error
 
