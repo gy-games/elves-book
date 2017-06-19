@@ -11,7 +11,7 @@ GET|POST /api/v2/queue/addtask
 ## 请求及参数
 
 ```
-/v2/queue/addtask?queue_id={queue_id}&ip={ip}&func={func}&param={param}&timeout={timeout}&proxy={proxy}&depend_task_id={depend_task_id}&app={app}&auth_id={auth_id}&timestamp={timestamp}&sign_type={sign_type}&sign={sign}
+/v2/queue/addtask?queue_id={queue_id}&ip={ip}&func={func}&param={param}&timeout={timeout}&proxy={proxy}&depend_task_id={depend_task_id}&auth_id={auth_id}&timestamp={timestamp}&sign_type={sign_type}&sign={sign}
 ```
 
 | **字段** | **必填否** | **类型** | **注释** |
@@ -25,7 +25,6 @@ GET|POST /api/v2/queue/addtask
 | mode | 选填 | string enum\(NP,P\) | 模式，NP不反馈至用户Processor,P反馈至用户Processor，默认为NP |
 | depend\_task\_id | 选填 | string | 依赖的任务项ID |
 | auth\_id | 必填 | string | AuthID |
-| app | 必填 | string | app名称 |
 | timestamp | 必填 | int | 当前时间戳 |
 | sign\_type | 必填 | string enum\(md5\) | 签名类型 |
 | sign | 必填 | string | 签名 |

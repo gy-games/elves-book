@@ -40,7 +40,7 @@ GET|POST /api/v2/queue/result
             "worker_costtime": "74"
         },
         "AF0EE718FCC41301": {
-            "status":"execing",
+            "status":"running",
             "depend_task_id":"BF0EE718FCC41307",
             "flag": "",
             "error": "",
