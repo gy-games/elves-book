@@ -43,23 +43,17 @@ thrift.outTime=30000                                             #thrif连接超
 
 ## 脚本参数
 
-  ** ./control**
+** ./control**
 
 ```
-build|pack|install|start|stop|restart|status|tail|uninstall
+build|start|stop|restart|status
 
-build : 运行后将执行go build , 最终构建成 bin\elves-agent , 构建前先go get ./... 解决依赖问题
-pack  : 运行后会将二进制文件打包成一个tar.gz的包，可用于其他机器的直接部署
-install : 执行后会将elves-agent追加入/etc/rc.local
-start : 以nohup形式启动elves-agent
-stop : 关闭elves-agent
+build : 运行后将执行mvn pakcge , 最终构建成 bin\scheduler 
+start : 以nohup形式启动elves-{module}
+stop : 关闭elves-{module}
 restart : 执行 stop & start
-status : 查看elves-agent的运行状态
-tail : 可以直接以tail方式查看elves-agent日志
-uninstall : 运行后将删除/etc/rc.local下的elves-agent启动项
+status : 查看elves-{module}的运行状态
 ```
-
-
 
 ## Thrift 服务
 
