@@ -34,7 +34,6 @@ mq.user     = admin                                              #RABBITMQ 账�
 mq.password =                                                    #RABBITMQ 密码
 mq.exchange = elves                                              #Exchange 名称
 
-
 #thrift server config
 thrift.scheduler.port=10101                                      #schduler服务端口
 thrift.agent.port=11101                                          #agent服务端口

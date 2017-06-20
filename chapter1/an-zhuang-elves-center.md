@@ -9,8 +9,13 @@ Elves-Center可以根据自身的情况进行筛选部署，理论上Elves-Cente
 ### 二进制安装
 
 * 下载适合操作系统的二进制安装包并解压
-* queue,cron模块需要将SQL文件导入MySQL
+
+* queue,cron模块需要将SQL文件（database.sql）导入MySQL
+
+* 复制配置文件 mv conf/conf.properties.example conf/conf.properties
+
 * 修改配置文件./conf/conf.properties （详见各组件介绍 ）
+
 * 执行chmod +x ./control 设置执行权限
 
 * 执行./control start 启动scheduler
@@ -20,10 +25,15 @@ Elves-Center可以根据自身的情况进行筛选部署，理论上Elves-Cente
 ### 编译安装
 
 * 下载源码包或 git clone  源码包
-* 执行 mvn package 编译源码
+
+* 执行 chmod +x ./control &&  ./control build   编译源码
+
+* 复制配置文件 mv conf/conf.properties.example conf/conf.properties 
+
 * 修改配置文件./conf/conf.properties （详见各组件介绍 ）
-* 执行chmod +x ./control 设置执行权限
+
 * 执行./control start 启动scheduler
+
 * 执行./control status 查看运行状态
 
 # openapi & supervisor
@@ -31,10 +41,15 @@ Elves-Center可以根据自身的情况进行筛选部署，理论上Elves-Cente
 ### 编译安装
 
 * 下载源码包或 git clone源码包
-* supervisor需要将SQL文件导入MySQL
-* 修改 ./src/main/resources/conf.properties （详见各组件介绍 ）
+
+* supervisor需要将SQL文件（database.sql）导入MySQL
+
+* 修改 resources/conf.properties （详见各组件介绍 ）
+
 * 执行 mvn package 编译源码
+
 * 获取编译后的War包
+
 * 部署至Tomcat
 
 ---
