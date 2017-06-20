@@ -1,21 +1,43 @@
 # Supervisor
 
-supervisor组件负责elves的APP管理与权限管理，提供web管理端提供这些数据 管理。
+supervisor组件负责elves的APP管理与权限管理，提供web管理端提供这些数据 管理。supervisor为WEB项目，推荐部署至Tomcat容器下。
 
-## 数据库
+## 修改配置
+
+**./elves-supervisor-web/src/main/resources/conf.properties**
+
+```
+#Zookeeper Config
+zookeeper.host=127.0.0.1                 #Zookeeper地址
+zookeeper.outTime=10000                  #Zookeeper超时时间      
+zookeeper.root=/elves                    #Zookeeper超时时间
+
+#MQ Basic Config
+mq.ip       = 127.0.0.1                  #RabbitMQ IP
+mq.port     = 5672                       #RabbitMQ 端口
+mq.user     = admin                      #RABBITMQ 账号
+mq.password =                            #RABBITMQ 密码      
+mq.exchange = elves                      #RABBITMQ 密码
+
+#FTP adress config
+ftp.res.ip=http://127.0.0.1              #存储app安装包的FTP地址
+ftp.res.user=admin                       #FTP帐号
+ftp.res.pass=admin                       #FTP密码
+```
+
+## 组件构建
+
+```
+cd ./elves-supervisor
+mvn package
+cp ./elves-supervisor/ROOT.war {Tomcat目录}
+{start Tomcat}
+{访问:http://ip:port}
+```
+
+## Mysql数据结构
 
 supervisor的权限管理和APP管理依赖mqsql数据库，下面是数据库SQL。
-
-    CREATE TABLE `auth_key` (
-      `auth_id` varchar(16) NOT NULL COMMENT '权限ID',
-      `auth_key` varchar(16) NOT NULL COMMENT '权限key',
-      `auth_name` varchar(20) NOT NULL COMMENT '名称',
-      `create_time` datetime NOT NULL COMMENT '创建时间',
-      `update_time` datetime NOT NULL COMMENT '权限修改时间',
-      PRIMARY KEY (`auth_id`)
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='权限表'
-
-
 
     CREATE TABLE `app` (
       `app_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键ID',
@@ -23,11 +45,52 @@ supervisor的权限管理和APP管理依赖mqsql数据库，下面是数据库SQ
       `app_name` varchar(30) NOT NULL COMMENT 'app名称',
       `founder` varchar(20) NOT NULL COMMENT '创建者',
       `create_time` datetime NOT NULL COMMENT '创建时间',
+      `update_time` datetime DEFAULT NULL COMMENT '最后更新时间',
       `version_id` int(11) DEFAULT NULL COMMENT '当前版本id',
-      `processor_ip` varchar(15) DEFAULT NULL COMMENT 'processor的ip',
-      `processor_port` int(11) DEFAULT NULL COMMENT 'processor的port',
       PRIMARY KEY (`app_id`)
-    ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='应用信息表'
+    ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='应用信息表';
+
+    CREATE TABLE `app_agent` (
+      `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键ID',
+      `app_id` int(11) NOT NULL COMMENT 'app主键ID',
+      `ip` varchar(20) NOT NULL COMMENT 'ip',
+      `asset_id` varchar(20) NOT NULL COMMENT '资产ID',
+      PRIMARY KEY (`id`)
+    ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='app绑定的agent列表';
+
+    CREATE TABLE `app_version` (
+      `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键ID',
+      `version` varchar(30) NOT NULL COMMENT '版本号',
+      `operator` varchar(20) NOT NULL COMMENT '创建人',
+      `create_time` datetime NOT NULL COMMENT '版本创建时间',
+      `app_id` int(11) NOT NULL COMMENT 'app主键ID',
+      PRIMARY KEY (`id`)
+    ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='app版本信息表';
+
+    CREATE TABLE `auth_key` (
+      `auth_id` varchar(16) NOT NULL COMMENT '权限ID',
+      `auth_key` varchar(16) NOT NULL COMMENT '权限key',
+      `auth_name` varchar(20) NOT NULL COMMENT '名称',
+      `create_time` datetime NOT NULL COMMENT '创建时间',
+      `app_id` int(11) NOT NULL COMMENT 'auth_id绑定的app_id',
+      PRIMARY KEY (`auth_id`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='权限表';
+
+    CREATE TABLE `user` (
+      `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键ID',
+      `email` varchar(40) NOT NULL COMMENT '邮箱',
+      `password` varchar(40) NOT NULL COMMENT '密码',
+      `user_name` varchar(20) NOT NULL COMMENT '用户名',
+      `founder` varchar(20) NOT NULL COMMENT '创建人',
+      `create_time` datetime NOT NULL COMMENT '创建时间',
+      `update_time` datetime NOT NULL COMMENT '更新时间',
+      `last_login_time` datetime DEFAULT NULL COMMENT '最后登录时间',
+      `last_login_ip` varchar(15) DEFAULT NULL COMMENT '最后登录ip地址',
+      `login_times` int(11) DEFAULT '0' COMMENT '登录次数',
+      PRIMARY KEY (`id`)
+    ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='用户表';
+
+    insert  into `user`(`id`,`email`,`password`,`user_name`,`founder`,`create_time`,`update_time`,`last_login_time`,`last_login_ip`,`login_times`) values (1,'admin@gyyx.cn','21232f297a57a5a743894a0e4a801fc3','管理员','管理员','2017-06-19 18:12:28','2017-06-19 18:12:31','2017-06-20 16:21:21','127.0.0.1',0);
 
 ## 组件服务
 
@@ -39,14 +102,14 @@ supervisor作为权限模块，主要对外提供：APP和权限相关的数据�
 
 | **服务** | **类型** | **注解** |
 | :--- | :--- | :--- |
-| appAuthInfo | rpc.call | app信息和app绑定agent数据 |
-| getAuthKey | rpc.call | 通过authId获取authKey |
-| validateAuth | rpc.call | 权限验证（authId是否有该IP运行app的权限） |
-| appInfo | rpc.call | 获取authId管理的app数据 |
+| [appAuthInfo](#appauthinfo) | rpc.call | app信息和app绑定agent数据 |
+| [getAuthKey](#getauthkey) | rpc.call | 通过authId获取authKey |
+| [validateAuth](#validateauth) | rpc.call | 权限验证（authId是否有该IP运行app的权限） |
+| [appInfo](#appinfo) | rpc.call | 获取authId管理的app数据 |
 
 ### 服务提供详情
 
-##### appAuthInfo：
+##### appAuthInfo： {#appauthinfo}
 
 ```
 接收消息：
@@ -78,7 +141,7 @@ supervisor作为权限模块，主要对外提供：APP和权限相关的数据�
 }
 ```
 
-##### getAuthKey：
+##### getAuthKey： {#getauthkey}
 
 ```
 接收消息：
@@ -102,7 +165,7 @@ supervisor作为权限模块，主要对外提供：APP和权限相关的数据�
 }
 ```
 
-##### validateAuth：
+##### validateAuth： {#validateauth}
 
 ```
 接收消息：
@@ -128,7 +191,7 @@ supervisor作为权限模块，主要对外提供：APP和权限相关的数据�
 }
 ```
 
-##### appInfo：
+##### appInfo： {#appinfo}
 
 ```
 接收消息：
@@ -156,7 +219,7 @@ supervisor作为权限模块，主要对外提供：APP和权限相关的数据�
 }
 ```
 
-##### agentList：
+##### agentList： {#agentlist}
 
 ```
 接收消息：
@@ -184,64 +247,21 @@ supervisor作为权限模块，主要对外提供：APP和权限相关的数据�
 }
 ```
 
-## 修改配置
-
-**./src/main/resource/conf.properties**
-
-```
-#Zookeeper Config
-#Zookeeper地址
-zookeeper.host=192.168.0.1
-#Zookeeper超时时间
-zookeeper.outTime=10000
-#Zookeeper ROOT地址        
-zookeeper.root=/elves  
-
-#MQ Basic Config
-#RabbitMQ IP
-mq.ip       = 192.168.0.1
-#RabbitMQ 端口
-mq.port     = 5672
-#RABBITMQ 账号
-mq.user     = admin
-#RABBITMQ 密码
-mq.password = 1234567890
-#Exchange 名称        
-mq.exchange = elves
-
-#FTP adress config
-ftp.res.ip=http://192.168.0.1
-ftp.res.user=admin
-ftp.res.pass=admin
-```
-
-## 组件构建
-
-```
-cd ./elves-supervisor
-mvn package
-cp ./elves-supervisor/ROOT.war {Tomcat目录}
-{start Tomcat}
-{访问:http://ip:port}
-```
-
 ## WEB功能说明
 
 ##### 登录
 
-默认帐号：admin
-
-默认密码：admin
+默认数据库导入 帐号：admin    ， 默认密码：admin
 
 ![](/supervisor-img/login.png)
 
-##### 密钥管理
+##### 密钥管理![](/assets/supervisor-authkey.png)
 
-##### App管理
+##### App管理![](/assets/supervisor-app.png)
 
-##### Agent数据
+##### Agent数据![](/assets/supervisor-agentlist.png)
 
-##### 用户权限
+##### 用户权限![](/assets/supervisor-manager.png)
 
 
 
