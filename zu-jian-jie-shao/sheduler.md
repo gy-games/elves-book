@@ -2,31 +2,64 @@
 
 elves的任务调度组件。   接收cron组件、queue组件、openapi组件发起的任务指令，调度转发到agent并回收任务处理结果，最后将结果返回给任务发起方。
 
-# 组件构建
+# 安装过程
+
+## 编译&安装
 
 ```
-cd ./elves-scheduler/bin
-mvn package
-./control start
+cd elves-scheduler
+chmod +x control
+./control build
 ```
 
-# 配置文件
+## 配置
 
-**./elves-scheduler/conf/conf.properties**
+```
+mv conf/conf.properties.example conf/conf.properties
+vim conf/conf.properties
+```
+
+**./conf/conf.properties**
 
 ```
 #Zookeeper Config
-zookeeper.host=10.0.101.1:2181,10.0.101.2:2181,10.0.101.3:2181   #Zookeeper地址
+zookeeper.host=127.0.0.1:2181   #Zookeeper地址
 zookeeper.outTime=10000                                          #Zookeeper超时时间
 zookeeper.root=/elves                                            #Zookeeper ROOT地址  
 
 #MQ Basic Config
-mq.ip       = 10.0.101.100                                       #RabbitMQ IP
+mq.ip       = 126.0.0.1                                          #RabbitMQ IP
 mq.port     = 5672                                               #RabbitMQ 端口
 mq.user     = admin                                              #RABBITMQ 账号
-mq.password = 1234567890                                         #RABBITMQ 密码
+mq.password =                                                    #RABBITMQ 密码
 mq.exchange = elves                                              #Exchange 名称
+
+
+#thrift server config
+thrift.scheduler.port=10101                                      #schduler服务端口
+thrift.agent.port=11101                                          #agent服务端口
+thrift.outTime=30000                                             #thrif连接超时时间
 ```
+
+## 脚本参数
+
+  ** ./control**
+
+```
+build|pack|install|start|stop|restart|status|tail|uninstall
+
+build : 运行后将执行go build , 最终构建成 bin\elves-agent , 构建前先go get ./... 解决依赖问题
+pack  : 运行后会将二进制文件打包成一个tar.gz的包，可用于其他机器的直接部署
+install : 执行后会将elves-agent追加入/etc/rc.local
+start : 以nohup形式启动elves-agent
+stop : 关闭elves-agent
+restart : 执行 stop & start
+status : 查看elves-agent的运行状态
+tail : 可以直接以tail方式查看elves-agent日志
+uninstall : 运行后将删除/etc/rc.local下的elves-agent启动项
+```
+
+
 
 ## Thrift 服务
 
