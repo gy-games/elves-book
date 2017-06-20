@@ -55,7 +55,7 @@ restart : 执行 stop & start
 status : 查看elves-{module}的运行状态
 ```
 
-## Thrift 服务
+## Thrift 通讯服务
 
 elves-scheduler 和elves-agent之间的通讯使用thrift实现，下面提供通讯thrift结构体和thrift服务：
 
