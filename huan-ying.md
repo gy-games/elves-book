@@ -10,7 +10,7 @@ Elves-Project 才刚刚起步，欢迎更多的人加入我们，共同见证其
 
 * [toryzen](http://toryzen.cn)
 * eastFu
-* [光宇游戏系统部](https://gy-games.github.io/)
+* 光宇游戏系统部
 
 ## 贡献列表
 
