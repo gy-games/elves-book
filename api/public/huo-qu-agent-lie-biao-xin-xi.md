@@ -37,7 +37,7 @@ GET|POST /api/v2/info/agents
 
 | **字段** | **类型** | **注释** |
 | :--- | :--- | :--- |
-| list ip | string | AGENT IP |
+| result | list&lt;string&gt; | AGENT IP 集合 |
 
 
 
