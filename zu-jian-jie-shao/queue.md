@@ -2,34 +2,36 @@
 
 queue组件是elves的队列任务组件，可以管理elves的队列任务，且队列任务支持任务间依赖，根据队列任务内容向scheduler发起异步任务。
 
-![](/assets/queue-flow.png)
+# 安装过程
 
-## 编译及安装
+## 编译
 
 ```
-wget {elves-queue.tar.gz}                     #选择合适的安装包
-tar -zxvf {elves-queue.tar.gz}                #解压安装包
-cd elves-queue                                #进入Elves-QUEUE目录
-vim conf/conf.properties                      #修改配置文件
-{./control|control.cmd build}                             #若为源码包可以进行构建，构建需要mvn环境                              
-./control|control.cmd start                               #启动elves-queue
+cd elves-scheduler
+chmod +x ./control
+./control build                                                 #二进制版本可以忽略编译过程
 ```
 
-## 配置文件
+## 配置
 
-**./elves-queue/conf/conf.properties**
+```
+mv conf/conf.properties.example conf/conf.properties            #复制配置文件
+vim conf/conf.properties                                        #编辑配置文件
+```
+
+**./conf/conf.properties**
 
 ```
 #Zookeeper Config
-zookeeper.host=192.168.0.1      #Zookeeper地址
+zookeeper.host=127.0.0.1        #Zookeeper地址
 zookeeper.outTime=10000         #Zookeeper超时时间
 zookeeper.root=/elves           #Zookeeper ROOT地址 
 
 #MQ Basic Config
-mq.ip       = 192.168.0.1       #RabbitMQ IP
+mq.ip       = 127.0.0.1         #RabbitMQ IP
 mq.port     = 5672              #RabbitMQ 端口
 mq.user     = admin             #RABBITMQ 账号
-mq.password = 1234567890        #RABBITMQ 密码
+mq.password =                   #RABBITMQ 密码
 mq.exchange = elves             #Exchange 名称  
 
 #jdbc conf
@@ -46,26 +48,23 @@ jdbc.password=mysql
 
 ## 脚本参数
 
-**Windows control.cmd**
+** ./control**
 
 ```
-"build|start"
+build|pack|start|stop|restart|status|version
 
-build : 运行后将执行mvn package , 最终构建成 bin\elves-queue-.x.x-release.jar 
-start : 以java -jar 方式启动elves-queue
-```
-
-**Linux ./control**
-
-```
-build|start|stop|status|restart
-
-build : 运行后将执行mvn package , 最终构建成 bin\elves-queue-.x.x-release.jar
-start : 以nohup java -jar形式启动elves-queue
-stop : 关闭elves-queue
+build   : 运行后将执行mvn pakcge , 最终构建成至 bin
+pack    : 将本模块打包(不包含配置文件与日志文件)
+start   : 以nohup形式启动elves-{module}
+stop    : 关闭elves-{module}
 restart : 执行 stop & start
-status : 查看elves-queue的运行状态
+status  : 查看elves-{module}的运行状态
+version : 查看当前模块的版本
 ```
+
+# 队列流程
+
+## ![](/assets/queue-flow.png)
 
 ## Mysql数据库结构
 
