@@ -4,19 +4,19 @@ elves的任务调度组件。   接收cron组件、queue组件、openapi组件�
 
 # 安装过程
 
-## 编译&安装
+## 编译
 
 ```
 cd elves-scheduler
-chmod +x control
-./control build
+chmod +x ./control
+./control build                                                 #二进制版本可以忽略编译过程
 ```
 
 ## 配置
 
 ```
-mv conf/conf.properties.example conf/conf.properties
-vim conf/conf.properties
+mv conf/conf.properties.example conf/conf.properties            #复制配置文件
+vim conf/conf.properties                                        #编辑配置文件
 ```
 
 **./conf/conf.properties**
