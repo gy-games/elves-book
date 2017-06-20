@@ -48,9 +48,23 @@ jdbc.username=mysql
 jdbc.password=mysql
 ```
 
-## 
+## 脚本参数
 
-## Quart介绍
+** ./control**
+
+```
+build|pack|start|stop|restart|status|version
+
+build   : 运行后将执行mvn pakcge , 最终构建成至 bin
+pack    : 将本模块打包(不包含配置文件与日志文件)
+start   : 以nohup形式启动elves-{module}
+stop    : 关闭elves-{module}
+restart : 执行 stop & start
+status  : 查看elves-{module}的运行状态
+version : 查看当前模块的版本
+```
+
+## 组件-Quart介绍
 
 cron 组件,各种计划任务的调度基于Quart框架实现（官方网站：[http://www.quartz-scheduler.org]()）
 
@@ -301,7 +315,7 @@ cron模块主要对openapi模块提供计划任务的操作接口，具体如下
 }
 ```
 
-## 
+
 
 
 
