@@ -2,6 +2,54 @@
 
 cron 组件 是 elves计划任务功能模块，基于Quartz框架实现的。 实现了elves 计划任务的添加和删除，根据计划任务内容定时向scheduler模块发起任务。
 
+# 安装过程
+
+## 编译
+
+```
+cd elves-scheduler
+chmod +x ./control
+./control build                                                 #二进制版本可以忽略编译过程
+```
+
+## 配置
+
+```
+mv conf/conf.properties.example conf/conf.properties            #复制配置文件
+vim conf/conf.properties                                        #编辑配置文件
+```
+
+**./conf/conf.properties**
+
+```
+#Zookeeper Config
+zookeeper.host=127.0.0.1                #Zookeeper地址
+zookeeper.outTime=10000                 #Zookeeper超时时间        
+zookeeper.root=/elves                   #Zookeeper ROOT地址
+
+#MQ Basic Config
+
+mq.ip       = 127.0.0.1                 #RabbitMQ IP
+mq.port     = 5672                      #RabbitMQ 端口
+mq.user     = admin                     #RABBITMQ 账号
+mq.password =                           #RABBITMQ 密码       
+mq.exchange = elves                     #Exchange 名称 
+
+
+#jdbc conf
+jdbc.type=mysql
+jdbc.driver=com.mysql.jdbc.Driver
+jdbc.pool.init=1
+jdbc.pool.minIdle=3
+jdbc.pool.maxActive=20
+jdbc.testSql=SELECT 'x' FROM DUAL
+jdbc.url=jdbc\:mysql\://127.0.0.1\:3306/elves_cron?characterEncoding=UTF-8&amp;useOldAliasMetadataBehavior=true&amp;zeroDateTimeBehavior=convertToNull
+jdbc.username=mysql
+jdbc.password=mysql
+```
+
+## 
+
 ## Quart介绍
 
 cron 组件,各种计划任务的调度基于Quart框架实现（官方网站：[http://www.quartz-scheduler.org]()）
@@ -253,51 +301,7 @@ cron模块主要对openapi模块提供计划任务的操作接口，具体如下
 }
 ```
 
-## 修改配置
-
-**./elves-cron/conf/conf.properties**
-
-```
-#Zookeeper Config
-#Zookeeper地址
-zookeeper.host=192.168.0.1
-#Zookeeper超时时间
-zookeeper.outTime=10000
-#Zookeeper ROOT地址        
-zookeeper.root=/elves  
-
-#MQ Basic Config
-#RabbitMQ IP
-mq.ip       = 192.168.0.1
-#RabbitMQ 端口
-mq.port     = 5672
-#RABBITMQ 账号
-mq.user     = admin
-#RABBITMQ 密码
-mq.password = 1234567890
-#Exchange 名称        
-mq.exchange = elves
-
-
-#jdbc conf
-jdbc.type=mysql
-jdbc.driver=com.mysql.jdbc.Driver
-jdbc.pool.init=1
-jdbc.pool.minIdle=3
-jdbc.pool.maxActive=20
-jdbc.testSql=SELECT 'x' FROM DUAL
-jdbc.url=jdbc\:mysql\://192.168.0.1\:3306/elves_cron?characterEncoding=UTF-8&amp;useOldAliasMetadataBehavior=true&amp;zeroDateTimeBehavior=convertToNull
-jdbc.username=mysql
-jdbc.password=mysql
-```
-
-## 组件构建
-
-```
-cd ./elves-cron/bin
-mvn package
-./control start
-```
+## 
 
 
 

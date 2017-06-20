@@ -46,13 +46,15 @@ thrift.outTime=30000                                             #thrif连接超
 ** ./control**
 
 ```
-build|start|stop|restart|status
+build|pack|start|stop|restart|status|version
 
-build : 运行后将执行mvn pakcge , 最终构建成 bin\scheduler 
-start : 以nohup形式启动elves-{module}
-stop : 关闭elves-{module}
+build   : 运行后将执行mvn pakcge , 最终构建成至 bin
+pack    : 将本模块打包(不包含配置文件与日志文件)
+start   : 以nohup形式启动elves-{module}
+stop    : 关闭elves-{module}
 restart : 执行 stop & start
-status : 查看elves-{module}的运行状态
+status  : 查看elves-{module}的运行状态
+version : 查看当前模块的版本
 ```
 
 ## Thrift 通讯服务
