@@ -8,9 +8,9 @@ Elves-Project 才刚刚起步，欢迎更多的人加入我们，共同见证其
 
 ## 作者列表
 
-* [toryzen](http://torblog.sinaapp.com/)
+* [toryzen](http://toryzen.cn)
 * eastFu
-* 光宇游戏系统部
+* [光宇游戏系统部](https://gy-games.github.io/)
 
 ## 贡献列表
 
