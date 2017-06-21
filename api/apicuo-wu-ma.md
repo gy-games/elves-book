@@ -18,7 +18,7 @@
 
 | **Code** | **Value** | **解释** |
 | :--- | :--- | :--- |
-| 401.1 | Unauthorized Missing Sign Param | 权限认证参数有误 |
+| 401.1 | Unauthorized Missing Sign Param | 缺少权限认证参数\(timestamp,signType,sign,authId\) |
 | 401.2 | Unauthorized AuthId Is Illegal | AuthID时间超时 |
 | 401.3 | Unauthorized SignType Is Illegal | 签名类型不合法 |
 | 401.4 | Unauthorized Sign Length Is Illegal | 签名长度不合法 |
