@@ -25,6 +25,7 @@
 | 401.5 | Unauthorized Sign Error | 签名错误 |
 | 401.6 | Unauthorized AuthId Permission Denied | AuthID没有操作权限 |
 | 401.7 | Unauthorized Sign Timeout | 时间戳超时 |
+| 401.8 | Unauthorized Timestamp Is Illegal | 非法时间戳 |
 
 ### 402 Require Module Not Enabled 所需组件未启用
 
@@ -44,12 +45,13 @@
 | :--- | :--- | :--- |
 | 403.1 | Request Params \(ip\) Illegal | IP参数不合法 |
 | 403.2 | Request Params \(param\) Illegal | param参数不合法 |
-| 403.3 | Request Params \(app\) Illegal | app不合法 |
+| 403.3 | Request Params \(app\) Illegal | app或func不合法 |
 | 403.4 | Request Params \(mode\) Illegal | mode参数不合法 |
 | 403.5 | Request Params \(cron-rule\) Illegal | cron-rule参数 |
 | 403.6 | Request Params \(queue\_id\) Illegal | queue\_id参数不合法 |
-| 403.7 | Request Params \(func\) Illegal | func参数合法（整型） |
-| 403.8 | Request Params \(timeout\) Illegak | timeout参数合法 |
+| 403.7 | Request Params \(func\) Illegal | func参数不合法，验证空值 |
+| 403.8 | Request Params \(timeout\) Illegal | timeout参数不合法，验证数字类型 |
+| 403.9 | Request Params\(cron\_id\)Illegal | CronID参数不合法，验证16位长度 |
 
 ### 410 Scheduler Error
 
