@@ -35,7 +35,8 @@ GET|POST /api/v2/queue/qksqueue
     "flag": "true",
     "error": "",
     "result":{
-        "id":"12d6af3b2e5d4c2e"
+        "id":"12d6af3b2e5d4c2e",
+        "task_id":"2346af3b2e5d4ca1"
     }
 }
 ```
@@ -44,7 +45,8 @@ GET|POST /api/v2/queue/qksqueue
 
 | **字段** | **类型** | **注释** |
 | :--- | :--- | :--- |
-| queue\_id | string | 队列 ID |
+| id | string | 队列 ID |
+| task\_id | string | 单任务ID |
 
 
 
