@@ -7,7 +7,6 @@ Elves整体采用C/S架构设计，Elves-Agent即为Client，运行在所有被�
 ```
 github.com/cihub/seelog                      #日志处理
 github.com/toolkits/file                     #文件处理
-github.com/go-fsnotify/fsnotify              #文件钩子监听
 github.com/jakecoffman/cron                  #定时任务
 git.apache.org/thrift.git/lib/go/thrift      #thrift服务
 github.com/snluu/uuid                        #UUID生成
