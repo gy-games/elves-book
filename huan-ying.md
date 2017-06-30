@@ -26,5 +26,7 @@ QQ群：69748845
 
 [![](http://www.gyyxol.cn/images/logo.png)](http://www.gyyxol.cn)
 
+---
 
+_如果您在使用Elves，那么可以修改_[_ huan-ying.md_](https://github.com/gy-games/elves-book/blob/master/huan-ying.md)_ , 然后提交pull-request到gy-games/elves-book，等待merge过后，即可在这里显示。_
 
