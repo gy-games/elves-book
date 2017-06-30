@@ -4,7 +4,7 @@
 
 Elves-Project 才刚刚起步，欢迎更多的人加入我们，共同见证其成长！
 
-QQ群：
+QQ群：69748845
 
 ---
 
@@ -19,6 +19,12 @@ QQ群：
 * Zhangguangxin
 * Liyong
 * Xiehuanhuan
+
+---
+
+## Who Uses Elves
+
+[![](http://www.gyyxol.cn/images/logo.png)](http://www.gyyxol.cn)
 
 
 
