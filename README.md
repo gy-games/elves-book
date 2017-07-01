@@ -6,7 +6,7 @@ Elves为一套 开源自动化运维开发平台\(IT Automatic Develop Platform\
 
 灵活的业务\(App\)编程设计：Elves主要面向运维开发人员，以编程方式实现某业务的自动化操作，Elves与用户间交互以RESTful方式进行，与Apps间交互以进程调用方式进行，理论上支持所有的编程语言，目前Elves提供Python与C\#版开发SDK
 
-任务模式：Elves提供[及时任务](/shi-yong-shou-ce/ren-wu-mo-shi.md)\(同步\)，[队列任务](/shi-yong-shou-ce/ren-wu-mo-shi.md)\(异步,支持依赖\)，[计划任务](/shi-yong-shou-ce/ren-wu-mo-shi.md)\(异步\) 三种任务调度模式，且允许开发者直接将App-worker的执行结果直接反馈至App-processor，以构建C/S架构服务
+任务模式：Elves提供及时任务\(同步\)，队列任务\(异步,支持依赖\)，计划任务\(异步\) 三种任务调度模式，且允许开发者直接将App-worker的执行结果直接反馈至App-processor，以构建C/S架构服务
 
 高可用与高性能：在Elves的设计中各组件为可拔插形式，且极大程度的降低各组件间依赖关系，几乎所有组件均可以独立使用与集群部署
 
@@ -42,7 +42,7 @@ Apps的便捷开发为整个系统的核心关注点，Elves-App分为两部分�
 
 APP的执行后需要返回两个执行结构，分别为flag与result，均为string类型，flag为枚举:true,false用于确定app的执行状态，result为执行反馈结果。
 
-若想获取反馈结果可以通过Elves API或者实现一个Processor直接由Agent端主动反馈，Processor的实现也非常简单，可以在后续的使用手册中查看。[4.1调试HelloWork示例](/shi-yong-shou-ce/helloword.md)
+若想获取反馈结果可以通过Elves API或者实现一个Processor直接由Agent端主动反馈，Processor的实现也非常简单，可以在后续的使用手册中查看。\([调试HelloWork示例](/dev/helloword.md)\)
 
 # Elves-Center
 
