@@ -3,22 +3,22 @@
 接口签名是对请求的所有参数进行一个摘要计算以防止伪造请求的方法，对于以下的请求：
 
 ```
-http://host:port/foo/bar/?key2=value2&key1=value1&timestamp=1234567890
+http://host:port/foo/bar?key2=value2&key1=value1&timestamp=1234567890
 ```
 
 经过签名计算后的请求如下：
 
 ```
-http://host:port/foo/bar/?key2=value2&key1=value1&auth_id=x&timestamp=1234567890&sign_type=MD5&sign=fb316e29172065a840090ddc759f4dff
+http://host:port/foo/bar?key2=value2&key1=value1&auth_id=x&timestamp=1234567890&sign_type=MD5&sign=fb316e29172065a840090ddc759f4dff
 ```
 
-**签名的计算方法为：                  
+**签名的计算方法为：                    
 **
 
-1. 生成待签名字符串 将 Uri 的 Path 部分（在本例中为："/foo/bar/"），与接口指定的 Uri 参数对（通常为除 sign 和 sign\_type 外的所有参数，则在本例中为"key2=value2", "key1=value1", "timestamp=1234567890"）经过字母顺序排序后以“&”连接的字符串通过“?”进行拼接进行拼接，生成最终带签名字符串，即本例中结果（signString）为：
+1. 生成待签名字符串 将 Uri 的 Path 部分（在本例中为："/foo/bar"），与接口指定的 Uri 参数对（通常为除 sign 和 sign\_type 外的所有参数，则在本例中为"key2=value2", "key1=value1", "timestamp=1234567890"）经过字母顺序排序后以“&”连接的字符串通过“?”进行拼接进行拼接，生成最终带签名字符串，即本例中结果（signString）为：
 
    ```
-   /foo/bar/?auth_id=x&key1=value1&key2=value2&timestamp=1234567890
+   /foo/bar?key1=value1&key2=value2&timestamp=1234567890
    ```
 
 2. 对待签名字符串进行签名计算 使用在 sign\_type 中指定的签名算法计算后，赋值给 sign 参数。在进行签名计算时，应使用待签名字符串的UTF-8编码字节。
@@ -26,7 +26,7 @@ http://host:port/foo/bar/?key2=value2&key1=value1&auth_id=x&timestamp=1234567890
 如：在使用 MD5 算法进行签名时，待签名字符串后应当拼接双方约定好的私钥，之后对拼接后的待签名字符串进行摘要计算（MD5\(signString+key\)），即本例中若密钥为“testkey”，待计算MD5的字符串为：
 
 ```
-   /foo/bar/?auth_id=x&key1=value1&key2=value2&timestamp=1234567890testkey
+   /foo/bar?key1=value1&key2=value2&timestamp=1234567890testkey
 ```
 
 将计算出来的签名 sign 及 sign\_type 与原参数拼接后，最后生成的URI则将如文首所示；
