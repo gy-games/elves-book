@@ -253,7 +253,7 @@ supervisor作为权限模块，主要对外提供：APP和权限相关的数据�
 
 默认数据库导入 帐号：admin    ， 默认密码：admin
 
-![](/supervisor-img/login.png)
+![](/assets/supervisor-login.png)
 
 ##### 密钥管理![](/assets/supervisor-authkey.png)
 
