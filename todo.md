@@ -18,7 +18,7 @@
 
 ## HeartBeat
 
-
+Agent在线数据写入到zookeeper /heartbeat节点中，避免出现单点问题，后期HeartBeat可以多部署，做选举。（防止HeartBeat单点故障，目前Agent在线数据存放在内存中）
 
 ## Supervisor
 
