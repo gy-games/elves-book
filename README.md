@@ -10,7 +10,7 @@ QQ群：69748845
 
 ## 作者列表
 
-* [toryzen](http://toryzen.cn)
+* toryzen
 * eastFu
 * 光宇游戏系统部
 
