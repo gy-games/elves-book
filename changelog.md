@@ -36,6 +36,8 @@
 
 2017-06-23 页面APP更新功能BUG修复
 
+2017-07-01 APP新增BUG
+
 ## AppSdk
 
 ### Python
