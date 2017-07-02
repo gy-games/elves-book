@@ -28,5 +28,5 @@ QQ群：69748845
 
 ---
 
-_如果您在使用Elves，那么可以修改_[_ welcome.md_](https://github.com/gy-games/elves-book/blob/master/welcome.md)_ , 然后提交pull-request到gy-games/elves-book，等待merge过后，即可在这里显示。_
+_如果您在使用Elves，那么可以修改 _[_README.md_](https://github.com/gy-games/elves-book/blob/master/README.md)_ , 然后提交pull-request到gy-games/elves-book，等待merge过后，即可在这里显示。_
 
