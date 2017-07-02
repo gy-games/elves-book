@@ -1,7 +1,7 @@
 # Summary
 
-* [欢迎](welcome.md)
-* [1. 介绍](README.md)
+* [欢迎](README.md)
+* [1. 介绍](intro.md)
 * [2. 快速安装](quickinstall.md)
   * [2.1 环境准备](quickinstall/prepare.md)
   * [2.2 安装Elves-Center](quickinstall/install-elves-center.md)
