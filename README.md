@@ -4,7 +4,11 @@
 
 Elves-Project 才刚刚起步，欢迎更多的人加入我们，共同见证其成长！
 
-QQ群：69748845
+交流QQ群：69748845
+
+Project：https://github.com/gy-games/elves
+
+Organization：https://github.com/elves-project
 
 ---
 

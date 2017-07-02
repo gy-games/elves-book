@@ -32,7 +32,7 @@ Mysql用于Cron组件，Queue组件与Superviror组件，若不需要安装以�
 ## 安装ZOOKEEPER
 
 ```
-安装略
+略
 
 Zookeeper安装后需要创建elves根节点，zookeeper在整个ELVES中提供服务发现与选举的功能实现
 ```
