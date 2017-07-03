@@ -46,6 +46,7 @@
 * [6. 设计思路及理念](philosophy.md)
   * [6.1 组件间通讯](philosophy/communication.md)
 * [7. 实践案例](/practice.md)
+  * [7.1 基于ELVES实现的WEB自动化操作](/practice/tron.md)
 * [Changelog](changelog.md)
 * [Todo](todo.md)
 
