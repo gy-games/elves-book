@@ -6,9 +6,11 @@ Elves-Project 才刚刚起步，欢迎更多的人加入我们，共同见证其
 
 交流QQ群：69748845
 
-Project：https://github.com/gy-games/elves
+Release：[GITHUB](https://github.com/gy-games/elves) [码云](http://git.oschina.net/gy-games/elves)
 
-Organization：https://github.com/elves-project
+Project：[https://github.com/gy-games/elves](https://github.com/gy-games/elves)
+
+Organization：[https://github.com/elves-project](https://github.com/elves-project)
 
 ---
 
