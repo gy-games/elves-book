@@ -4,7 +4,7 @@
 
 Elves-Project 才刚刚起步，欢迎更多的人加入我们，共同见证其成长！
 
-交流QQ群：69748845 <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=dfc4404559856ad1c518bff273b35869d0fda18b3ecbdada1dd74c600dcd34b0"><img border="0" src="http//pub.idqqimg.com/wpa/images/group.png" alt="ELVES" title="ELVES"></a>
+交流QQ群：69748845 <a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=dfc4404559856ad1c518bff273b35869d0fda18b3ecbdada1dd74c600dcd34b0"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="ELVES" title="ELVES"></a>
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 
