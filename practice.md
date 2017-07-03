@@ -9,8 +9,9 @@ _如果你们也在用ELVES，可以修改 _[_gitbook _](https://github.com/gy-g
 1. [WEB自动化操作](//practice/tron.md)
 2. 数据库统一管理
 3. 批量命令行执行工具
-4. 游戏纵向更新
-5. 敏感数据审计
+4. 机器敏感数据审计
+
+
 
 
 
