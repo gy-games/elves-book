@@ -27,7 +27,7 @@
 
 ## 2、安装elves-agent，部署apps，并开启开发模式
 
-* elves-agent安装详见: [安装:Elves-Agent](/chapter1/an-zhuang-elves-agent.md) 或 [介绍:Elves-Agent](/zu-jian-jie-shao/elves-agent.md)
+* elves-agent安装详见: [安装:Elves-Agent](/quickinstall/install-elves-agent.md) 或 [介绍:Elves-Agent](/module/elves-agent.md)
 * 修改elves-agent配置文件./conf/cfg.json
 
   * apps增加 {"apptest":"1.0.0"}
@@ -60,7 +60,5 @@
 * 打开elves-agent目录下的conf/cron.json
 * 填写相关信息，Mode采用P模式，并保存corn.json，Worker即开始按照Rule进行执行
 
-计划任务配置参考 [3.8 Elves-Agent](/zu-jian-jie-shao/elves-agent.md) \(Agent Cron Task\)
-
-
+计划任务配置参考 [3.8 Elves-Agent](/quickinstall/install-elves-agent.md) \(Agent Cron Task\)
 

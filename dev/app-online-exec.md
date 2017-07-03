@@ -12,7 +12,7 @@
 
 # 发布
 
-app的发布需要借助于heartbeat组件，Heartbeat存在两种模式，且发布方式不同，默认介绍详见:[3.5HearBeat](/zu-jian-jie-shao/heartbeat.md)。
+app的发布需要借助于heartbeat组件，Heartbeat存在两种模式，且发布方式不同，默认介绍详见:[3.5HearBeat](/module/heartbeat.md)。
 
 ## **simple模式**
 
