@@ -7,6 +7,10 @@
 * Mysql新建实例
 * Mysql主从切换
 
+使用模式有：
+
+* 及时任务rt，CANP
+
 ## Mysql新建实例
 
 工单系统新建库的单子自动推送至Duiker![](/assets/practice-duiker-1.png)Duiker调用基于Elves实现实例创建![](/assets/practice-duiker-2.png)

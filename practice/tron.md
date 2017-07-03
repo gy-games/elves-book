@@ -4,13 +4,19 @@
 
 实现的功能有：
 
-* IIS操作
-* Nginx操作
-* SQUID操作
-* 主机HOSTS操作
-* 配置文件查看
-* 数据库主从切换
+* IIS操作,新建/修改站点、重启IIS
+* Nginx操作,新增/修改Upstream,新增/修改servername
+* SQUID操作,查看修改SQUIDHOSTS,PUREGE
+* WEB节点HOSTS操作，查看/修改HOSTS
+* 配置文件查看，操作
+* 数据库主从切换，SQL SERVER AWO 切换
 * GIT版本检测
+* 等等
+
+使用的模式有：
+
+* 及时任务模式 rt ，CSNP
+* 队列任务模式 queue ，CANP
 
 ## 新站点一键部署：
 
