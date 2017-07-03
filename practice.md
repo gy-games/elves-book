@@ -7,7 +7,7 @@ _如果你们也在用ELVES，可以修改 _[_gitbook _](https://github.com/gy-g
 ---
 
 1. [WEB自动化操作](//practice/tron.md)
-2. Mysql数据库统一管理\(主从切换,实例部署\)
+2. [Mysql数据库统一管理](//practice/duiker.md)
 3. 批量命令行执行工具
 4. 机器敏感数据审计
 5. CMDB相关机器硬件信息校对
