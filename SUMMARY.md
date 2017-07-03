@@ -45,6 +45,9 @@
     * [获取计划任务详细信息](api/cron/info.md)
 * [6. 设计思路及理念](philosophy.md)
   * [6.1 组件间通讯](philosophy/communication.md)
+* [7. 实践案例](/practice.md)
 * [Changelog](changelog.md)
 * [Todo](todo.md)
+
+
 
