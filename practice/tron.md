@@ -2,7 +2,7 @@
 
 光宇游戏的WEB自动化运维产品，这款产品光宇游戏内部的代号是TRON，提供WEB运维的CMDB管理，自动化操作，配置检测等相关的服务，其中自动化操作、与配置检测产品均基于ELVES实现。
 
-实现的功能有：
+基于ELVES APP-SDK实现的功能有：
 
 * IIS操作,新建/修改站点、重启IIS
 * Nginx操作,新增/修改Upstream,新增/修改servername
