@@ -14,13 +14,13 @@ Elves-Project 才刚刚起步，欢迎更多的人加入我们，共同见证其
 
 ## 作者列表
 
-* toryzen
-* eastFu
+* [toryzen](https://github.com/toryzen)
+* [eastFu](https://github.com/eastFu)
 * 光宇游戏运维团队
 
 ## 贡献列表
 
-* Zhangguangxin
+* [Zhangguangxin](https://github.com/GuangxinZhang)
 * Liyong
 * Xiehuanhuan
 
