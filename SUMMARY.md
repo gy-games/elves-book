@@ -46,10 +46,8 @@
 * [6. 设计思路及理念](philosophy.md)
   * [6.1 组件间通讯](philosophy/communication.md)
 * [7. 实践案例](/practice.md)
-  * [7.1 WEB运维自动化\(Tron\)](/practice/tron.md)
-  * [7.2 Mysql数据库统一管理\(Duiker\)](/practice/duiker.md)
+  * [7.1 网站运维自动化\(Tron\)](/practice/tron.md)
+  * [7.2 数据库统一管理\(Duiker\)](/practice/duiker.md)
 * [Changelog](changelog.md)
 * [Todo](todo.md)
-
-
 
