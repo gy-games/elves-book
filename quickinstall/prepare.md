@@ -18,7 +18,8 @@
 ## 安装RABBITMQ
 
 ```bash
-略
+步骤略
+详见：http://www.rabbitmq.com/download.html
 ```
 
 ## 安装MYSQL
