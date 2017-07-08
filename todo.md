@@ -18,5 +18,7 @@
 
 * \[app-sdk\]提供shell版本app-sdk
 
+* \[all-module\]增加Zookeeper依赖开关，允许各组件不依赖zookeeper（会有部分功能受限）
+
 
 
