@@ -18,6 +18,10 @@
 * 及时任务模式 RT ，CSNP
 * 队列任务模式 QUEUE，CANP
 
+## Architecture
+
+![](/assets/demo-elves-cron.png)
+
 ## 新站点一键部署：
 
 目前可以实现IIS站点的一键部署与Tomcat站点的一键部署，直接在目标机器上建立相应的站点，在我们的总分发机上创建相应的站点仓库，同时配置我们的Nginx集群对站点进行反向代理配置，如果需要缓存则同步配置SQUID集群。![](/assets/practice-create-web.png)
