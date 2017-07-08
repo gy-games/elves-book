@@ -20,7 +20,7 @@ Elves-Project 才刚刚起步，欢迎更多的人加入我们，共同见证其
 
 ## 贡献列表
 
-* [Zhangguangxin](https://github.com/GuangxinZhang)
+* [xin](https://github.com/GuangxinZhang)
 * Liyong
 * Xiehuanhuan
 
