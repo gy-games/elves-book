@@ -36,9 +36,10 @@ mv ./conf/cfg.example.json ./conf/cfg.json
 
 ```
 {
-        "asset": "localhost",        #主机的别称，一般可以设置CMDB资产的ID
-        "ip"   : "127.0.0.1",        #主机的IP地址，这里没有做校验，所以需要认真写
-        "port" : 11101,              #Agent接收参数的端口
+        "asset"   : "localhost",        #主机的别称，一般可以设置CMDB资产的ID
+        "ip"      : "127.0.0.1",        #主机的IP地址，这里没有做校验，所以需要认真写
+        "port"    : 11101,              #Agent接收参数的端口
+        "authips" : [],                 #Agent允许执行来自elves-center的授权IP（demo: ["127.0.0.1","192.168.0.1"]）
         "heartbeat": {
                 "comment": "if this disabled,agent will not install app automatically",
                 "enabled" : true,             #heartbeat 开关，若关闭后将无法自动下载或更新apps
@@ -149,14 +150,6 @@ Agent端默认 内置计划任务，使用Agent端调用的计划任务信息将
 ```
 
 cron rule 请参考 [https://github.com/jakecoffman/cron](https://github.com/jakecoffman/cron)
-
-# **安全性**
-
-在Elves-Agent的设计中，我们并未对其指令来源进行安全校验，理论上所有实现其Thrift方法的程序都可以调用Elves-Agent，在实际的成产环境中，我们建议与iptables联用以保证其指令来源的合法性
-
-```bash
-iptables -I INPUT -p tcp !-s {scheduler ip} --dport {agent port} -j DROP
-```
 
 
 
