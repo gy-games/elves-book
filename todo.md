@@ -12,6 +12,8 @@
 
 * \[Supervisor\]提供对外权限设置接口，主要用于与企业CMDB联动配置权限，提供定期同步CMDB权限功能（需要CMDB提供特殊格式数据）。
 
+* \[Openapi\]基于spring-boot进行改版来提供restful的接口，，去除对Tomcat依赖.
+
 * \[app-sdk\]提供csharp版本app-sdk
 
 * \[app-sdk\]提供golang版本app-sdk
