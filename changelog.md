@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.1.1 \[20170710\]
+* \[ALL Elves-Center Module\]增加ZK开关，默认设置关闭ZK，（ZK仅用于组件集群部署时使用）
+* \[All Elves-Center Module\]开启ZK时，各组件支持自动创建根节点与自身节点，无需再手工创建
+* \[HeartBeat\] 当启用ZK组件时，HB的数据将写入ZK下的节点（为多HB数据共享做准备）
+* \[Agent\]增加ELves-Center IP认证，可以设置允许的Scheduler IP地址列表（将Thrift生成的代码集成入agent，并对Thrift Go源码进行修改获取来路IP地址）
+* \[AppSDK\]增加csharpSDK(目前只提供app-worker）
+
 ## v0.1.0 \[20170702\]
 
 * \[**Agent\]**代码重构，重新设计WEB DASHBORD，修订miniAPI与elves-center OpenAPI不一致问题
