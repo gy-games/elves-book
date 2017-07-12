@@ -26,11 +26,20 @@ app的发布需要借助于heartbeat组件，Heartbeat存在两种模式，且�
 
 1、登录supervisor web界面
 
-2、点击添加APP，WEB端上传{app名称}\_{版本号}.zip，并填写app名称与版本号
+2、新增APP：点击APP管理，点击右上角+号，新建一个APP,输入APP指令(英文)，APP名称，保存。
+![](/assets/new-app1.png)
 
-4、创建APP
+3、上传APP包：找到刚刚建立的APP名称，点击右侧的第一个按钮，选择一个APP包（名称为：{app名称}\_{版本号}.zip），点击保存
+![](/assets/new-app2.png)
 
-3、授权APP允许运行的机器
+4、设置线上APP版本：找到刚刚建立的APP名称，点击右侧第二个按钮，选择需要线上版本按钮，点击
+![](/assets/new-app3.png)
+
+5、设置需要运行APP的节点：找到刚刚建立的APP名称，点击右侧第三个按钮，选择响应的主机后保存
+![](/assets/new-app4.png)
+
+3、创建可以操作此APP的密钥：点击Auth管理，点击右上角的+号，填写密钥名称，选择可操作的APP，保存，即可获取AuthID与AuthKEY
+![](/assets/new-app5.png)
 
 # 执行
 
