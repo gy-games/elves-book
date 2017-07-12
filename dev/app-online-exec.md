@@ -4,7 +4,7 @@
 
 # 打包
 
-将已开发的worker进行一个打包为ZIP格式，注意，打包时不要包含worker目录，ZIP文件解压后即为Worker的可执行文件，且文件名以 **{app名称}\_{版本号}.zip** 命名，如果是C/S模式的APP，其中Processor部分需要自己提前进行部署，当然你可以将不同的语言的APP内置在一个APP包内，elves将根据不同操作系统或者根据用户自定义proxy进行程序调用。
+将已开发的worker进行一个打包为ZIP格式，注意，打包时不要包含worker目录，ZIP文件解压后即为Worker的可执行文件，且文件名以 **{app名称}\_{版本号}.zip** 命名，如果是C/S模式的APP，其中Processor部分需要自己提前进行部署，当然你可以将不同的语言的APP内置在一个APP包内，elves将根据不同操作系统或者根据用户自定义入口[[4.3](/dev/customize-app-worker.md)]进行程序调用。
 
 **apptest\_1.0.0 app包示例**
 
