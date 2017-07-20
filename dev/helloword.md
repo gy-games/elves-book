@@ -28,21 +28,40 @@
 ## 2、安装elves-agent，部署apps，并开启开发模式
 
 * elves-agent安装详见: [安装:Elves-Agent](/quickinstall/install-elves-agent.md) 或 [介绍:Elves-Agent](/module/elves-agent.md)
-* 修改elves-agent配置文件./conf/cfg.json
 
-  * apps增加 {"apptest":"1.0.0"}
+* 修改elves-agent配置文件./conf/cfg.json (可能需要 mv cfg.example.json cfg.json )
 
+  * apps增加 {"apptest":"1.0.0"} #默认实例配置文件cfg.example.json中已配置此APP
+   
   * 设置devmode.enabled = true
 
-* 启动elves-agent
+* 启动elves-agent (./control start)
 
-* 将worker目录放入 ./apps，并重命名为apptest
+* 将worker目录放入 ./apps，并重命名为apptest，此时elves agent的目录结构为
+```
+        │
+        ├─apps  #elves apps
+        │  ├─apptest          
+        │  │      app-worker.py  #App Worker入口
+        │  │      appcfg.json    #Worker配置文件
+        │  │      apptest.py     #Worker执行方法
+        │  │
+        │  └─otherapp..           #其他Elves APP
+        ├─bin
+        ├─conf
+        ├─control
+        ├─logs
+        ├─var
+        └─public
+```
+
+
 
 ## 3、开发模式**调试APP**
 
 ### 3.1 及时任务\(RT\)调试Worker
 
-* 打开elves-agent web管理界面，进入"Develop Tools“
+* 打开elves-agent web管理界面，默认为：http://ip:19880 ， 进入"Develop Tools“
 
 * app输入 apptest , func输入helloword , param输入{"my":"toryzen"} ,点击"Generate"，再点击"Run Test"，获取 APP Worker 执行后结果
 
