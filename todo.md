@@ -12,9 +12,9 @@
 
 * \[Supervisor\]提供对外权限设置接口，主要用于与企业CMDB联动配置权限，提供定期同步CMDB权限功能（需要CMDB提供特殊格式数据）。
 
-* \[Openapi\]内置Jetty，去除对Tomcat容器的依赖。
+* \[Openapi\]~~内置Jetty，去除对Tomcat容器的依赖。~~
 
-* \[supervisor\]内置Jetty，去除对Tomcat容器的依赖。
+* \[supervisor\]~~内置Jetty，去除对Tomcat容器的依赖。~~
 
 * \[app-sdk\]~~提供csharp版本app-sdk~~
 
