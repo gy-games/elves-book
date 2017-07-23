@@ -2,15 +2,15 @@
 
 Elves-Center可以根据自身的情况进行筛选部署，理论上Elves-Center可以部署在Linux与Windows平台，但我们建议还是部署在Linux平台下，Elves-Center的编译需要maven环境支持，Elves-Agent的编译需要Golang环境的支持
 
-## schduler & queue & cron & heartbeat
+## schduler & queue & cron & heartbeat & openapi & supervisor
 
-以上4个组件的安装过程一致
+以上6个组件的安装过程一致
 
 ### 二进制安装
 
 * 下载适合操作系统的二进制安装包并解压
 
-* queue,cron模块需要将SQL文件（database.sql）导入MySQL
+* queue,cron,supervisor模块需要将SQL文件（database.sql）导入MySQL
 
 * 复制配置文件 mv conf/conf.properties.example conf/conf.properties
 
@@ -28,29 +28,13 @@ Elves-Center可以根据自身的情况进行筛选部署，理论上Elves-Cente
 
 * 执行 chmod +x ./control &&  ./control build   编译源码
 
-* 复制配置文件 mv conf/conf.properties.example conf/conf.properties 
+* 复制配置文件 mv conf/conf.properties.example conf/conf.properties
 
 * 修改配置文件./conf/conf.properties （详见各组件介绍 ）
 
 * 执行./control start 启动scheduler
 
 * 执行./control status 查看运行状态
-
-# openapi & supervisor
-
-### 编译安装
-
-* 下载源码包或 git clone源码包
-
-* supervisor需要将SQL文件（database.sql）导入MySQL
-
-* 修改 resources/conf.properties （详见各组件介绍 ）
-
-* 执行 mvn package 编译源码
-
-* 获取编译后的War包
-
-* 部署至Tomcat
 
 ---
 
