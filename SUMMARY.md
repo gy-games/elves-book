@@ -48,6 +48,9 @@
 * [7. 实践案例](/practice.md)
   * [7.1 网站运维自动化\(Tron\)](/practice/tron.md)
   * [7.2 数据库统一管理\(Duiker\)](/practice/duiker.md)
+  * [7.3 批量命令行执行\(Bumblebe\)](/practice/bumblebee.md)
 * [Changelog](changelog.md)
 * [Todo](todo.md)
+
+
 
