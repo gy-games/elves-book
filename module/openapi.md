@@ -35,12 +35,18 @@ queue.enabled = true                 #queue组件开关，关闭后，OpenAPI不
 
 ## 组件构建
 
+**./control**
+
 ```
-cd ./openapi
-mvn package
-cp ./openapi/ROOT.war {Tomcat目录}
-{start Tomcat}
-{访问:http://ip:port}
+build|pack|start|stop|restart|status|version
+
+build   : 运行后将执行mvn pakcge , 最终构建成至 bin
+pack    : 将本模块打包(不包含配置文件与日志文件)
+start   : 以nohup形式启动elves-{module}
+stop    : 关闭elves-{module}
+restart : 执行 stop & start
+status  : 查看elves-{module}的运行状态
+version : 查看当前模块的版本
 ```
 
 ## 服务使用列表
