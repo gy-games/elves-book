@@ -56,6 +56,8 @@ queue.enabled = true                 #queue组件开关，关闭后，OpenAPI不
 
 ** ./control**
 
+**./control**
+
 ```
 build|pack|start|stop|restart|status|version
 
