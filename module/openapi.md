@@ -2,8 +2,6 @@
 
 OpenAPI组件为Elves-Center的唯一入口，对内采用RabbitMQ的方式与各组件进行交互，对外采用RESTful方式交互。OpenAPI中设置了大量的开关以达到组件的拔插性
 
-OpenAPI为WEB项目，推荐部署至Tomcat容器下。
-
 ## 编译
 
 ```
