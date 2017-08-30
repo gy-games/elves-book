@@ -1,10 +1,25 @@
 # Supervisor
 
-supervisor组件负责elves的APP管理与权限管理，提供web管理端提供这些数据 管理。supervisor为WEB项目，推荐部署至Tomcat容器下。
+supervisor组件负责elves的APP管理与权限管理，提供web管理端提供这些数据 管理。
+
+## 编译
+
+```
+cd elves-openapi
+chmod +x ./control
+./control build                                                 #二进制版本可以忽略编译过程
+```
+
+## 配置
+
+```
+mv conf/conf.properties.example conf/conf.properties            #复制配置文件
+vim conf/conf.properties                                        #编辑配置文件
+```
 
 ## 修改配置
 
-**./elves-supervisor-web/src/main/resources/conf.properties**
+**./conf/conf.properties**
 
 ```
 #Zookeeper Config
@@ -25,7 +40,8 @@ ftp.res.user=admin                       #FTP帐号
 ftp.res.pass=admin                       #FTP密码
 ```
 
-## 组件构建
+## 脚本参数
+
 
 **./control**
 
