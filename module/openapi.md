@@ -4,11 +4,30 @@ OpenAPI组件为Elves-Center的唯一入口，对内采用RabbitMQ的方式与�
 
 OpenAPI为WEB项目，推荐部署至Tomcat容器下。
 
-## 修改配置
-
-**./src/main/resource/conf.properties**
+## 编译
 
 ```
+cd elves-openapi
+chmod +x ./control
+./control build                                                 #二进制版本可以忽略编译过程
+```
+
+## 配置
+
+```
+mv conf/conf.properties.example conf/conf.properties            #复制配置文件
+vim conf/conf.properties                                        #编辑配置文件
+```
+
+
+## 修改配置
+
+**./conf/conf.properties**
+
+```
+#api server config
+server.port=80                                                    #提供服务的端口
+
 #Zookeeper Config
 zookeeper.host=10.0.101.1:2181,10.0.101.2:2181,10.0.101.3:2181    #Zookeeper地址
 zookeeper.outTime=10000                                           #Zookeeper超时时间
@@ -33,15 +52,6 @@ queue.enabled = true                 #queue组件开关，关闭后，OpenAPI不
 
 **开启simple模式后无法使用supervisor的权限认证且simple模式提供的auth**_**id与auth**_**key可以管理并执行所有Elves的Agents下的所有Apps**
 
-## 组件构建
-
-```
-cd ./openapi
-mvn package
-cp ./openapi/ROOT.war {Tomcat目录}
-{start Tomcat}
-{访问:http://ip:port}
-```
 
 ## 服务使用列表
 

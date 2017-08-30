@@ -18,7 +18,9 @@ Elves-Center可以根据自身的情况进行筛选部署，理论上Elves-Cente
 
 * 执行chmod +x ./control 设置执行权限
 
-* 执行./control start 启动scheduler
+* 执行./control build 构建
+
+* 执行./control start 启动
 
 * 执行./control status 查看运行状态
 
