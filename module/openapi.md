@@ -52,6 +52,22 @@ queue.enabled = true                 #queue组件开关，关闭后，OpenAPI不
 
 **开启simple模式后无法使用supervisor的权限认证且simple模式提供的auth**_**id与auth**_**key可以管理并执行所有Elves的Agents下的所有Apps**
 
+## 脚本参数
+
+** ./control**
+
+```
+build|pack|start|stop|restart|status|version
+
+build   : 运行后将执行mvn pakcge , 最终构建成至 bin
+pack    : 将本模块打包(不包含配置文件与日志文件)
+start   : 以nohup形式启动elves-{module}
+stop    : 关闭elves-{module}
+restart : 执行 stop & start
+status  : 查看elves-{module}的运行状态
+version : 查看当前模块的版本
+```
+
 
 ## 服务使用列表
 
