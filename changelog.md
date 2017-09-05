@@ -1,5 +1,14 @@
 # Changelog
 
+## bug fix \[20170828\]
+
+* \[Agent\] 更新安装时自启动放置位置
+* \[Supervisor\] 增加根据URL配置（此功能将包含在后期发布的CMDBProxy中）授权信息功能
+
+## bug fix \[20170811\]
+
+* \[Agent\] 针对开发模式优化web dashbord面板，修订agent与heartbeat交互时超时推出的严重BUG
+
 ## v0.1.2 \[20170723\]
 
 * \[All Elves-Center Module\]日志文件路径修改为：{elves模块}/logs 目录下
