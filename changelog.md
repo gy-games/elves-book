@@ -9,13 +9,13 @@
 
 * \[Agent\] 针对开发模式优化web dashbord面板，修订agent与heartbeat交互时超时推出的严重BUG
 
-## v0.1.2 \[20170723\]
+## release v0.1.2 \[20170723\]
 
 * \[All Elves-Center Module\]日志文件路径修改为：{elves模块}/logs 目录下
 * \[Openapi\] 内置Jetty，去除对Tomcat容器的依赖
 * \[Supervisor\] 内置Jetty，去除对Tomcat容器的依赖
 
-## v0.1.1 \[20170710\]
+## release v0.1.1 \[20170710\]
 
 * \[All Elves-Center Module\]增加ZK开关，默认设置关闭ZK，（ZK仅用于组件集群部署时使用）
 * \[All Elves-Center Module\]开启ZK时，各组件支持自动创建根节点与自身节点，无需再手工创建
@@ -23,7 +23,7 @@
 * \[Agent\]增加ELves-Center IP认证，可以设置允许的Scheduler IP地址列表（将Thrift生成的代码集成入agent，并对Thrift Go源码进行修改获取来路IP地址）
 * \[AppSDK\]增加csharpSDK\(目前只提供app-worker）
 
-## v0.1.0 \[20170702\]
+## release v0.1.0 \[20170702\]
 
 * \[**Agent\]**代码重构，重新设计WEB DASHBORD，修订miniAPI与elves-center OpenAPI不一致问题
 * \[**Schdule**\] 代码重构
