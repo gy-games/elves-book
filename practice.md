@@ -6,10 +6,10 @@ _如果你们也在用ELVES，可以修改 _[_gitbook _](https://github.com/gy-g
 
 ---
 
-1. 光宇游戏 - [网站运维自动化Tron](//practice/tron.md)
-2. 光宇游戏 - [数据库统一管理Duiker](//practice/duiker.md)
+1. 光宇游戏 - [网站运维自动化Tron](/practice/tron.md)
+2. 光宇游戏 - [数据库统一管理Duiker](/practice/duiker.md)
 3. 光宇游戏 - [批量命令行执行Bumblebee](/practice/bumblebee.md)
-4. 光宇游戏 - 机器敏感数据审计Odin
+4. 光宇游戏 - [入侵检测系统Odin](/practice/odin.md)
 5. 光宇游戏 - 资产系统\(机器硬件信息校对\)CenterAPP
 6. 光宇游戏 - 混合云管理系统GCloud
 7. 光宇游戏 - 游戏运维自动化操作Martrix
