@@ -8,9 +8,9 @@
 | Queue | RabbitMQ,Zookeeper | Mysql |
 | Cron | RabbitMQ,Zookeeper | Mysql |
 | Heartbeat | RabbitMQ,Zookeeper | Apache或Nginx |
-| Supervisor | RabbitMQ,Zookeeper | Mysql,Tomcat,FTP |
+| Supervisor | RabbitMQ,Zookeeper | Mysql,FTP |
 | OpenAPI | RabbitMQ,Zookeeper | - |
-| Watcher&Dashbord | RabbitMQ,Zookeeper | MongoDB,Tomcat |
+| Watcher&Dashbord | RabbitMQ,Zookeeper |  |
 | Elves-Agent | - | - |
 
 ---
@@ -36,14 +36,6 @@ Mysql用于Cron组件，Queue组件与Superviror组件，若不需要安装以�
 略
 
 Zookeeper安装后需要创建elves根节点，zookeeper在整个ELVES中提供服务发现与选举的功能实现
-```
-
-## 安装TOMCAT
-
-```
-略
-
-Tomcat主要用于openapi组件与supervior组件，当然也可以不使用Tomcat将以上WEB项目部署至其他容器中。
 ```
 
 ## 安装Apache或Nginx
