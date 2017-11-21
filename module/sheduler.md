@@ -23,7 +23,8 @@ vim conf/conf.properties                                        #编辑配置文
 
 ```
 #Zookeeper Config
-zookeeper.host=127.0.0.1:2181   #Zookeeper地址
+zookeeper.enabled=false                                          #Zookeeper开启标识
+zookeeper.host=127.0.0.1:2181                                    #Zookeeper地址
 zookeeper.outTime=10000                                          #Zookeeper超时时间
 zookeeper.root=/elves                                            #Zookeeper ROOT地址  
 

@@ -6,6 +6,7 @@
   * [2.1 环境准备](quickinstall/prepare.md)
   * [2.2 安装Elves-Center](quickinstall/install-elves-center.md)
   * [2.3 安装Elves-Agent](quickinstall/install-elves-agent.md)
+  * [2.4 Docker部署](quickinstall/24-dockerbu-shu.md)
 * [3. 组件介绍](module.md)
   * [3.1 Sheduler](module/sheduler.md)
   * [3.2 Cron](module/cron.md)
