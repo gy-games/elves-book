@@ -21,6 +21,7 @@ Elves-Project 才刚刚起步，欢迎更多的人加入我们，共同见证其
 ## 贡献列表
 
 * [xin](https://github.com/GuangxinZhang)
+* [jiayun](https://github.com/chenjiayun)
 * Liyong
 * Xiehuanhuan
 
@@ -28,7 +29,7 @@ Elves-Project 才刚刚起步，欢迎更多的人加入我们，共同见证其
 
 ## Who Uses Elves
 
-[![](http://www.gyyxol.cn/images/logo.png)](http://www.gyyxol.cn)
+[![](http://www.gyyxol.cn/images/logo.jpg)](http://www.gyyxol.cn)
 
 ---
 

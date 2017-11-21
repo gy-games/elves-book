@@ -22,7 +22,11 @@ vim conf/conf.properties                                        #编辑配置文
 **./conf/conf.properties**
 
 ```
-#Zookeeper Config
+#api server config
+server.port=9092                        #Supervisor WEB管理界面端口
+
+#zookeeper config
+zookeeper.enabled=false                  #Zookeeper开启标识
 zookeeper.host=127.0.0.1                 #Zookeeper地址
 zookeeper.outTime=10000                  #Zookeeper超时时间      
 zookeeper.root=/elves                    #Zookeeper超时时间
@@ -34,14 +38,22 @@ mq.user     = admin                      #RABBITMQ 账号
 mq.password =                            #RABBITMQ 密码      
 mq.exchange = elves                      #RABBITMQ 密码
 
+#db config
+jdbc.url=jdbc\:mysql\://127.0.0.1\:3306/elves_supervisor?characterEncoding=UTF-8&amp;useOldAliasMetadataBehavior=true&amp;zeroDateTimeBehavior=convertToNull
+jdbc.username=root                       #数据库帐号
+jdbc.password=root                       #数据库密码
+
 #FTP adress config
 ftp.res.ip=http://127.0.0.1              #存储app安装包的FTP地址
 ftp.res.user=admin                       #FTP帐号
 ftp.res.pass=admin                       #FTP密码
 ```
 
-## 脚本参数
+**注意：**
 
+使用Supervisor上传APP时一定要确定APP的包名字符合规范，例如 apptest\_1.0.0.zip ,supervisor会根据规则截取版本号，并通过FTP进行上传。
+
+## 脚本参数
 
 **./control**
 

@@ -22,10 +22,11 @@ vim conf/conf.properties                                         #编辑配置�
 **./conf/conf.properties**
 
 ```
-#Zookeeper Config
-zookeeper.host=192.168.0.1             #Zookeeper地址
-zookeeper.outTime=10000                #Zookeeper超时时间
-zookeeper.root=/elves                  #Zookeeper ROOT地址   
+#zookeeper config
+zookeeper.enabled=false                #是否开启ZK
+zookeeper.host=127.0.0.1:2181          #Zookeeper 超时时间
+zookeeper.outTime=10000                #Zookeeper ROOT地址
+zookeeper.root = /elves                #Zookeeper Root地址
 
 #MQ Basic Config
 mq.ip       = 192.168.0.1              #RabbitMQ IP
@@ -34,10 +35,15 @@ mq.user     = admin                    #RABBITMQ 账号
 mq.password = 1234567890               #RABBITMQ 密码
 mq.exchange = elves                    #Exchange 名称   
 
-
 #auth config
 auth.mode = supervisor                                 #权限模式，可选择supervisor或simple模式
 auth.localAppInfo={'app1':'1.0.1','app2':'1.0.2'}      #simple模式的app列表
+
+#thrift config
+thrift.heartbeat.port=11102             #HeartBeat接收来自Agent消息的端口
+
+
+
 ```
 
 注：
