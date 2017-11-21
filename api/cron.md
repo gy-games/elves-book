@@ -4,11 +4,10 @@
 
 | **名称** | **METHOD&URI** | **必须依赖组件** | **可选依赖组件** |
 | :--- | :--- | :--- | :--- |
-| [添加计划任务](/api/cron/tian-jia-ji-hua-ren-wu.md) | POST /api/v2/cron/add | openapi,cron,scheduler | supervisor |
-| [开启计划任务](/api/cron/kai-qi-ji-hua-ren-wu.md) | POST /api/v2/cron/start | openapi,cron,scheduler | supervisor |
-| [停止计划任务](/api/cron/huo-qu-ji-hua-ren-wu-xiang-xi-xin-xi.md) | POST /api/v2/cron/stop | openapi,cron,scheduler | supervisor |
-| [获取计划任务列表信息](/api/public/huo-qu-agent-lie-biao-xin-xi.md) | GET /api/v2/cron/list | openapi,cron,scheduler | supervisor |
-| [获取计划任务详细信息](/api/cron/huo-qu-ji-hua-ren-wu-xiang-xi-xin-xi.md) | GET /api/v2/cron/detail | openapi,cron,scheduler | supervisor |
+| [添加计划任务](/api/cron/add.md) | POST /api/v2/cron/add | openapi,cron,scheduler | supervisor |
+| [开启计划任务](/api/cron/start.md) | POST /api/v2/cron/start | openapi,cron,scheduler | supervisor |
+| [停止计划任务](/api/cron/stop.md) | POST /api/v2/cron/stop | openapi,cron,scheduler | supervisor |
+| [获取计划任务详细信息](/api/cron/info.md) | GET /api/v2/cron/detail | openapi,cron,scheduler | supervisor |
 
 ---
 

@@ -4,7 +4,7 @@
 
 | **名称** | **METHOD&URI** | **必须依赖组件** | **可选依赖组件** |
 | :--- | :--- | :--- | :--- |
-| [执行及时任务](/api/rt/zhi-xing-ji-shi-ren-wu.md) | POST /api/v2/rt/exec | openapi,scheduler | supervisor |
+| [执行及时任务](/api/rt/exec.md) | POST /api/v2/rt/exec | openapi,scheduler | supervisor |
 
 
 

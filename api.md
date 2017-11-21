@@ -1,6 +1,6 @@
 # API
 
-Elves-Center与开发者的交互均采用RESTful的API方式实现，并集成在其组件OpenApi中，Api采用 [签名方式](/api/qian-ming-ren-zheng.md) 认证请求的合法信息。
+Elves-Center与开发者的交互均采用RESTful的API方式实现，并集成在其组件OpenApi中，Api采用 [签名方式](/api/sign.md) 认证请求的合法信息。
 
 API包含4大类接口，信息，即时任务，队列任务与计划任务
 
@@ -11,8 +11,8 @@ API包含4大类接口，信息，即时任务，队列任务与计划任务
 | **名称** | **METHOD&URI** | **必须依赖组件** | **可选依赖组件** |
 | :--- | :--- | :--- | :--- |
 | [获取APP信息列表](/api/public/apps.md) | GET /api/v2/info/apps | supervisor | - |
-| [获取AGENT列表信息](/api/public/huo-qu-agent-lie-biao-xin-xi.md) | GET /api/v2/info/agents | supervisor | - |
-| [获取AGENT详细信息](/api/public/huo-qu-agent-xiang-xi-xin-xi.md) | GET /api/v2/info/agents/detail | supervisor,heartbeat | cron |
+| [获取AGENT列表信息](/api/public/agent-list.md) | GET /api/v2/info/agents | supervisor | - |
+| [获取AGENT详细信息](/api/public/agent-detail.md) | GET /api/v2/info/agents/detail | supervisor,heartbeat | cron |
 
 # 及时任务\(RT\)
 
@@ -20,7 +20,7 @@ API包含4大类接口，信息，即时任务，队列任务与计划任务
 
 | **名称** | **METHOD&URI** | **必须依赖组件** | **可选依赖组件** |
 | :--- | :--- | :--- | :--- |
-| [执行及时任务](/api/rt/zhi-xing-ji-shi-ren-wu.md) | POST /api/v2/rt/exec | openapi,scheduler | supervisor |
+| [执行及时任务](/api/rt/exec.md) | POST /api/v2/rt/exec | openapi,scheduler | supervisor |
 
 # 队列任务\(Queue\)
 
@@ -28,11 +28,11 @@ API包含4大类接口，信息，即时任务，队列任务与计划任务
 
 | **名称** | **METHOD&URI** | **必须依赖组件** | **可选依赖组件** |
 | :--- | :--- | :--- | :--- |
-| [创建队列](/api/queue/chuang-jian-dui-lie.md) | POST /api/v2/queue/create | openapi,queue,scheduler | supervisor |
-| [添加任务项](/api/cron/tian-jia-ji-hua-ren-wu.md) | POST /api/v2/queue/addtask | openapi,queue,scheduler | supervisor |
-| [提交队列](/api/queue/ti-jiao-dui-lie-ren-wu.md) | POST /api/v2/queue/commit | openapi,queue,scheduler | supervisor |
-| [停止队列](/api/queue/ting-zhi-dui-lie-ren-wu.md) | POST /api/v2/queue/stop | openapi,queue,scheduler | supervisor |
-| [获取队列结果](/api/queue/huo-qu-dui-lie-ren-wu-jie-guo.md) | GET /api/v2/queue/result | openapi,queue,scheduler | supervisor |
+| [创建队列](/api/queue/create.md) | POST /api/v2/queue/create | openapi,queue,scheduler | supervisor |
+| [添加任务项](/api/queue/add-task.md) | POST /api/v2/queue/addtask | openapi,queue,scheduler | supervisor |
+| [提交队列](/api/queue/submit.md) | POST /api/v2/queue/commit | openapi,queue,scheduler | supervisor |
+| [停止队列](/api/queue/stop.md) | POST /api/v2/queue/stop | openapi,queue,scheduler | supervisor |
+| [获取队列结果](/api/queue/result.md) | GET /api/v2/queue/result | openapi,queue,scheduler | supervisor |
 
 # 计划任务\(Cron\)
 
@@ -40,11 +40,10 @@ API包含4大类接口，信息，即时任务，队列任务与计划任务
 
 | **名称** | **METHOD&URI** | **必须依赖组件** | **可选依赖组件** |
 | :--- | :--- | :--- | :--- |
-| [添加计划任务](/api/cron/tian-jia-ji-hua-ren-wu.md) | POST /api/v2/cron/add | openapi,cron,scheduler | supervisor |
-| [开启计划任务](/api/cron/kai-qi-ji-hua-ren-wu.md) | POST /api/v2/cron/start | openapi,cron,scheduler | supervisor |
-| [停止计划任务](/api/cron/huo-qu-ji-hua-ren-wu-xiang-xi-xin-xi.md) | POST /api/v2/cron/stop | openapi,cron,scheduler | supervisor |
-| [获取计划任务列表信息](/api/public/huo-qu-agent-lie-biao-xin-xi.md) | GET /api/v2/cron/list | openapi,cron,scheduler | supervisor |
-| [获取计划任务详细信息](/api/cron/huo-qu-ji-hua-ren-wu-xiang-xi-xin-xi.md) | GET /api/v2/cron/detail | openapi,cron,scheduler | supervisor |
+| [添加计划任务](/api/cron/add.md) | POST /api/v2/cron/add | openapi,cron,scheduler | supervisor |
+| [开启计划任务](/api/cron/start.md) | POST /api/v2/cron/start | openapi,cron,scheduler | supervisor |
+| [停止计划任务](/api/cron/stop.md) | POST /api/v2/cron/stop | openapi,cron,scheduler | supervisor |
+| [获取计划任务详细信息](/api/cron/info.md) | GET /api/v2/cron/info | openapi,cron,scheduler | supervisor |
 
 计划组件使用Quartz实现，并同时使用其cron语法规则。
 

@@ -4,11 +4,11 @@
 
 | **名称** | **METHOD&URI** | **必须依赖组件** | **可选依赖组件** |
 | :--- | :--- | :--- | :--- |
-| [创建队列](/api/queue/chuang-jian-dui-lie.md) | POST /api/v2/queue/create | openapi,queue,scheduler | supervisor |
-| [添加任务项](/api/cron/tian-jia-ji-hua-ren-wu.md) | POST /api/v2/queue/addtask | openapi,queue,scheduler | supervisor |
-| [提交队列](/api/queue/ti-jiao-dui-lie-ren-wu.md) | POST /api/v2/queue/commit | openapi,queue,scheduler | supervisor |
-| [停止队列](/api/queue/ting-zhi-dui-lie-ren-wu.md) | POST /api/v2/queue/stop | openapi,queue,scheduler | supervisor |
-| [获取队列结果](/api/queue/huo-qu-dui-lie-ren-wu-jie-guo.md) | GET /api/v2/queue/result | openapi,queue,scheduler | supervisor |
+| [创建队列](/api/queue/create.md) | POST /api/v2/queue/create | openapi,queue,scheduler | supervisor |
+| [添加任务项](/api/queue/add-task.md) | POST /api/v2/queue/addtask | openapi,queue,scheduler | supervisor |
+| [提交队列](/api/queue/submit.md) | POST /api/v2/queue/commit | openapi,queue,scheduler | supervisor |
+| [停止队列](/api/queue/stop.md) | POST /api/v2/queue/stop | openapi,queue,scheduler | supervisor |
+| [获取队列结果](/api/queue/result.md) | GET /api/v2/queue/result | openapi,queue,scheduler | supervisor |
 
 
 

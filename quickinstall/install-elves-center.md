@@ -8,7 +8,7 @@ Elves-Center可以根据自身的情况进行筛选部署，理论上Elves-Cente
 
 ### 二进制安装
 
-* 下载适合操作系统的二进制安装包并解压
+* 下载适合操作系统的二进制安装包并解压( [下载地址](https://github.com/gy-games/elves/releases) )
 
 * queue,cron,supervisor模块需要将SQL文件（database.sql）导入MySQL
 
