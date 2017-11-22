@@ -1,5 +1,13 @@
 # Changelog
 
+## release v0.1.3 \[20171122\]
+
+* \[All Elves-Center Module\] 优化Elves-Center各组件的RabbitMQ信息交互性能
+* \[Supervisor\] 允许权限通过接口配置（无WEB操作界面，需要在数据库内定义）
+* \[Agent\] 修订Agent在一定条件下会掉线的BUG，更新安装时自启动放置位置，测试WEB界面小更新
+* \[Dashbord\] 发布Dashbord组件
+* 增加docker部署支持 https://github.com/elves-project/docker
+
 ## new feature \[20170828\]
 
 * \[Agent\] 更新安装时自启动放置位置
